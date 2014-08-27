@@ -1,0 +1,5 @@
+﻿Đọc tài liệu
+-Viết Q&A
+-Document: 5UC đầu tiên mỗi thành viên 1 UC
+-Unit TestCase: dụa vào code giả để viết
+- Database

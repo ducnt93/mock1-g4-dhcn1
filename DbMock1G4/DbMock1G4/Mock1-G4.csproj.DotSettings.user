@@ -1,0 +1,21 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC1_002EVALIDATION_005CCONTENT/@EntryIndexedValue">UC1.Validation\Content</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC1_002EVALIDATION_005CSCRIPTS_005CBOOTSTRAP_002EMIN_002EJS/@EntryIndexedValue">UC1.Validation\Scripts\bootstrap.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC1_002EVALIDATION_005CSCRIPTS_005CJQUERY_002D1_002E8_002E2_002EMIN_002EJS/@EntryIndexedValue">UC1.Validation\Scripts\jquery-1.8.2.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC1_002EVALIDATION_005CUC2_002EWITHDRAWMONEY_005CWITHDRAW_002EASPX/@EntryIndexedValue">UC1.Validation\UC2.WithdrawMoney\Withdraw.aspx</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CCSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CIMAGES_005CNGANHANG2_002EJPG/@EntryIndexedValue">UC2.WithdrawMoney\Content\images\nganhang2.jpg</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\Style.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CSCRIPTS/@EntryIndexedValue">UC2.WithdrawMoney\Scripts</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=_002E_002E_005CCONTENT/@EntryIndexedValue">..\Content</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=UC1_002EVALIDATION_005CMAIN_002EASPX/@EntryIndexedValue"></s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CCONTENT/@EntryIndexedValue">UC1.Validation\Content</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CMAIN_002EASPX/@EntryIndexedValue">UC1.Validation\Main.aspx</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CSCRIPTS_005CBOOTSTRAP_002EMIN_002EJS/@EntryIndexedValue">UC1.Validation\Scripts\bootstrap.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CSCRIPTS_005CJQUERY_002D1_002E8_002E2_002EMIN_002EJS/@EntryIndexedValue">UC1.Validation\Scripts\jquery-1.8.2.min.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CUC2_002EWITHDRAWMONEY_005CWITHDRAW_002EASPX/@EntryIndexedValue">UC1.Validation\UC2.WithdrawMoney\Withdraw.aspx</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CCSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CIMAGES_005CNGANHANG2_002EJPG/@EntryIndexedValue">UC2.WithdrawMoney\Content\images\nganhang2.jpg</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\Style.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CSCRIPTS/@EntryIndexedValue">UC2.WithdrawMoney\Scripts</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=_002E_002E_005CCONTENT/@EntryIndexedValue">..\Content</s:String></wpf:ResourceDictionary>
