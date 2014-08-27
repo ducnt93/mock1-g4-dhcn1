@@ -1,0 +1,27 @@
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb
