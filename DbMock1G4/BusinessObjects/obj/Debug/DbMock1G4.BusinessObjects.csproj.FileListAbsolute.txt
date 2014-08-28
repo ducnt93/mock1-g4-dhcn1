@@ -7,3 +7,8 @@ C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessObjects\bin\Debug\DbMock
 C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.dll
 C:\Users\Admin\Desktop\Project fsoft\DbMock1G41\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.csprojResolveAssemblyReference.cache
+C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb
