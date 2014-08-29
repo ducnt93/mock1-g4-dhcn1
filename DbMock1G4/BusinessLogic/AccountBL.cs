@@ -39,7 +39,11 @@ namespace DbMock1G4.BusinessLogic
             }
 	    }
 
-
+	    public Account GetBalance(int accId)
+	    {
+	        Account account = GetByAccountId(accId);
+	        return account;
+	    }
 	    public void DispenserMoney(int accId, decimal balance)
 	    {
             Account acc = new Account();

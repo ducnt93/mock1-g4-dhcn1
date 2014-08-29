@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Style.css" />
+    <Content Include="InsertCardMain.aspx" />
     <Content Include="MainATM.aspx" />
     <Content Include="UC1.Validation\EnterPIN.aspx" />
     <Content Include="UC1.Validation\ValidationError.aspx" />
@@ -135,8 +136,13 @@
     <Content Include="UC2.WithdrawMoney\EnterOther.aspx" />
     <Content Include="UC2.WithdrawMoney\ErrorScreen.aspx" />
     <Content Include="UC2.WithdrawMoney\PrintReceipt.aspx" />
+    <Content Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx" />
+    <Content Include="UC2.WithdrawMoney\UcController\UcErrorScreen.ascx" />
+    <Content Include="UC2.WithdrawMoney\UcController\UcPrintPeceipt.ascx" />
+    <Content Include="UC2.WithdrawMoney\UcController\UcTest.ascx" />
+    <Content Include="UC2.WithdrawMoney\UcController\UcWithdraw.ascx" />
     <Content Include="UC2.WithdrawMoney\Withdraw.aspx" />
-    <Content Include="UC3.CheckBalance\CheckBalance.aspx" />
+    <Content Include="UC3.CheckBalance\CheckBalace.aspx" />
     <Content Include="UseControl\Caculator.ascx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
@@ -268,6 +274,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="InsertCardMain.aspx.cs">
+      <DependentUpon>InsertCardMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertCardMain.aspx.designer.cs">
+      <DependentUpon>InsertCardMain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MainATM.aspx.cs">
       <DependentUpon>MainATM.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,6 +330,41 @@
     <Compile Include="UC2.WithdrawMoney\PrintReceipt.aspx.designer.cs">
       <DependentUpon>PrintReceipt.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx.cs">
+      <DependentUpon>UcEnterOrther.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx.designer.cs">
+      <DependentUpon>UcEnterOrther.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcErrorScreen.ascx.cs">
+      <DependentUpon>UcErrorScreen.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcErrorScreen.ascx.designer.cs">
+      <DependentUpon>UcErrorScreen.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcPrintPeceipt.ascx.cs">
+      <DependentUpon>UcPrintPeceipt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcPrintPeceipt.ascx.designer.cs">
+      <DependentUpon>UcPrintPeceipt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcTest.ascx.cs">
+      <DependentUpon>UcTest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcTest.ascx.designer.cs">
+      <DependentUpon>UcTest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcWithdraw.ascx.cs">
+      <DependentUpon>UcWithdraw.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC2.WithdrawMoney\UcController\UcWithdraw.ascx.designer.cs">
+      <DependentUpon>UcWithdraw.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UC2.WithdrawMoney\Withdraw.aspx.cs">
       <DependentUpon>Withdraw.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,12 +372,12 @@
     <Compile Include="UC2.WithdrawMoney\Withdraw.aspx.designer.cs">
       <DependentUpon>Withdraw.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UC3.CheckBalance\CheckBalance.aspx.cs">
-      <DependentUpon>CheckBalance.aspx</DependentUpon>
+    <Compile Include="UC3.CheckBalance\CheckBalace.aspx.cs">
+      <DependentUpon>CheckBalace.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UC3.CheckBalance\CheckBalance.aspx.designer.cs">
-      <DependentUpon>CheckBalance.aspx</DependentUpon>
+    <Compile Include="UC3.CheckBalance\CheckBalace.aspx.designer.cs">
+      <DependentUpon>CheckBalace.aspx</DependentUpon>
     </Compile>
     <Compile Include="UseControl\Caculator.ascx.cs">
       <DependentUpon>Caculator.ascx</DependentUpon>

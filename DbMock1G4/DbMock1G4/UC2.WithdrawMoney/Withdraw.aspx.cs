@@ -15,7 +15,12 @@ namespace WebApplication1.UC2.WithdrawMoney
         readonly LogBL logBl = new LogBL();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                contenPlace.Controls.Clear();
+                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
+               
+            }
         }
 
         private void ResetSession()
@@ -23,6 +28,7 @@ namespace WebApplication1.UC2.WithdrawMoney
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
+            
         }
 
         private void WriteLog(decimal money)
@@ -38,90 +44,164 @@ namespace WebApplication1.UC2.WithdrawMoney
         }
         protected void btn50_Click(object sender, EventArgs e)
         {
-            const decimal money = 500000;
-            int accId = Convert.ToInt32(Session["AccountId"]);
-            bool check = accountBl.CheckBalance(accId, money);
-            if (check == false)
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
-              
-                Response.Redirect("~/UC2.WithdrawMoney/ErrorScreen.aspx");
+                const decimal money = 500000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                bool check = accountBl.CheckBalance(accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                    
+                }
+                else
+                {
+                    Session["ViewState"] = "PrintPeceipt";
+                    WriteLog(money);
+                    ResetSession();
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                    
+                }
             }
-            else
-            {
-                WriteLog(money);
-                ResetSession();
-                Response.Redirect("~/UC2.WithdrawMoney/PrintReceipt.aspx");
-            }
+           
         }
 
         protected void btn200_Click(object sender, EventArgs e)
         {
-            const decimal money = 2000000;
-            int accId = Convert.ToInt32(Session["AccountId"]);
-            bool check = accountBl.CheckBalance(accId, money);
-            if (check == false)
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
-               
-                Response.Redirect("~/UC2.WithdrawMoney/ErrorScreen.aspx");
-            }
-            else
-            {
-                WriteLog(money);
-                ResetSession();
-                Response.Redirect("~/UC2.WithdrawMoney/PrintReceipt.aspx");
+                const decimal money = 2000000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                bool check = accountBl.CheckBalance(accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                    
+                }
+                else
+                {
+                    Session["ViewState"] = "PrintPeceipt";
+                    WriteLog(money);
+                    ResetSession();
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+
+                    
+                }
             }
         }
 
         protected void btn300_Click(object sender, EventArgs e)
         {
-            const decimal money = 3000000;
-            int accId = Convert.ToInt32(Session["AccountId"]);
-            bool check = accountBl.CheckBalance(accId, money);
-            if (check == false)
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
-              
-                Response.Redirect("~/UC2.WithdrawMoney/ErrorScreen.aspx");
-            }
-            else
-            {
-                WriteLog(money);
-                ResetSession();
-                Response.Redirect("~/UC2.WithdrawMoney/PrintReceipt.aspx");
+                const decimal money = 3000000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                bool check = accountBl.CheckBalance(accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                   
+                }
+                else
+                {
+                    Session["ViewState"] = "PrintPeceipt";
+                    WriteLog(money);
+                    ResetSession();
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                    
+                }
             }
         }
 
         protected void btn100_Click(object sender, EventArgs e)
         {
-            const decimal money = 1000000;
-            int accId = Convert.ToInt32(Session["AccountId"]);
-            bool check = accountBl.CheckBalance(accId, money);
-            if (check == false)
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
-                Response.Redirect("~/UC2.WithdrawMoney/ErrorScreen.aspx");
-            }
-            else
-            {
-                WriteLog(money);
-                ResetSession();
-                Response.Redirect("~/UC2.WithdrawMoney/PrintReceipt.aspx");
+                const decimal money = 1000000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                bool check = accountBl.CheckBalance(accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                    
+                }
+                else
+                {
+                    Session["ViewState"] = "PrintPeceipt";
+                    WriteLog(money);
+                    ResetSession();
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                    
+                }
             }
         }
 
         protected void btn250_Click(object sender, EventArgs e)
         {
-            const decimal money = 2500000;
-            int accId = Convert.ToInt32(Session["AccountId"]);
-            bool check = accountBl.CheckBalance(accId, money);
-            if (check == false)
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
+                const decimal money = 2500000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                bool check = accountBl.CheckBalance(accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                }
+                else
+                {
+                    Session["ViewState"] = "PrintPeceipt";
+                    WriteLog(money);
+                    ResetSession();
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
 
-                Response.Redirect("~/UC2.WithdrawMoney/ErrorScreen.aspx");
+                }
             }
             else
             {
-                WriteLog(money);
-                ResetSession();
-                Response.Redirect("~/UC2.WithdrawMoney/PrintReceipt.aspx");
+                if (Session["ViewState"].ToString() == "PrintPeceipt")
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                }
+            }
+        }
+
+        protected void btnOrther_Click(object sender, EventArgs e)
+        {
+            if(Session["ViewState"].ToString() == "Withdraw")
+            {
+                Session["ViewState"] = "EnterOrther";
+                contenPlace.Controls.Clear();
+                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcEnterOrther.ascx"));
+            }
+            else
+            {
+                if (Session["ViewState"].ToString() == "EnterOrther")
+                {
+                    Session["ViewState"] = "PrintPeciept";
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                }
+                else
+                {
+                    if (Session["ViewState"].ToString() == "PrintPeceipt")
+                    {
+                        ResetSession();
+                        Session["ViewState"] = "Withdraw";
+                        Response.Redirect("~/MainATM.aspx");
+                    }
+                }
+               
             }
         }
     }
