@@ -37,12 +37,14 @@ namespace WebApplication1
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
+            Session["ViewState"] = "Withdraw";
         }
         void Session_End(object sender, EventArgs e)
         {
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
+            Session["ViewState"] = "";
         }
     }
 }

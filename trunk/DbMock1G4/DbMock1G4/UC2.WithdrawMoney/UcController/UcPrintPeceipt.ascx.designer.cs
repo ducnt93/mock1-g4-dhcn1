@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1
+namespace WebApplication1.UC2.WithdrawMoney.UcController
 {
 
 
-    public partial class WebForm1
+    public partial class UcPrintPeceipt
     {
     }
 }

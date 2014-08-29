@@ -7,6 +7,9 @@
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CIMAGES_005CNGANHANG2_002EJPG/@EntryIndexedValue">UC2.WithdrawMoney\Content\images\nganhang2.jpg</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\Style.css</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC2_002EWITHDRAWMONEY_005CSCRIPTS/@EntryIndexedValue">UC2.WithdrawMoney\Scripts</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC3_002ECHECKBALANCE_005CCONTENT_005CCSS_005CBOOTSTRAP_002ECSS/@EntryIndexedValue">UC3.CheckBalance\Content\css\bootstrap.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC3_002ECHECKBALANCE_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC3.CheckBalance\Content\Style.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=UC3_002ECHECKBALANCE_005CSCRIPTS/@EntryIndexedValue">UC3.CheckBalance\Scripts</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=_002E_002E_005CCONTENT/@EntryIndexedValue">..\Content</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=UC1_002EVALIDATION_005CMAIN_002EASPX/@EntryIndexedValue"></s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC1_002EVALIDATION_005CCONTENT/@EntryIndexedValue">UC1.Validation\Content</s:String>
@@ -18,4 +21,7 @@
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CIMAGES_005CNGANHANG2_002EJPG/@EntryIndexedValue">UC2.WithdrawMoney\Content\images\nganhang2.jpg</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC2.WithdrawMoney\Content\Style.css</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC2_002EWITHDRAWMONEY_005CSCRIPTS/@EntryIndexedValue">UC2.WithdrawMoney\Scripts</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC3_002ECHECKBALANCE_005CCONTENT_005CCSS_005CBOOTSTRAP_002ECSS/@EntryIndexedValue">UC3.CheckBalance\Content\css\bootstrap.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC3_002ECHECKBALANCE_005CCONTENT_005CSTYLE_002ECSS/@EntryIndexedValue">UC3.CheckBalance\Content\Style.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=UC3_002ECHECKBALANCE_005CSCRIPTS/@EntryIndexedValue">UC3.CheckBalance\Scripts</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=_002E_002E_005CCONTENT/@EntryIndexedValue">..\Content</s:String></wpf:ResourceDictionary>

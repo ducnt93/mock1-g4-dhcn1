@@ -21,25 +21,27 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-2">
+                        <div class="col-md-12" style="height: 190px;">
+                        </div>
                         <table class="table">
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Withdraw" OnClick="btnWithdraw_Click" />
+                                    <asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Buttom 1" OnClick="btnWithdraw_Click" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                   <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Check Balance" OnClick="btnWithdraw_Click" />
+                                    <asp:Button runat="server" ID="btnCheckBalance" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btnCheckBalance_Click"  />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Transfer</asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Button 3</asp:HyperLink>
                                 </td>
                             </tr>
                         </table>
                     </div>
-                    <div class="col-md-8 table-bordered">
+                    <div class="col-md-8 table-bordered" style="height: 393px;">
                         <div class="col-md-12">
                             <div class="col-md-3">
                                 <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
@@ -50,24 +52,56 @@
                                 <p>
                                     Wellcom to ABC Bank @ ATM.
                                 </p>
+                                <h3>Choose amount below or enter your amount you want:</h3>
+                                <div class="col-md-12">
+                                    <div class="col-md-5 col-md-offset-1 col">
+
+                                        <input type="text" class="btn btn-success btn1 col" value="Withdraw" />
+                                    </div>
+                                    <div class="col-md-5 col-md-offset-1 col">
+                                        <input type="text" class="btn btn-success btn1 col" value="View History" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-5 col-md-offset-1 col">
+
+                                        <input type="text" class="btn btn-success btn1 col" value="Check Balance" />
+                                    </div>
+                                    <div class="col-md-5 col-md-offset-1 col">
+
+                                        <input type="text" class="btn btn-success btn1 col" value="Change PIN" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-5 col-md-offset-1 col">
+
+                                        <input type="text" class="btn btn-success btn1 col" value="Transfer" />
+                                    </div>
+                                    <div class="col-md-5 col-md-offset-1 col">
+
+                                        <input type="text" class="btn btn-success btn1 col" value="Exit" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
+                        <div class="col-md-12" style="height: 190px;">
+                        </div>
                         <table class="table">
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">View History</asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">Button 4</asp:HyperLink>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Change PIN</asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Button 5</asp:HyperLink>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Exit" OnClick="btnExit_Click" />
+                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button6" OnClick="btnExit_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -81,45 +115,45 @@
                                 <table class="table table-bordered">
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" OnClick="btnNum1_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" OnClick="btnNum2_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" OnClick="btnCancel_Click" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" OnClick="btnNum4_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" OnClick="btnNum5_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" OnClick="btnClear_Click" /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" OnClick="btnNum7_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" OnClick="btnNum8_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                         <td>
                                             <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." OnClick="btnDot_Click" /></td>
+                                            <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" OnClick="btnNum0_Click" /></td>
+                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," OnClick="btnComma_Click" /></td>
+                                            <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," /></td>
                                     </tr>
                                 </table>
                             </div>
-                            <asp:Panel runat="server" ID="pnInsertCard">
+                            <%--<asp:Panel runat="server" ID="pnInsertCard">
                                 <div class="col-md-4">
                                     <table class="table">
                                         <tr>
@@ -133,7 +167,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </asp:Panel>
+                            </asp:Panel>--%>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
