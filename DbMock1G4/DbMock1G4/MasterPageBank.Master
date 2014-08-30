@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkExit" CssClass="btn btn-primary col btn1" NavigateUrl="Main.aspx">Exit</asp:HyperLink>
+                                    <asp:HyperLink runat="server" ID="hyperLinkExit" CssClass="btn btn-primary col btn1" NavigateUrl="MainATM.aspx">Exit</asp:HyperLink>
                                 </td>
                             </tr>
                         </table>

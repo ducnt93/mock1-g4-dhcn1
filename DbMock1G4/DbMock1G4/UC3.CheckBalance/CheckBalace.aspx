@@ -7,7 +7,7 @@
     <title></title>
     <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Style.css" rel="stylesheet" />
-    
+
     <style type="text/css">
         #main {
             padding-top: 100px;
@@ -26,12 +26,12 @@
                         <table class="table">
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Buttom 1"  />
+                                    <asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Buttom 1" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Buttom 2"  />
+                                    <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
                                 </td>
                             </tr>
                             <tr>
@@ -47,21 +47,17 @@
                                 <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
                             </div>
                             <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
-                                You account have:
-                                <asp:Label runat="server" ID="lblAccount"></asp:Label>
-                                <h3>Do you want to print receipt?</h3>
-                              
-                                <div class="col-md-12">
-                                    <div class="col-md-5 col-md-offset-1 col">
+                                <h2>ABC Bank @ ATM</h2>
+                                <h3>Wellcom to ABC Bank @ ATM.</h3>
+                                <h4><b>You account have:<asp:Label runat="server" ID="lblAccount"></asp:Label></b></h4>
+                                <h4 style="padding-top: 10px;">Do you want to print receipt?</h4>
+
+                                <div class="col-md-12" style="padding-top: 70px;">
+                                    <div class="col-md-5 col-md-offset-7 col">
 
                                         <input type="text" class="btn btn-success btn1 col" value="OK" />
                                     </div>
-                                    <div class="col-md-5 col-md-offset-1 col">
+                                    <div class="col-md-5 col-md-offset-7 col">
 
                                         <input type="text" class="btn btn-success btn1 col" value="Cancel" />
                                     </div>
@@ -105,7 +101,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -115,7 +111,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -125,7 +121,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
                                     </tr>
                                     <tr>
                                         <td>

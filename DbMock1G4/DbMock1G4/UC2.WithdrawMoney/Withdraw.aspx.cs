@@ -17,9 +17,27 @@ namespace WebApplication1.UC2.WithdrawMoney
         {
             if (!IsPostBack)
             {
-                contenPlace.Controls.Clear();
-                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
-               
+                if (Session["ViewState"].ToString() == "Error")
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                }
+                else
+                {
+                    if (Session["ViewState"].ToString() == "PrintPeceipt")
+                    {
+                        contenPlace.Controls.Clear();
+                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                    }
+                    else
+                    {
+                        contenPlace.Controls.Clear();
+                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
+                    }
+
+                }
+
+
             }
         }
 
@@ -28,7 +46,7 @@ namespace WebApplication1.UC2.WithdrawMoney
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
-            
+
         }
 
         private void WriteLog(decimal money)
@@ -53,7 +71,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    
+
                 }
                 else
                 {
@@ -62,10 +80,10 @@ namespace WebApplication1.UC2.WithdrawMoney
                     ResetSession();
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    
+
                 }
             }
-           
+
         }
 
         protected void btn200_Click(object sender, EventArgs e)
@@ -79,7 +97,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    
+
                 }
                 else
                 {
@@ -89,7 +107,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
 
-                    
+
                 }
             }
         }
@@ -105,7 +123,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                   
+
                 }
                 else
                 {
@@ -114,7 +132,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                     ResetSession();
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    
+
                 }
             }
         }
@@ -130,7 +148,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    
+
                 }
                 else
                 {
@@ -139,7 +157,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                     ResetSession();
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    
+
                 }
             }
         }
@@ -178,11 +196,10 @@ namespace WebApplication1.UC2.WithdrawMoney
 
         protected void btnOrther_Click(object sender, EventArgs e)
         {
-            if(Session["ViewState"].ToString() == "Withdraw")
+            if (Session["ViewState"].ToString() == "Withdraw")
             {
-                Session["ViewState"] = "EnterOrther";
-                contenPlace.Controls.Clear();
-                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcEnterOrther.ascx"));
+
+                Response.Redirect("~/UC2.WithdrawMoney/EnterOrther.aspx");
             }
             else
             {
@@ -201,8 +218,17 @@ namespace WebApplication1.UC2.WithdrawMoney
                         Response.Redirect("~/MainATM.aspx");
                     }
                 }
-               
+
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (Session["ViewState"].ToString() == "Withdraw")
+            {
+                Response.Redirect("~/MainATM.aspx");
+            }
+          
         }
     }
 }

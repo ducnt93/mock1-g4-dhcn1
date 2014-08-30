@@ -127,15 +127,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\data1\images\20070509_citibank.jpg" />
+    <Content Include="Content\data1\images\bank.jpg" />
+    <Content Include="Content\data1\images\bankofamericaintheus.jpg" />
+    <Content Include="Content\data1\tooltips\20070509_citibank.jpg" />
+    <Content Include="Content\data1\tooltips\bank.jpg" />
+    <Content Include="Content\data1\tooltips\bankofamericaintheus.jpg" />
+    <Content Include="Content\engine1\arrows.png" />
+    <Content Include="Content\engine1\bullet.png" />
+    <Content Include="Content\engine1\jquery.js" />
+    <Content Include="Content\engine1\pause.png" />
+    <Content Include="Content\engine1\play.png" />
+    <Content Include="Content\engine1\script.js" />
+    <Content Include="Content\engine1\style.css" />
+    <Content Include="Content\engine1\style.mod.css" />
+    <Content Include="Content\engine1\triangle.png" />
+    <Content Include="Content\engine1\wowslider.js" />
+    <Content Include="Content\engine1\wowslider.mod.js" />
+    <Content Include="Content\images\20070509_Citibank.JPG" />
+    <Content Include="Content\images\20140711084142-ngan-hang.jpg" />
+    <Content Include="Content\images\bank-of-america-in-the-us.jpg" />
+    <Content Include="Content\images\Bank.jpg" />
+    <Content Include="Content\images\NH.jpg" />
+    <Content Include="Content\images\tien-tien.jpg" />
     <Content Include="Content\Style.css" />
     <Content Include="InsertCardMain.aspx" />
     <Content Include="MainATM.aspx" />
     <Content Include="UC1.Validation\EnterPIN.aspx" />
     <Content Include="UC1.Validation\ValidationError.aspx" />
     <Content Include="UC1.Validation\ValidationPIN.aspx" />
-    <Content Include="UC2.WithdrawMoney\EnterOther.aspx" />
-    <Content Include="UC2.WithdrawMoney\ErrorScreen.aspx" />
-    <Content Include="UC2.WithdrawMoney\PrintReceipt.aspx" />
+    <Content Include="UC2.WithdrawMoney\EnterOrther.aspx" />
     <Content Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx" />
     <Content Include="UC2.WithdrawMoney\UcController\UcErrorScreen.ascx" />
     <Content Include="UC2.WithdrawMoney\UcController\UcPrintPeceipt.ascx" />
@@ -205,19 +226,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -309,26 +317,12 @@
     <Compile Include="UC1.Validation\ValidationPIN.aspx.designer.cs">
       <DependentUpon>ValidationPIN.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UC2.WithdrawMoney\EnterOther.aspx.cs">
-      <DependentUpon>EnterOther.aspx</DependentUpon>
+    <Compile Include="UC2.WithdrawMoney\EnterOrther.aspx.cs">
+      <DependentUpon>EnterOrther.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UC2.WithdrawMoney\EnterOther.aspx.designer.cs">
-      <DependentUpon>EnterOther.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UC2.WithdrawMoney\ErrorScreen.aspx.cs">
-      <DependentUpon>ErrorScreen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UC2.WithdrawMoney\ErrorScreen.aspx.designer.cs">
-      <DependentUpon>ErrorScreen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UC2.WithdrawMoney\PrintReceipt.aspx.cs">
-      <DependentUpon>PrintReceipt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UC2.WithdrawMoney\PrintReceipt.aspx.designer.cs">
-      <DependentUpon>PrintReceipt.aspx</DependentUpon>
+    <Compile Include="UC2.WithdrawMoney\EnterOrther.aspx.designer.cs">
+      <DependentUpon>EnterOrther.aspx</DependentUpon>
     </Compile>
     <Compile Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx.cs">
       <DependentUpon>UcEnterOrther.ascx</DependentUpon>

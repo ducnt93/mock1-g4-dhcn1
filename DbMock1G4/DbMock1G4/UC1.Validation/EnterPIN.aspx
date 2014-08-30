@@ -59,7 +59,7 @@
                                     Enter your PIN
                                     <br />
 
-                                    <asp:TextBox ID="txtPIN" runat="server" CssClass="form-control" />
+                                    <asp:TextBox ID="txtPIN" runat="server" CssClass="form-control" MaxLength="6" TextMode="Password" />
                                     <br />
                                     then press Enter buttom
                                 </div>
@@ -78,7 +78,8 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:HyperLink runat="server" ID="hyperLinkExit" CssClass="btn btn-primary col btn1" NavigateUrl="Main.aspx">Cancel</asp:HyperLink>
+                                           
+                                        <asp:Button ID="btnCance" runat="server" Text="Cancel" CssClass="btn btn-primary col btn1" OnClick="btnCance_Click"  />
                                         </td>
                                     </tr>
                                 </table>

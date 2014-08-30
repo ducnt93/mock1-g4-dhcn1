@@ -58,13 +58,13 @@ namespace WebApplication1.UC1.Validation {
         protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
-        /// hyperLinkExit control.
+        /// btnCance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperLinkExit;
+        protected global::System.Web.UI.WebControls.Button btnCance;
         
         /// <summary>
         /// btnNum1 control.

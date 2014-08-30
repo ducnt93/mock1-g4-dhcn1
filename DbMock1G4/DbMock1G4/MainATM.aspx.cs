@@ -11,13 +11,18 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             string cardNo = Session["CardNo"].ToString();
             string pin = Session["PIN"].ToString();
-          
-            
+            if (cardNo == "" && pin == "")
+            {
+                Session["CardNo"] = "";
+                Session["PIN"] = "";
+                Response.Redirect("~/InsertCardMain.aspx");
+            }
+
         }
-       
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Session["CardNo"] = "";

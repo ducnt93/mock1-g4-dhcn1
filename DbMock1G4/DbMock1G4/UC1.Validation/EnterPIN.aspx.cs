@@ -11,7 +11,7 @@ namespace WebApplication1.UC1.Validation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtPIN.Focus();
         }
         protected void btnNum1_Click(object sender, EventArgs e)
         {
@@ -83,9 +83,16 @@ namespace WebApplication1.UC1.Validation
             }
         }
 
+        private void CancelTrans()
+        {
+            Session["CardNo"] = "";
+            Session["PIN"] = "";
+            Session["AccountId"] = "";
+            Response.Redirect("~/InsertCardMain.aspx");
+        }
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Page_Load(sender, e);
+            CancelTrans();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -103,6 +110,11 @@ namespace WebApplication1.UC1.Validation
         {
             Session["PIN"] = txtPIN.Text;
             Response.Redirect("ValidationPIN.aspx");
+        }
+
+        protected void btnCance_Click(object sender, EventArgs e)
+        {
+            CancelTrans();
         }
     }
 }
