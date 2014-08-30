@@ -28,10 +28,7 @@ namespace WebApplication1.UC3.CheckBalance
 
         protected void btnExit_Click(object sender, EventArgs e)
         {
-            Session["CardNo"] = "";
-            Session["PIN"] = "";
-            Session["AccountId"] = "";
-            Response.Redirect("~/InsertCardMain.aspx");
+            Response.Redirect("~/MainATM.aspx");
         }
     }
 }

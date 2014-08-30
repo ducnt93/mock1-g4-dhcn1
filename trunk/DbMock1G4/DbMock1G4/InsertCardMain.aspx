@@ -7,123 +7,161 @@
     <title></title>
     <link href="Content/css/bootstrap.css" rel="stylesheet" />
     <link href="Content/Style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/engine1/style.css" />
     <style type="text/css">
         #main {
-            padding-top: 100px;
+            padding-top: 5px;
             background-color: aliceblue;
         }
+
+        .active {
+            z-index: 99;
+        }
     </style>
+    <script>
+       
+    </script>
 </head>
 <body class="panel-body" id="main">
 
     <form id="form1" runat="server">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
-                        </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Withdraw" OnClick="btnWithdraw_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 1" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Check Balance" OnClick="btnWithdraw_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 2" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%-- <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Transfer</asp:HyperLink>--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 3" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-8 table-bordered" style="height: 393px;">
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div class="container">
+                    <div class="row">
                         <div class="col-md-12">
-                            <div class="col-md-3">
-                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                            <div class="col-md-2">
+                                <div class="col-md-12" style="height: 190px;">
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 1" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 2" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 3" />
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                            <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
+                            <div class="col-md-8 table-bordered" style="height: 505px;">
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h3>ABC Bank @ ATM</h3>
+                                        <h4>Wellcom to ABC Bank @ ATM.</h4>
+                                    </div>
+                                </div>
+                                <asp:Panel runat="server" ID="slider">
+                                    <div class="col-md-12">
+                                        <div id="wowslider-container1">
+                                            <div class="ws_images">
+                                                <ul>
+                                                    <li>
+
+                                                        <img src="Content/images/20070509_Citibank.JPG" alt="jquery slideshow" title="Bank 1" id="wows1_0" />
+                                                    </li>
+                                                    <li>
+                                                        <img src="Content/images/Bank.jpg" alt="slider" title="Bank 2" id="wows1_1" /></li>
+                                                    <li>
+                                                        <img src="Content/images/bank-of-america-in-the-us.jpg" alt="jquery carousel" title="Bank 3" id="wows1_2" /></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ws_bullets">
+                                                <div>
+                                                    <a href="#" title="20070509_Citibank">
+                                                        <img src="~/Content/data1/tooltips/20070509_citibank.jpg" alt="20070509_Citibank" />1</a>
+
+                                                    <a href="#" title="Bank">
+                                                        <img src="~/Content/data1/tooltips/bank.jpg" alt="Bank" />2</a>
+                                                    <a href="#" title="bank-of-america-in-the-us">
+                                                        <img src="~/Content/data1/tooltips/bankofamericaintheus.jpg" alt="bank-of-america-in-the-us" />3</a>
+                                                </div>
+                                            </div>
+                                            <div class="ws_shadow"></div>
+                                        </div>
+                                        <script type="text/javascript" src="~/Content/engine1/wowslider.js"></script>
+                                        <script type="text/javascript" src="~/Content/engine1/script.js"></script>
+                                    </div>
+                                </asp:Panel>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="col-md-12" style="height: 190px;">
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 4" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 5" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 6" />
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
-                        </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <%-- <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">View History</asp:HyperLink>--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 4" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Change PIN</asp:HyperLink>--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 5" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Exit" OnClick="btnExit_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 6" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-12 table-bordered">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
+
+                        <div class="col-md-12 table-bordered">
                             <div class="col-md-4 col-md-offset-4">
                                 <table class="table table-bordered">
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1"  /></td>
+                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" OnClick="btnNum1_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2"  /></td>
+                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" OnClick="btnNum2_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
+                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel"  /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4"  /></td>
+                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" OnClick="btnNum4_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5"  /></td>
+                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" OnClick="btnNum5_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6"  /></td>
+                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear"  /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" OnClick="btnClear_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7"  /></td>
+                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" OnClick="btnNum7_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8"  /></td>
+                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" OnClick="btnNum8_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9"  /></td>
+                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click1" /></td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0"  /></td>
+                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" OnClick="btnNum0_Click" /></td>
                                         <td>
                                             <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," /></td>
                                     </tr>
@@ -144,11 +182,14 @@
                                     </table>
                                 </div>
                             </asp:Panel>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Button1" EventName="Click" />
+            </Triggers>
+        </asp:UpdatePanel>
     </form>
     <script src="Scripts/jquery-1.8.2.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>

@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12" style="height: 180px;">
                         </div>
                         <table class="table">
                             <tr>
@@ -52,7 +52,10 @@
                                 <p>
                                     Wellcom to ABC Bank @ ATM.
                                 </p>
-                                <h3>Choose amount below or enter your amount you want:</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                               <h4>Choose amount below or enter your amount you want:</h4>
                                 <div class="col-md-12">
                                     <div class="col-md-5 col-md-offset-1 col">
 
@@ -82,11 +85,10 @@
                                         <input type="text" class="btn btn-success btn1 col" value="Exit" />
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12" style="height: 180px;">
                         </div>
                         <table class="table">
                             <tr>
@@ -101,7 +103,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button6" OnClick="btnExit_Click" />
+                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button 6" OnClick="btnExit_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -121,7 +123,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -131,7 +133,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -141,7 +143,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom " Text="Enter" /></td>
                                     </tr>
                                     <tr>
                                         <td>
