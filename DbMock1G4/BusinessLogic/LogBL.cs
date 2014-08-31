@@ -11,16 +11,16 @@ namespace DbMock1G4.BusinessLogic
 {
 	public class LogBL
 	{
+	    
 
-		#region ***** Init Methods ***** 
+        #region ***** Init Methods *****
 
-	    readonly LogDA objLogDA;
-		public LogBL()
-		{
-			objLogDA = new LogDA();
-		}
-		#endregion
-
+        readonly LogDA objLogDA;
+        public LogBL()
+        {
+            objLogDA = new LogDA();
+        }
+        #endregion
 		#region ***** Get Methods ***** 
 		// Lấy Log theo Id
 		public Log GetByLogId(int logid)
@@ -40,10 +40,10 @@ namespace DbMock1G4.BusinessLogic
 		}
 
 		// Lấy danh theo phân trang
-		public List<Log> GetListPaged(int recperpage, int pageindex)
-		{
-			return objLogDA.GetListPaged(recperpage, pageindex);
-		}
+        public List<Log> GetListPaged(int recperpage, int pageindex, int time)
+        {
+            return objLogDA.GetListPaged(recperpage, pageindex, time);
+        }
 
 		#endregion
 
