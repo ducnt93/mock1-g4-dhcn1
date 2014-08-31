@@ -32,6 +32,16 @@ namespace DbMock1G4.DataAccess
 			return obj;
 		}
 
+        public Log Populate1(IDataReader myReader)
+        {
+            Log obj = new Log();
+            obj.AtmLocation = (string)myReader["Address"];
+            obj.Type = (string)myReader["Description"];
+            obj.LogDate = (DateTime)myReader["LogDate"];
+            obj.Amount = (decimal)myReader["Amount"];
+            obj.Details = (string)myReader["Details"];
+            return obj;
+        }
 		
 		public Log GetByLogId(int logid)
 		{
@@ -59,24 +69,25 @@ namespace DbMock1G4.DataAccess
 			}
 		}
 
-		
-	
 
-		
-		public List<Log> GetListPaged(int recperpage, int pageindex)
-		{
-			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Log_GetPaged"
-							,Data.CreateParameter("recperpage", recperpage)
-							,Data.CreateParameter("pageindex", pageindex)))
-			{
-				List<Log> list = new List<Log>();
-				while (reader.Read())
-				{
-				list.Add(Populate(reader));
-				}
-				return list;
-			}
-		}
+
+
+
+        public List<Log> GetListPaged(int recperpage, int pageindex, int time)
+        {
+            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Log_GetPaged"
+                            , Data.CreateParameter("recperpage", recperpage)
+                            , Data.CreateParameter("Time", time)
+                            , Data.CreateParameter("pageindex", pageindex)))
+            {
+                List<Log> list = new List<Log>();
+                while (reader.Read())
+                {
+                    list.Add(Populate1(reader));
+                }
+                return list;
+            }
+        }
 
 
 		#endregion
