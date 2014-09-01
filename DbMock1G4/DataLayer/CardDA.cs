@@ -32,18 +32,70 @@ namespace DbMock1G4.DataAccess
 			return obj;
 		}
 
-		
-		public Card GetByCardNo(string cardno)
-		{
+
+        #region *****ReadCard Methods *****
+        public Card GetByCardNo(string cardno)
+        {
             using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNo]", Data.CreateParameter("CardNo", cardno)))
-			{
-				if (reader.Read())
-				{
-					return Populate(reader);
-				}
-				return null;
-			}
-		}
+            {
+                if (reader.Read())
+                {
+                    return Populate(reader);
+                }
+                return null;
+            }
+        }
+        #endregion
+        #region ***** AcceptCard Methods *****
+        public bool AcceptCard(string cardno)
+        {
+            if (GetByCardNo(cardno) != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region ***** EjectCard Methods *****
+        public void EjectCard()
+        {
+
+        }
+        #endregion
+
+        #region ***** ValidateCard Methods *****
+        public bool ValidateCard(Card card)
+        {
+            if (card.ExpiredDate < DateTime.Now)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        #endregion
+
+        #region ***** CheckAttempt Methods *****
+        public void CheckAttempt(Card cardByCardNo, string pin)
+        {
+            if (pin.Equals(cardByCardNo.Pin.ToString()))
+            {
+                cardByCardNo.Attempt = 0;
+            }
+            else
+            {
+                cardByCardNo.Attempt += 1;
+            }
+        }
+        #endregion
+
         public Card GetByCardNoPinCard(string cardno, string pin)
         {
             using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNoPIN]", Data.CreateParameter("CardNo", cardno), Data.CreateParameter("Pin", pin)))
