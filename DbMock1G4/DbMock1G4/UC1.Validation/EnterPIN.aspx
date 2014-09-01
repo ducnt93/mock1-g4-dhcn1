@@ -73,7 +73,7 @@
                                                 <asp:PlaceHolder runat="server" ID="contenEnterPIN"></asp:PlaceHolder>
                                                 Enter your PIN<br />
                                                 <div>
-                                                    <asp:TextBox ID="txtPIN" runat="server" CssClass="form-control1" TextMode="Password"/>
+                                                    <asp:TextBox ID="txtPIN" runat="server" CssClass="form-control1" TextMode="Password" MaxLength="6"/>
                                                 </div>
                                                 <br />
                                             </div>
@@ -84,10 +84,10 @@
 
                                                 <div class="col-md-4 col-lg-offset-8 col">
                                                     <p></p>
-                                                    <input type="text" class="btn btn-primary btn1" value="OK" />
+                                                    <input type="text" class="btn btn-success btn1" value="OK" />
                                                 </div>
                                                 <div class="col-md-4 col-lg-offset-8 col">
-                                                    <input type="text" class="btn btn-primary btn1" value="Cancel" />
+                                                    <input type="text" class="btn btn-success btn1" value="Cancel" />
                                                 </div>
                                             </div>
                                         </asp:PlaceHolder>
