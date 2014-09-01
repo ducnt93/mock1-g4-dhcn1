@@ -5,31 +5,39 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Threading;
+using DbMock1G4.BusinessLogic;
 namespace WebApplication1
 {
     public partial class InsertCardMain : System.Web.UI.Page
     {
+        CardBL cardBl = new CardBL();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
             txtCardNo.Focus();
+            Session["ViewSate"] = "";
+            Session["AcceptCard"] = "";
+            Session["ValidCard"] = "";
+            Session["CardNo"] = "";
+
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnInsertCard_Click(object sender, EventArgs e)
         {
-       
-            Response.Redirect("~/UC1.Validation/ValidateCard.aspx?CardNo=" + txtCardNo.Text);
-        }
-
-        protected void btnNum1_Click(object sender, EventArgs e)
-        {
-            txtCardNo.Text += "1";
-           
+            string cardNo = txtCardNo.Text;
+            Session["CardNo"] = cardNo;
+            Response.Redirect("~/UC1.Validation/Validate.aspx");
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
             txtCardNo.Text = "";
+        }
+
+        #region ***** Number button *****
+        protected void btnNum1_Click(object sender, EventArgs e)
+        {
+            txtCardNo.Text += "1";
+
         }
 
         protected void btnNum2_Click(object sender, EventArgs e)
@@ -91,16 +99,6 @@ namespace WebApplication1
                 txtCardNo.Text += "";
             }
         }
-
-        protected void btnEnter_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("~/UC1.Validation/ValidateCard.aspx?CardNo=" + txtCardNo.Text);
-        }
-
-        protected void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion
     }
 }

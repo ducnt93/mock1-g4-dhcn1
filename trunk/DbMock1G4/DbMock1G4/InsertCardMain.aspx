@@ -135,7 +135,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -155,7 +155,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click1" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -177,7 +177,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <asp:Button runat="server" ID="Button1" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="Button1_Click" /></td>
+                                                <asp:Button runat="server" ID="Button1" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="btnInsertCard_Click" /></td>
                                         </tr>
                                     </table>
                                 </div>
