@@ -34,3 +34,5 @@ C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\bin\Debug\log4net.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessLogic\bin\Debug\log4net.xml

@@ -158,3 +158,5 @@ C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\bin\DbMock1G4.DataAccess
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\obj\Debug\Mock1-G4.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\obj\Debug\WebApplication1.dll
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\obj\Debug\WebApplication1.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\bin\log4net.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DbMock1G4\bin\log4net.xml

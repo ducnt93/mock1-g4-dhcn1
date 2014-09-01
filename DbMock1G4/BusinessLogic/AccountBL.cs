@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Common;
 using DbMock1G4.BusinessObjects;
 using DbMock1G4.DataAccess;
+using log4net;
 
 namespace DbMock1G4.BusinessLogic
 {
@@ -24,40 +25,39 @@ namespace DbMock1G4.BusinessLogic
         // check balance
         public bool CheckBalance(int accId, decimal money)
         {
-            Account account = GetByAccountId(accId);
-            decimal balance = account.Balance;
-            if (money > balance)
-            {
-
-                return false;
-            }
-            else
-            {
-                if (money < 50000)
+                Account account = GetByAccountId(accId);
+                decimal balance = account.Balance;
+                if (money > balance)
                 {
+
                     return false;
                 }
                 else
                 {
-                    if ((money % 50000) != 0)
+                    if (money < 50000)
                     {
                         return false;
                     }
                     else
                     {
-                        balance = balance - money;
-                        DispenserMoney(accId, balance);
-                        return true;
+                        if ((money%50000) != 0)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            balance = balance - money;
+                            DispenserMoney(accId, balance);
+                            return true;
+                        }
                     }
                 }
-
-            }
-        }
+    }
 
         public Account GetBalance(int accId)
         {
-            Account account = GetByAccountId(accId);
-            return account;
+                Account account = GetByAccountId(accId);
+                return account;
         }
         public void DispenserMoney(int accId, decimal balance)
         {

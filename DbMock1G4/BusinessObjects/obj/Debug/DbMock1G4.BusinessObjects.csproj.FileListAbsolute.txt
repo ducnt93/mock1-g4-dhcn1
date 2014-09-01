@@ -14,6 +14,5 @@ C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.Busine
 C:\Users\Giang\Desktop\moc1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.dll
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.pdb
-C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.dll
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb
