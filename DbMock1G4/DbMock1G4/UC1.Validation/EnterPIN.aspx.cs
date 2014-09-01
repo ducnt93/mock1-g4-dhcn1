@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DbMock1G4.BusinessLogic;
+using DbMock1G4.BusinessObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,18 +11,50 @@ namespace WebApplication1.UC1.Validation
 {
     public partial class EnterPIN : System.Web.UI.Page
     {
+        CardBL cardBl = new CardBL();
+        Card card;
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtPIN.Focus();
+
         }
+
+        protected void CheckAttempt()
+        {
+            string pin = txtPIN.Text;
+            string CardNo = Session["CardNo"].ToString();
+            card = cardBl.GetByCardNo(CardNo);
+            cardBl.CheckAttempt(card, pin);
+            if (card.Attempt == 0)
+            {
+                card.Attempt = 0;
+                card.Status = "UnBlock";
+                cardBl.Update(card);
+                Session["PIN"] = pin;
+                Session["AccountId"] = card.AccountId;
+                Response.Redirect("~/MainATM.aspx");
+            }
+            else if (card.Attempt >= 1 && card.Attempt < 3)
+            {
+                cardBl.Update(card);
+                Session["ViewSate"] = "ErrorPIN";
+                txtPIN.Text = "";
+                contenEnterPIN.Controls.Clear();
+                contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
+            }
+            else
+            {
+                Session["ViewSate"] = "BlockCard";
+                contenBlockCard.Controls.Clear();
+                contenBlockCard.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcBlockCard.ascx"));
+                card.Status = "Block";
+                cardBl.Update(card);
+            }
+        }
+
+        #region ***** button number *****
         protected void btnNum1_Click(object sender, EventArgs e)
         {
             txtPIN.Text += "1";
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            txtPIN.Text = "";
         }
 
         protected void btnNum2_Click(object sender, EventArgs e)
@@ -82,39 +116,63 @@ namespace WebApplication1.UC1.Validation
                 txtPIN.Text += "";
             }
         }
+        #endregion
 
-        private void CancelTrans()
+        #region ***** button Enter Cancel and Clear *****
+        protected void btnClear_Click(object sender, EventArgs e)
         {
-            Session["CardNo"] = "";
-            Session["PIN"] = "";
-            Session["AccountId"] = "";
-            Response.Redirect("~/InsertCardMain.aspx");
+            if(Session["ViewSate"].Equals("ErrorPIN"))
+            {
+                txtPIN.Text = "";
+                contenEnterPIN.Controls.Clear();
+                contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
+            }
+            else
+            {
+                txtPIN.Text = "";
+            }
         }
+
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            CancelTrans();
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/UC1.Validation/ValidateCard.aspx?CardNo=" + txtPIN.Text);
+            if (Session["ViewSate"].Equals("ErrorPIN"))
+            {
+                card.Attempt = 0;
+                card.Status = "UnBlock";
+                cardBl.Update(card);
+            }
+            Session["PIN"] = "";
+            Response.Redirect("~/InsertCardMain.aspx");
         }
 
         protected void btnEnter_Click(object sender, EventArgs e)
         {
-            Session["PIN"] = txtPIN.Text;
-            Response.Redirect("ValidationPIN.aspx");
+            contenEnterPIN.Controls.Clear();
+            contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/ValidatingPIN.ascx"));
+            CheckAttempt();
+        }
+        #endregion
+
+        #region ***** button OK Cancel and Clear *****
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            contenEnterPIN.Controls.Clear();
+            contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/ValidatingPIN.ascx"));
+            CheckAttempt();
         }
 
-        protected void btnOk_Click(object sender, EventArgs e)
+        protected void Button6_Click(object sender, EventArgs e)
         {
-            Session["PIN"] = txtPIN.Text;
-            Response.Redirect("ValidationPIN.aspx");
+            if (Session["ViewSate"].Equals("ErrorPIN"))
+            {
+                card.Attempt = 0;
+                card.Status = "UnBlock";
+                cardBl.Update(card);
+            }
+            Session["PIN"] = "";
+            Response.Redirect("~/InsertCardMain.aspx");
         }
+        #endregion
 
-        protected void btnCance_Click(object sender, EventArgs e)
-        {
-            CancelTrans();
-        }
     }
 }
