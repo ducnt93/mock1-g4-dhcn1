@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using log4net;
 
 namespace WebApplication1
 {
@@ -11,15 +12,24 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            string cardNo = Session["CardNo"].ToString();
-            string pin = Session["PIN"].ToString();
-            if (cardNo == "" && pin == "")
+            try
             {
-                Session["CardNo"] = "";
-                Session["PIN"] = "";
-                Response.Redirect("~/InsertCardMain.aspx");
+                string cardNo = Session["CardNo"].ToString();
+                string pin = Session["PIN"].ToString();
+                if (cardNo == "" && pin == "")
+                {
+                    Session["CardNo"] = "";
+                    Session["PIN"] = "";
+                    Response.Redirect("~/InsertCardMain.aspx");
+                }
             }
+            catch (Exception ex)
+            {
+
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
+            }
+            
 
         }
 
@@ -33,16 +43,26 @@ namespace WebApplication1
 
         protected void btnWithdraw_Click(object sender, EventArgs e)
         {
-            string CardNo = Session["CardNo"].ToString();
-            string PIN = Session["PIN"].ToString();
-            if (CardNo != "" && PIN != "")
+            try
             {
-                Response.Redirect("~/UC2.WithdrawMoney/Withdraw.aspx");
+                string CardNo = Session["CardNo"].ToString();
+                string PIN = Session["PIN"].ToString();
+                if (CardNo != "" && PIN != "")
+                {
+                    Response.Redirect("~/UC2.WithdrawMoney/Withdraw.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/InsertCardMain.aspx");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Redirect("~/InsertCardMain.aspx");
+
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
             }
+          
         }
 
         //protected void Button1_Click(object sender, EventArgs e)

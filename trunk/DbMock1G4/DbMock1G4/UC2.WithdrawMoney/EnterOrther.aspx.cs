@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DbMock1G4.BusinessLogic;
 using DbMock1G4.BusinessObjects;
+using log4net;
+
 namespace WebApplication1.UC2.WithdrawMoney
 {
     public partial class EnterOrther : System.Web.UI.Page
@@ -18,20 +20,29 @@ namespace WebApplication1.UC2.WithdrawMoney
 
         protected void btn250_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = "PrintPeceipt";
-            int accountId = int.Parse(Session["AccountId"].ToString());
-            decimal money = Convert.ToDecimal(txtEnterCash.Text);
-            bool check = accountBl.CheckBalance(accountId, money);
-            if (check == false)
+            try
             {
-                lblError.Text = "Number enter have to div to 50.000";
-                txtEnterCash.Text = "";
-                txtEnterCash.Focus();
+                Session["ViewState"] = "PrintPeceipt";
+                int accountId = int.Parse(Session["AccountId"].ToString());
+                decimal money = Convert.ToDecimal(txtEnterCash.Text);
+                bool check = accountBl.CheckBalance(accountId, money);
+                if (check == false)
+                {
+                    lblError.Text = "Number enter have to div to 50.000";
+                    txtEnterCash.Text = "";
+                    txtEnterCash.Focus();
+                }
+                else
+                {
+                    Response.Redirect("Withdraw.aspx");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Redirect("Withdraw.aspx");
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
             }
+           
             
         }
 

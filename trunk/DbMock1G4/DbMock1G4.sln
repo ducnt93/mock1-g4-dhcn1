@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbMock1G4.DataAccess", "Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mock1-G4", "DbMock1G4\Mock1-G4.csproj", "{EB1D7AC6-FCBC-4F25-AFDC-4BBD14F4136A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNUnit", "TestNUnit\TestNUnit.csproj", "{BAB29F75-4341-4ACE-95E7-AFD07FE75509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{EB1D7AC6-FCBC-4F25-AFDC-4BBD14F4136A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB1D7AC6-FCBC-4F25-AFDC-4BBD14F4136A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB1D7AC6-FCBC-4F25-AFDC-4BBD14F4136A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB29F75-4341-4ACE-95E7-AFD07FE75509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB29F75-4341-4ACE-95E7-AFD07FE75509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB29F75-4341-4ACE-95E7-AFD07FE75509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB29F75-4341-4ACE-95E7-AFD07FE75509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
