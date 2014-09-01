@@ -108,7 +108,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" /></td>
+                                    <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom " Text="Cancel" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -118,7 +118,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" /></td>
+                                    <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -128,7 +128,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
+                                    <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
                             </tr>
                             <tr>
                                 <td>
