@@ -31,6 +31,7 @@ namespace WebApplication1.UC1.Validation
                 cardBl.Update(card);
                 Session["PIN"] = pin;
                 Session["AccountId"] = card.AccountId;
+                Session["ViewSate"] = "Authentication";
                 Response.Redirect("~/MainATM.aspx");
             }
             else if (card.Attempt >= 1 && card.Attempt < 3)
