@@ -33,6 +33,21 @@ namespace DbMock1G4.BusinessLogic
             return objCardDA.GetByCardNoPinCard(cardno, pin);
         }
 
+        public bool AcceptCard(string cardno)
+        {
+            return objCardDA.AcceptCard(cardno);
+        }
+
+        public bool ValidateCard(Card card)
+        {
+            return objCardDA.ValidateCard(card);
+        }
+
+        public void CheckAttempt(Card cardByCardNo, string pin)
+        {
+            objCardDA.CheckAttempt(cardByCardNo, pin);
+        }
+
         // Lấy danh sách Card
         public List<Card> GetList()
         {
