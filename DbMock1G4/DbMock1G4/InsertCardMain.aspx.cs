@@ -6,26 +6,41 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Threading;
 using DbMock1G4.BusinessLogic;
+using log4net;
 namespace WebApplication1
 {
     public partial class InsertCardMain : System.Web.UI.Page
     {
         CardBL cardBl = new CardBL();
+        protected static ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
             txtCardNo.Focus();
             Session["ViewSate"] = "";
-            Session["AcceptCard"] = "";
-            Session["ValidCard"] = "";
             Session["CardNo"] = "";
-
         }
 
         protected void btnInsertCard_Click(object sender, EventArgs e)
         {
-            string cardNo = txtCardNo.Text;
-            Session["CardNo"] = cardNo;
-            Response.Redirect("~/UC1.Validation/Validate.aspx");
+            try
+            {
+                string cardNo = txtCardNo.Text;
+                if (cardNo == "")
+                {
+                    lblError.Text = "Pleale Insert Card...";
+                }
+                else
+                {
+                    Session["ViewSate"] = "";
+                    Session["CardNo"] = cardNo;
+                    Response.Redirect("~/UC1.Validation/Validate.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
+            }
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
