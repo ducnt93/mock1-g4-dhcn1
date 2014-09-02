@@ -54,6 +54,21 @@ namespace DbMock1G4.BusinessLogic
                 }
     }
 
+        public bool CheckBalance(Account acc, decimal money)
+        {
+            if (acc.Balance < money)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public Account CheckAcc(int ID)
+        {
+            Account Account = GetByAccountId(ID);
+            return Account;
+        }
+
         public Account GetBalance(int accId)
         {
                 Account account = GetByAccountId(accId);
