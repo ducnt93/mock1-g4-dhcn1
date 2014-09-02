@@ -1,5 +1,6 @@
 ﻿using DbMock1G4.BusinessLogic;
 using DbMock1G4.BusinessObjects;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,107 +13,135 @@ namespace WebApplication1.UC1.Validation
     public partial class Validate : System.Web.UI.Page
     {
         CardBL cardBl = new CardBL();
-        string cardNo;
+        protected static ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            contenValidate.Controls.Clear();
-            contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidating.ascx"));
-            if (!IsPostBack)
+            try
             {
-                CheckStatus();
-                if (Session["ViewSate"].Equals("Block"))
+                contenValidate.Controls.Clear();
+                contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidating.ascx"));
+                string s = Session["ViewSate"].ToString();
+                if (Session["ViewSate"].Equals("EjectCard") || Session["ViewSate"].Equals("Block"))
                 {
-                    contenValidate.Controls.Clear();
-                    contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardBlocked.ascx"));
+                    Response.Redirect("~/InsertCardMain.aspx");
                 }
-                else
+                if (Session["ViewSate"].Equals("InsertedCard"))
                 {
-                    AcceptCard();
-                    if (Session["AcceptCard"].Equals("NoAccept"))
-                    {
-                        EjectCard();
-                        if (Session["ViewSate"].Equals("EjectCard"))
-                        {
-                            //Response.Redirect("~/InsertCardMain.aspx");
-                        }
-                    }
-                    else
-                    {
-                        ValidCard();
-                    }
+                    Response.Redirect("~/UC1.Validation/EnterPIN.aspx");
                 }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
 
         #region ***** Validate Methods *****
         protected void AcceptCard()
         {
-            cardNo = Session["CardNo"].ToString();
-            if (cardBl.AcceptCard(cardNo) == false)
+            try
             {
-                Session["AcceptCard"] = "NoAccept";
+                string cardNo = Session["CardNo"].ToString();
+                if (cardBl.AcceptCard(cardNo) == false)
+                {
+                    Session["ViewSate"] = "NoAccept";
+                }
+                else
+                {
+                    Session["ViewSate"] = "Accepted";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Session["AcceptCard"] = "Accepted";
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
 
         protected void ValidCard()
         {
-            if (Session["AcceptCard"].Equals("Accepted"))
+            try
             {
-                cardNo = Session["CardNo"].ToString();
-                Card card = cardBl.GetByCardNo(cardNo);
-                if (cardBl.ValidateCard(card) == false)
+                if (Session["ViewSate"].Equals("Accepted"))
                 {
-                    Session["ValidCard"] = "InValidCard";
-                    EjectCard();
-                    if (Session["ViewSate"].Equals("EjectCard"))
+                    string cardNo = Session["CardNo"].ToString();
+                    Card card = cardBl.GetByCardNo(cardNo);
+                    if (cardBl.ValidateCard(card) == false)
                     {
-                        //Response.Redirect("~/InsertCardMain.aspx");
+                        Session["ViewSate"] = "InValidCard";
+                    }
+                    else
+                    {
+                        Session["ViewSate"] = "InsertedCard";
                     }
                 }
-                else
-                {
-                    Session["ValidCard"] = "Validated";
-                    Session["ViewSate"] = "InsertedCard";
-                    Response.Redirect("~/UC1.Validation/EnterPIN.aspx");
-                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
 
         protected void EjectCard()
         {
-            if (Session["AcceptCard"].Equals("NoAccept"))
+            try
             {
-                contenValidate.Controls.Clear();
-                contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidatingError.ascx"));
-                Session["ViewSate"] = "EjectCard";
-            }
-            else
-            {
-
-                if (Session["ValidCard"].Equals("InValidCard"))
+                if (Session["ViewSate"].Equals("NoAccept"))
                 {
                     contenValidate.Controls.Clear();
-                    contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardInvalid.ascx"));
+                    contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidatingError.ascx"));
                     Session["ViewSate"] = "EjectCard";
                 }
+                else
+                {
+
+                    if (Session["ViewSate"].Equals("InValidCard"))
+                    {
+                        contenValidate.Controls.Clear();
+                        contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardInvalid.ascx"));
+                        Session["ViewSate"] = "EjectCard";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
         protected void CheckStatus()
         {
-            cardNo = Session["CardNo"].ToString();
-            Card card = cardBl.GetByCardNo(cardNo);
-            if (card != null)
+            try
             {
-                if (card.Status.Equals("Block"))
+                string cardNo = Session["CardNo"].ToString();
+                Card card = cardBl.GetByCardNo(cardNo);
+                if (Session["ViewSate"].Equals("Accepted"))
                 {
-                    Session["ViewSate"] = "Block";
+                    if (card.Status.Equals("Block"))
+                    {
+                        contenValidate.Controls.Clear();
+                        contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardBlocked.ascx"));
+                        Session["ViewSate"] = "Block";
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
         #endregion
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            AcceptCard();
+            CheckStatus();
+            ValidCard();
+            EjectCard();
+        }
     }
 }

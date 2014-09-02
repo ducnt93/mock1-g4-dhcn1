@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Validate.aspx.cs" Inherits="WebApplication1.UC1.Validation.Validate" %>
 
+<%@ Reference Control="~/UC1.Validation/UcController/UcValidating.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +17,7 @@
 </head>
 <body class="panel-body" id="main">
     <form id="form1" runat="server">
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -54,21 +56,30 @@
                                 <p>
                                     Wellcom to ABC Bank @ ATM.
                                 </p>
+                                <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
                             </div>
                             <div class="col-lg-9 col-md-offset-3">
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                                <asp:UpdatePanel ID="UpdatePanel1" runat="server" RenderMode="Inline" UpdateMode="Conditional">
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <Triggers>
-                                        <%--<asp:AsyncPostBackTrigger ControlID="time" EventName="time" />--%>
+                                        <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
                                         <%--<asp:AsyncPostBackTrigger ControlID="Timer2" EventName="Tick" />--%>
                                     </Triggers>
                                     <ContentTemplate>
-                                        <fieldset>
-                                            <%--<asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick" />--%>
-                                            <time id="time1" onwaiting="10" onchange="Page_Load" />
-                                            <asp:PlaceHolder runat="server" ID="contenValidate"></asp:PlaceHolder>
+
+                                        <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick" />
+                                        
+                                        <asp:PlaceHolder runat="server" ID="contenValidate"></asp:PlaceHolder>
+
                                     </ContentTemplate>
+                                    
                                 </asp:UpdatePanel>
+                                <%--<asp:UpdateProgress ID="UpProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">--%>
+                                    <%--<ProgressTemplate>--%>
+                                        <%--Validating your ATM card...--%>
+                                    <%--</ProgressTemplate>--%>
+                                <%--</asp:UpdateProgress>--%>
+
                             </div>
                         </div>
                     </div>
@@ -140,21 +151,7 @@
                             </tr>
                         </table>
                     </div>
-                    <%--<asp:Panel runat="server" ID="pnInsertCard">
-                        <div class="col-md-4">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Number"></asp:TextBox>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <asp:Button runat="server" ID="btnInsertCard" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="btnInsertCard_Click" /></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </asp:Panel>--%>
+
                 </div>
             </div>
         </div>
