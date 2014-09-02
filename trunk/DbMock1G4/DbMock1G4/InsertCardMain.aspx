@@ -26,7 +26,7 @@
 
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel runat="server">
+        <asp:UpdatePanel runat="server" ID="updatePanl1">
             <ContentTemplate>
                 <div class="container">
                     <div class="row">
@@ -37,19 +37,16 @@
                                 <table class="table">
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 1" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 2" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 3" />
                                         </td>
                                     </tr>
@@ -64,6 +61,7 @@
                                         <h3>ABC Bank @ ATM</h3>
                                         <h4>Wellcom to ABC Bank @ ATM.</h4>
                                     </div>
+                                    <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
                                 </div>
                                 <asp:Panel runat="server" ID="slider">
                                     <div class="col-md-12">
@@ -71,7 +69,6 @@
                                             <div class="ws_images">
                                                 <ul>
                                                     <li>
-
                                                         <img src="Content/images/20070509_Citibank.JPG" alt="jquery slideshow" title="Bank 1" id="wows1_0" />
                                                     </li>
                                                     <li>
@@ -84,7 +81,6 @@
                                                 <div>
                                                     <a href="#" title="20070509_Citibank">
                                                         <img src="~/Content/data1/tooltips/20070509_citibank.jpg" alt="20070509_Citibank" />1</a>
-
                                                     <a href="#" title="Bank">
                                                         <img src="~/Content/data1/tooltips/bank.jpg" alt="Bank" />2</a>
                                                     <a href="#" title="bank-of-america-in-the-us">
@@ -104,86 +100,82 @@
                                 <table class="table">
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 4" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 5" />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-
                                             <input type="button" class="btn btn-primary col btn1" value="Buttom 6" />
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
-
-                        <div class="col-md-12 table-bordered">
-                            <div class="col-md-4 col-md-offset-4">
-                                <table class="table table-bordered">
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" OnClick="btnNum1_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" OnClick="btnNum2_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" OnClick="btnNum4_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" OnClick="btnNum5_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" OnClick="btnClear_Click" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" OnClick="btnNum7_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" OnClick="btnNum8_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" OnClick="btnNum0_Click" /></td>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," /></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <asp:Panel runat="server" ID="pnInsertCard">
-                                <div class="col-md-4">
-                                    <table class="table">
-                                        <tr>
-                                            <td>
-                                                <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Number"></asp:TextBox>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <asp:Button runat="server" ID="Button1" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="btnInsertCard_Click" /></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </asp:Panel>
-                        </div>
                     </div>
+                </div>
+                <div class="col-md-12 table-bordered">
+                    <div class="col-md-4 col-md-offset-4">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" OnClick="btnNum1_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" OnClick="btnNum2_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" OnClick="btnNum4_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" OnClick="btnNum5_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" OnClick="btnClear_Click" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" OnClick="btnNum7_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" OnClick="btnNum8_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" OnClick="btnNum0_Click" /></td>
+                                <td>
+                                    <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," /></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <asp:Panel runat="server" ID="pnInsertCard">
+                        <div class="col-md-4">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Number"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Button runat="server" ID="Button1" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="btnInsertCard_Click" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </asp:Panel>
                 </div>
             </ContentTemplate>
             <Triggers>
