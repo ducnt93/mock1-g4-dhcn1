@@ -38,6 +38,9 @@ namespace WebApplication1
             Session["PIN"] = "";
             Session["AccountId"] = "";
             Session["ViewState"] = "Withdraw";
+            //NamLD them session amount
+            Session["Amount"] = "";
+            Session["AccountIdR"] = "";
         }
         void Session_End(object sender, EventArgs e)
         {
@@ -45,6 +48,9 @@ namespace WebApplication1
             Session["PIN"] = "";
             Session["AccountId"] = "";
             Session["ViewState"] = "";
+            //NamLD them session amount
+            Session["Amount"] = "";
+            Session["AccountIdR"] = "";
         }
     }
 }
