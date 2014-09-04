@@ -54,9 +54,9 @@ namespace DbMock1G4.BusinessLogic
                 }
     }
 
-        public bool CheckBalance(Account acc, decimal money)
+        public bool CheckBalance(decimal balance, decimal money)
         {
-            if (acc.Balance < money)
+            if (balance < money)
             {
                 return false;
             }
