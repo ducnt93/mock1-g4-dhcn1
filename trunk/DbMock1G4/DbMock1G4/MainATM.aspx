@@ -36,7 +36,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                     <asp:Button runat="server" ID="Button1" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btnCashTransfer_Click"  />
+                                     <asp:Button runat="server" ID="btnCashTransfer" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btnCashTransfer_Click"  />
                                 </td>
                             </tr>
                         </table>
