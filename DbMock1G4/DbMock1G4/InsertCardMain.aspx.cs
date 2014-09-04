@@ -16,7 +16,7 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             txtCardNo.Focus();
-            Session["ViewSate"] = "";
+            Session["ViewState"] = "";
             Session["CardNo"] = "";
         }
 
@@ -31,7 +31,7 @@ namespace WebApplication1
                 }
                 else
                 {
-                    Session["ViewSate"] = "";
+                    Session["ViewState"] = "";
                     Session["CardNo"] = cardNo;
                     Response.Redirect("~/UC1.Validation/Validate.aspx");
                 }
