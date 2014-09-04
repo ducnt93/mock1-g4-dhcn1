@@ -82,5 +82,10 @@ namespace WebApplication1
         {
             Response.Redirect("~/UC3.CheckBalance/CheckBalace.aspx");
         }
+
+        protected void btnCashTransfer_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UC5.CashTransfer/CashTransfer.aspx");
+        }
     }
 }
