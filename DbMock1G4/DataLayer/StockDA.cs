@@ -29,9 +29,9 @@ namespace DbMock1G4.DataAccess
 			return obj;
 		}
 
-		public Stock GetByStockId(int stockid)
+		public Stock GetByStockId(int stockId)
 		{
-			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Stock_GetByStockId", Data.CreateParameter("StockId", stockid)))
+			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Stock_GetByStockId", Data.CreateParameter("StockId", stockId)))
 			{
 				if (reader.Read())
 				{
@@ -40,7 +40,18 @@ namespace DbMock1G4.DataAccess
 				return null;
 			}
 		}
-
+        public List<Stock> GetByAtmId(int atmId)
+        {
+            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Stock_GetByAtmId",Data.CreateParameter("AtmId",atmId)))
+            {
+                List<Stock> list = new List<Stock>();
+                while (reader.Read())
+                {
+                    list.Add(Populate(reader));
+                }
+                return list;
+            }
+        }
 	
 		public List<Stock> GetList()
 		{
@@ -106,5 +117,7 @@ namespace DbMock1G4.DataAccess
 			SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure,"sproc_Stock_Delete", Data.CreateParameter("StockId", stockid));
 		}
 		#endregion
-	}
+
+     
+    }
 }

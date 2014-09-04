@@ -2,14 +2,37 @@
 using System.Data.Common;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+
 namespace DbMock1G4.DataAccess
 {
     public class Data
     {
-        private static readonly string DataProvider = ConfigurationManager.ConnectionStrings["ConnectionString"].ProviderName;
-        private static readonly DbProviderFactory Factory = DbProviderFactories.GetFactory(DataProvider);
-        public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
+        public Data()
+        {
+            
+        }
+        private static string DataProvider = ConfigurationManager.ConnectionStrings["ConnectionString"].ProviderName;
+        private  static  DbProviderFactory Factory = DbProviderFactories.GetFactory(DataProvider);
+        public static  string ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        //public static string ConnectionString1()
+        //{
+        //    string str = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        //    try
+        //    {
+        //        return str;
+        //    }
+        //    catch
+        //    {
+        //        str = @"Data Source=PC\TRUNGDUC;Initial Catalog=DbMock1G4;Integrated Security=True";
+        //    }
+        //    var cn = new SqlConnection(str);
+        //    if (cn.State == ConnectionState.Closed)
+        //    {
+        //        cn.Open();
+        //    }
+        //    return str;
+        //}
         #region parameters
 
         public static DbParameter CreateParameter(string parameterName, DbType parameterType, int parameterSize)

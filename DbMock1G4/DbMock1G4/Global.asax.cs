@@ -37,7 +37,7 @@ namespace WebApplication1
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
-            Session["ViewState"] = "Withdraw";
+            Session["ViewState"] = "";
             //NamLD them session amount
             Session["Amount"] = "";
             Session["AccountIdR"] = "";

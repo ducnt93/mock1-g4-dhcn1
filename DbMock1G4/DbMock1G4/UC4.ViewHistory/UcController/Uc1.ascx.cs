@@ -13,5 +13,15 @@ namespace WebApplication1.UC4.ViewHistory.UcController
         {
 
         }
+
+        protected void btnNexxt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnPre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

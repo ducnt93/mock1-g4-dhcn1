@@ -30,10 +30,10 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="col-md-5 col-md-offset-1 col">
-                                        <asp:Button runat="server" ID="btnPre" CssClass="btn btn-primary col btn1" Text="Pre"/>
+                                        <asp:Button runat="server" ID="btnPre" CssClass="btn btn-primary col btn1" Text="Pre" OnClick="btnPre_Click"/>
                                     </div>
                                     <div class="col-md-5 col-md-offset-1 col">                                       
-                                        <asp:Button runat="server" ID="btnNexxt" CssClass="btn btn-primary col btn1" Text="Next"/>
+                                        <asp:Button runat="server" ID="btnNexxt" CssClass="btn btn-primary col btn1" Text="Next" OnClick="btnNexxt_Click"/>
                                     </div>
                                 </div>
                             </div>
