@@ -40,9 +40,9 @@ namespace DbMock1G4.BusinessLogic
 		}
 
 		// Lấy danh theo phân trang
-        public List<Log> GetListPaged(int recperpage, int pageindex, int time)
+        public List<Log> GetListPaged(int recperpage, int pageindex, int time,string CardNo)
         {
-            return objLogDA.GetListPaged(recperpage, pageindex, time);
+            return objLogDA.GetListPaged(recperpage, pageindex, time,CardNo);
         }
 
 		#endregion
