@@ -37,7 +37,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btn300" CssClass="btn btn-primary col btn1" Text="Buttom 3"/>
+                                    <asp:Button runat="server" ID="btn300" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btn300_Click"/>
 
                                 </td>
                             </tr>
@@ -56,7 +56,9 @@
                                 </p>
                                 <h3><p>View transaction history</p></h3>
                                 <div class="col-md-12">
-                                    <asp:GridView ID="grViewhistory" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="148px" Width="444px">
+                                    <asp:GridView ID="grViewhistory" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" 
+                                        BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="148px" Width="444px" AllowPaging="True" 
+                                        EnableSortingAndPagingCallbacks="True" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
                                         <Columns>
                                             <asp:BoundField DataField="ATMLocation" HeaderText="ATM(Location)" />
                                             <asp:BoundField DataField="Type" HeaderText="Type" />
@@ -99,12 +101,12 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btn250" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btn250_Click" />
+                                    <asp:Button runat="server" ID="btn250" CssClass="btn btn-primary col btn1" Text="Buttom 5" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btn6" CssClass="btn btn-primary col btn1" Text="Buttom 6" />
+                                    <asp:Button runat="server" ID="btn6" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btn6_Click" />
                                 </td>
                             </tr>
                         </table>

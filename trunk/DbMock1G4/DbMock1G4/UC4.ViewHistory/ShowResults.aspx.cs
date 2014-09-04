@@ -11,48 +11,62 @@ namespace WebApplication1.UC4.ViewHistory
 {
     public partial class ShowResults : System.Web.UI.Page
     {
+        LogBL logbl = new LogBL();
+        
         protected void Page_Load(object sender, EventArgs e)
         {          
-            LogBL logbl = new LogBL();
-            string thoigian=Session["ViewState"].ToString();
             if (!Page.IsPostBack)
             {
+                string thoigian = Session["CriteriasChoose"].ToString();
+                string CardNo = Session["CardNo"].ToString();
                 if (thoigian == "1 Week ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 7);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 7, CardNo);
                     grViewhistory.DataBind();
                 }
                 if (thoigian == "1 Month ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 30);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 30, CardNo);
                     grViewhistory.DataBind();
                 }
                 if (thoigian == "4 Month ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 120);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 120, CardNo);
                     grViewhistory.DataBind();
                 }
                 if (thoigian == "6 Month ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 180);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 180, CardNo);
                     grViewhistory.DataBind();
                 }
                 if (thoigian == "1 Year ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 365);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 365, CardNo);
                     grViewhistory.DataBind();
                 }
                 if (thoigian == "2 Year ago")
                 {
-                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 700);
+                    grViewhistory.DataSource = logbl.GetListPaged(1, 1, 700, CardNo);
                     grViewhistory.DataBind();
                 }
             }
         }
 
-        protected void btn250_Click(object sender, EventArgs e)
+        protected void grViewhistory_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-           // Response.Redirect("~/UC4.ViewHistory/CriteriasChoose.aspx");
+            grViewhistory.PageIndex = e.NewPageIndex;
+            grViewhistory.DataBind();
+           
+        }
+
+        protected void btn6_Click(object sender, EventArgs e)
+        {
+            Page_Load(sender, e);
+        }
+
+        protected void btn300_Click(object sender, EventArgs e)
+        {
+            Page_Load(sender, e);
         }
     }
 }
