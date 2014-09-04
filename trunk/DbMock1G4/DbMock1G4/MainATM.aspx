@@ -93,17 +93,17 @@
                         <table class="table">
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">Button 4</asp:HyperLink>
+                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button 4" OnClick="btnExit_Click1" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Button 5</asp:HyperLink>
+                                    <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Button 5" OnClick="btnExit_Click1" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button 6" OnClick="btnExit_Click" />
+                                    <asp:Button runat="server" ID="Button1" CssClass="btn btn-primary col btn1" Text="Button 6" OnClick="btnExit_Click1" />
                                 </td>
                             </tr>
                         </table>
