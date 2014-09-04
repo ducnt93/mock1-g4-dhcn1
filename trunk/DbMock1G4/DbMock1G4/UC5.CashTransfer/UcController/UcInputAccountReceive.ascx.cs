@@ -11,8 +11,8 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 {
     public partial class AccountInput : System.Web.UI.UserControl
     {
-        AccountBL accBl = new AccountBL();
-        CustomerBL cusBl = new CustomerBL();
+        AccountBL AccountBusinessLogic = new AccountBL();
+        CustomerBL CustomerBusinessLogic = new CustomerBL();
         Account account = new Account();
         Customer customer = new Customer();
         protected void Page_Load(object sender, EventArgs e)
@@ -22,14 +22,20 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 
         protected void LoadID(object sender, EventArgs e)
         {
-            lblAccTransferID.Text = Session["AccountId"].ToString();
+            if (Session["AccountId"].ToString() != "")
+            {
+                lblAccTransferID.Text = Session["AccountId"].ToString();
+            }
         }
 
         protected void LoadName(object sender, EventArgs e)
         {
-            account = accBl.GetByAccountId(Convert.ToInt32(Session["AccountId"].ToString()));
-            customer = cusBl.GetByCusId(Convert.ToInt32(account.CusId));
-            lblAccTransferName.Text = customer.Name;
+            if (Session["AccountId"].ToString() != "")
+            {
+                account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountId"].ToString()));
+                customer = CustomerBusinessLogic.GetByCusId(Convert.ToInt32(account.CusId));
+                lblAccTransferName.Text = customer.Name;
+            }
         }
     }
 }

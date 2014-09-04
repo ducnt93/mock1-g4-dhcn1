@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1.UC2.WithdrawMoney.UcController {
+namespace WebApplication1.UC5.CashTransfer.UcController {
     
     
     public partial class UcPrintPeceiptCT {
