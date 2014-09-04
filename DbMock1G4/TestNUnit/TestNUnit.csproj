@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="TestGetBalance.cs" />
     <Compile Include="TestValidation.cs" />
+    <Compile Include="TestViewHistory.cs" />
     <Compile Include="TestWithdraw.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validation.cs" />
