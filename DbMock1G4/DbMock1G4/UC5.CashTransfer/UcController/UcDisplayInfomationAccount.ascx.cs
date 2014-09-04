@@ -11,23 +11,22 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 {
     public partial class InfomationAccount : System.Web.UI.UserControl
     {
-        readonly AccountBL accBl = new AccountBL();
-        readonly CustomerBL cusBl = new CustomerBL();
+        readonly AccountBL AccountBusinessLogic = new AccountBL();
+        readonly CustomerBL CustomerBusinessLogic = new CustomerBL();
         Account account = new Account();
         Customer customer = new Customer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Gan o day thi lai duoc
-            Session["AccountIdR"] = 2;
+
         }
 
         protected void LoadName(object sender, EventArgs e)
         {
             // cái này 
-            if (Session["AccountIdR"].ToString()!="")
+            if (Session["AccountReceiveId"].ToString()!="")
             {
-                account = accBl.GetByAccountId(Convert.ToInt32(Session["AccountIdR"].ToString()));
-                customer = cusBl.GetByCusId(Convert.ToInt32(account.CusId));
+                account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountReceiveId"].ToString()));
+                customer = CustomerBusinessLogic.GetByCusId(Convert.ToInt32(account.CusId));
                 lblAccountName.Text = customer.Name;
             }
             else
@@ -38,9 +37,9 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 
         protected void LoadID(object sender, EventArgs e)
         {
-            if (Session["AccountIdR"].ToString() != "")
+            if (Session["AccountReceiveId"].ToString() != "")
             {
-                lblAccountID.Text = Session["AccountIdR"].ToString();
+                lblAccountID.Text = Session["AccountReceiveId"].ToString();
             }
             else
             {

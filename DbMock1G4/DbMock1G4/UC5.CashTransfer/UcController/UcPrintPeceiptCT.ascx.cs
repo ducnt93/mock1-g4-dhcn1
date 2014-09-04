@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication1.UC2.WithdrawMoney.UcController
+namespace WebApplication1.UC5.CashTransfer.UcController
 {
     public partial class UcPrintPeceiptCT : System.Web.UI.UserControl
     {

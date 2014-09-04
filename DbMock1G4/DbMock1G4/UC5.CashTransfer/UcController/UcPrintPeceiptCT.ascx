@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcPrintPeceiptCT.ascx.cs" Inherits="WebApplication1.UC2.WithdrawMoney.UcController.UcPrintPeceiptCT" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcPrintPeceiptCT.ascx.cs" Inherits="WebApplication1.UC5.CashTransfer.UcController.UcPrintPeceiptCT" %>
 <div class="col-md-10 col-md-offset-2">
     <h4>Transfer Success!</h4>
     <h4>Do you want print peceipt?</h4>

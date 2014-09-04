@@ -13,12 +13,12 @@ namespace WebApplication1.UC5.CashTransfer.UcController {
     public partial class CashTransfer {
         
         /// <summary>
-        /// txtReAccID control.
+        /// txtReAccountReceiveId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtReAccID;
+        protected global::System.Web.UI.WebControls.TextBox txtReAccountReceiveId;
     }
 }

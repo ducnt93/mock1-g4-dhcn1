@@ -11,8 +11,8 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 {
     public partial class UcDisplayAccountReceiveAndAmount : System.Web.UI.UserControl
     {
-        AccountBL accBl = new AccountBL();
-        CustomerBL cusBl = new CustomerBL();
+        AccountBL AccountBusinessLogic = new AccountBL();
+        CustomerBL CustomerBusinessLogic = new CustomerBL();
         Account account = new Account();
         Customer customer = new Customer();
         protected void Page_Load(object sender, EventArgs e)
@@ -22,14 +22,17 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 
         protected void LoadName(object sender, EventArgs e)
         {
-            account = accBl.GetByAccountId(Convert.ToInt32(Session["AccountId"].ToString()));
-            customer = cusBl.GetByCusId(Convert.ToInt32(account.CusId));
-            lblAccountName.Text = customer.Name;
-        }
+            if (Session["AccountReceiveId"].ToString() != "")
+            {
+                account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountReceiveId"].ToString()));
+                customer = CustomerBusinessLogic.GetByCusId(Convert.ToInt32(account.CusId));
+                lblAccountName.Text = customer.Name;
+            }
+    }
 
         protected void LoadID(object sender, EventArgs e)
         {
-            lblAccountID.Text = Session["AccountId"].ToString();
+            lblAccountID.Text = Session["AccountReceiveId"].ToString();
         }
 
 

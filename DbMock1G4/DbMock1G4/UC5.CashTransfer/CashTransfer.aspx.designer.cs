@@ -118,7 +118,7 @@ namespace WebApplication1.UC5.CashTransfer {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebApplication1.UC2.WithdrawMoney.UcController.UcPrintPeceiptCT UcPrintPeceiptCT;
+        protected global::WebApplication1.UC5.CashTransfer.UcController.UcPrintPeceiptCT UcPrintPeceiptCT;
         
         /// <summary>
         /// UcDisplayAccountReceiveAndAmount control.
