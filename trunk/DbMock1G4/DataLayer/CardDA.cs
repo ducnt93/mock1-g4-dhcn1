@@ -85,7 +85,7 @@ namespace DbMock1G4.DataAccess
         #region ***** CheckAttempt Methods *****
         public void CheckAttempt(Card cardByCardNo, string pin)
         {
-            if (pin.Equals(cardByCardNo.Pin.ToString()))
+            if (pin.Equals(cardByCardNo.Pin))
             {
                 cardByCardNo.Attempt = 0;
             }

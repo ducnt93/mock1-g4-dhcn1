@@ -47,6 +47,7 @@ namespace WebApplication1
             {
                 string CardNo = Session["CardNo"].ToString();
                 string PIN = Session["PIN"].ToString();
+                Session["ViewState"] = "Withdraw";
                 if (CardNo != "" && PIN != "")
                 {
                     Response.Redirect("~/UC2.WithdrawMoney/Withdraw.aspx");
@@ -80,6 +81,7 @@ namespace WebApplication1
 
         protected void btnCheckBalance_Click(object sender, EventArgs e)
         {
+            Session["ViewState"] = "CheckBalance";
             Response.Redirect("~/UC3.CheckBalance/CheckBalace.aspx");
         }
 

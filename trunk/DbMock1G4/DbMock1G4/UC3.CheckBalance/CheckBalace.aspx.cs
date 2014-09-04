@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using  DbMock1G4.BusinessLogic;
-using  DbMock1G4.BusinessObjects;
+using DbMock1G4.BusinessLogic;
+using DbMock1G4.BusinessObjects;
 
 namespace WebApplication1.UC3.CheckBalance
 {
@@ -16,13 +16,19 @@ namespace WebApplication1.UC3.CheckBalance
         {
             if (!IsPostBack)
             {
-                int accountId = int.Parse(Session["AccountId"].ToString());
-                Account account = accountBl.GetBalance(accountId);
-                if (account != null)
+                if (Session["ViewState"].Equals("CheckBalance"))
                 {
-                    lblAccount.Text = account.Balance.ToString();
+                    int accountId = int.Parse(Session["AccountId"].ToString());
+                    Account account = accountBl.GetBalance(accountId);
+                    if (account != null)
+                    {
+                        lblAccount.Text = account.Balance.ToString();
+                    }
+                    else
+                    {
+                        Response.Redirect("~/MainATM.aspx");
+                    }
                 }
-
             }
         }
 

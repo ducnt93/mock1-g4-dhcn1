@@ -37,10 +37,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
                         }
-
                     }
-
-
                 }
             }
             catch (Exception ex)
@@ -57,7 +54,6 @@ namespace WebApplication1.UC2.WithdrawMoney
             Session["CardNo"] = "";
             Session["PIN"] = "";
             Session["AccountId"] = "";
-
         }
 
         private void WriteLog(decimal money)
@@ -88,12 +84,11 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 500000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalance(accId, money);
+                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
                     if (check == false)
                     {
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-
                     }
                     else
                     {
@@ -102,7 +97,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                         ResetSession();
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-
                     }
                 }
             }
@@ -111,8 +105,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
-
         }
 
         protected void btn200_Click(object sender, EventArgs e)
@@ -123,12 +115,11 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 2000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalance(accId, money);
+                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
                     if (check == false)
                     {
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-
                     }
                     else
                     {
@@ -137,8 +128,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                         ResetSession();
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-
-
                     }
                 }
             }
@@ -147,7 +136,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
         }
 
         protected void btn300_Click(object sender, EventArgs e)
@@ -158,12 +146,11 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 3000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalance(accId, money);
+                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
                     if (check == false)
                     {
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-
                     }
                     else
                     {
@@ -172,7 +159,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                         ResetSession();
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-
                     }
                 }
             }
@@ -181,7 +167,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
         }
 
         protected void btn100_Click(object sender, EventArgs e)
@@ -192,12 +177,11 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 1000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalance(accId, money);
+                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
                     if (check == false)
                     {
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-
                     }
                     else
                     {
@@ -206,7 +190,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                         ResetSession();
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-
                     }
                 }
             }
@@ -215,7 +198,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
         }
 
         protected void btn250_Click(object sender, EventArgs e)
@@ -226,7 +208,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 2500000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalance(accId, money);
+                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
                     if (check == false)
                     {
                         contenPlace.Controls.Clear();
@@ -239,7 +221,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                         ResetSession();
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-
                     }
                 }
                 else
@@ -256,7 +237,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
         }
 
         protected void btnOrther_Click(object sender, EventArgs e)
@@ -285,7 +265,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                             Response.Redirect("~/MainATM.aspx");
                         }
                     }
-
                 }
             }
             catch (Exception ex)
@@ -293,7 +272,6 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -302,7 +280,6 @@ namespace WebApplication1.UC2.WithdrawMoney
             {
                 Response.Redirect("~/MainATM.aspx");
             }
-
         }
     }
 }

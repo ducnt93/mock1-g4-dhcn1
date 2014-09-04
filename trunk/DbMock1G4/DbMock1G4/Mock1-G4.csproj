@@ -157,8 +157,14 @@
     <Content Include="InsertCardMain.aspx" />
     <Content Include="MainATM.aspx" />
     <Content Include="UC1.Validation\EnterPIN.aspx" />
-    <Content Include="UC1.Validation\ValidationError.aspx" />
-    <Content Include="UC1.Validation\ValidationPIN.aspx" />
+    <Content Include="UC1.Validation\UcController\UcBlockCard.ascx" />
+    <Content Include="UC1.Validation\UcController\UcCardBlocked.ascx" />
+    <Content Include="UC1.Validation\UcController\UcCardInvalid.ascx" />
+    <Content Include="UC1.Validation\UcController\UcRe-EnterPIN.ascx" />
+    <Content Include="UC1.Validation\UcController\UcValidating.ascx" />
+    <Content Include="UC1.Validation\UcController\UcValidatingError.ascx" />
+    <Content Include="UC1.Validation\UcController\ValidatingPIN.ascx" />
+    <Content Include="UC1.Validation\Validate.aspx" />
     <Content Include="UC2.WithdrawMoney\EnterOrther.aspx" />
     <Content Include="UC2.WithdrawMoney\UcController\UcEnterOrther.ascx" />
     <Content Include="UC2.WithdrawMoney\UcController\UcErrorScreen.ascx" />
@@ -167,6 +173,19 @@
     <Content Include="UC2.WithdrawMoney\UcController\UcWithdraw.ascx" />
     <Content Include="UC2.WithdrawMoney\Withdraw.aspx" />
     <Content Include="UC3.CheckBalance\CheckBalace.aspx" />
+    <Content Include="UC4.ViewHistory\CriteriasChoose.aspx" />
+    <Content Include="UC4.ViewHistory\ShowResults.aspx" />
+    <Content Include="UC4.ViewHistory\UcController\Uc1.ascx" />
+    <Content Include="UC4.ViewHistory\WaittedScreen.aspx" />
+    <Content Include="UC5.CashTransfer\CashTransfer.aspx" />
+    <Content Include="UC5.CashTransfer\UcController\UcDisplayAccountReceiveAndAmount.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcDisplayInfomationAccount.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcErrorAccount.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcErrorAmount.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcHelloCashTransfer.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcInputAccountReceive.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcInputMoneyTransfer.ascx" />
+    <Content Include="UC5.CashTransfer\UcController\UcPrintPeceiptCT.ascx" />
     <Content Include="UseControl\Caculator.ascx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
@@ -238,8 +257,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="MasterPageBank.Master" />
-    <Content Include="UC1.Validation\ValidateCard.aspx" />
     <Content Include="Config.config" />
+    <Content Include="Logs.log" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -307,19 +326,61 @@
     <Compile Include="UC1.Validation\EnterPIN.aspx.designer.cs">
       <DependentUpon>EnterPIN.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UC1.Validation\ValidationError.aspx.cs">
-      <DependentUpon>ValidationError.aspx</DependentUpon>
+    <Compile Include="UC1.Validation\UcController\UcBlockCard.ascx.cs">
+      <DependentUpon>UcBlockCard.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UC1.Validation\ValidationError.aspx.designer.cs">
-      <DependentUpon>ValidationError.aspx</DependentUpon>
+    <Compile Include="UC1.Validation\UcController\UcBlockCard.ascx.designer.cs">
+      <DependentUpon>UcBlockCard.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UC1.Validation\ValidationPIN.aspx.cs">
-      <DependentUpon>ValidationPIN.aspx</DependentUpon>
+    <Compile Include="UC1.Validation\UcController\UcCardBlocked.ascx.cs">
+      <DependentUpon>UcCardBlocked.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UC1.Validation\ValidationPIN.aspx.designer.cs">
-      <DependentUpon>ValidationPIN.aspx</DependentUpon>
+    <Compile Include="UC1.Validation\UcController\UcCardBlocked.ascx.designer.cs">
+      <DependentUpon>UcCardBlocked.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcCardInvalid.ascx.cs">
+      <DependentUpon>UcCardInvalid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcCardInvalid.ascx.designer.cs">
+      <DependentUpon>UcCardInvalid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcRe-EnterPIN.ascx.cs">
+      <DependentUpon>UcRe-EnterPIN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcRe-EnterPIN.ascx.designer.cs">
+      <DependentUpon>UcRe-EnterPIN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcValidating.ascx.cs">
+      <DependentUpon>UcValidating.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcValidating.ascx.designer.cs">
+      <DependentUpon>UcValidating.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcValidatingError.ascx.cs">
+      <DependentUpon>UcValidatingError.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\UcValidatingError.ascx.designer.cs">
+      <DependentUpon>UcValidatingError.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\ValidatingPIN.ascx.cs">
+      <DependentUpon>ValidatingPIN.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\UcController\ValidatingPIN.ascx.designer.cs">
+      <DependentUpon>ValidatingPIN.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC1.Validation\Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC1.Validation\Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
     <Compile Include="UC2.WithdrawMoney\EnterOrther.aspx.cs">
       <DependentUpon>EnterOrther.aspx</DependentUpon>
@@ -377,6 +438,97 @@
     <Compile Include="UC3.CheckBalance\CheckBalace.aspx.designer.cs">
       <DependentUpon>CheckBalace.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UC4.ViewHistory\CriteriasChoose.aspx.cs">
+      <DependentUpon>CriteriasChoose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\CriteriasChoose.aspx.designer.cs">
+      <DependentUpon>CriteriasChoose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\ShowResults.aspx.cs">
+      <DependentUpon>ShowResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\ShowResults.aspx.designer.cs">
+      <DependentUpon>ShowResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\UcController\Uc1.ascx.cs">
+      <DependentUpon>Uc1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\UcController\Uc1.ascx.designer.cs">
+      <DependentUpon>Uc1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\WaittedScreen.aspx.cs">
+      <DependentUpon>WaittedScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC4.ViewHistory\WaittedScreen.aspx.designer.cs">
+      <DependentUpon>WaittedScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\CashTransfer.aspx.cs">
+      <DependentUpon>CashTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\CashTransfer.aspx.designer.cs">
+      <DependentUpon>CashTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcDisplayAccountReceiveAndAmount.ascx.cs">
+      <DependentUpon>UcDisplayAccountReceiveAndAmount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcDisplayAccountReceiveAndAmount.ascx.designer.cs">
+      <DependentUpon>UcDisplayAccountReceiveAndAmount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcDisplayInfomationAccount.ascx.cs">
+      <DependentUpon>UcDisplayInfomationAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcDisplayInfomationAccount.ascx.designer.cs">
+      <DependentUpon>UcDisplayInfomationAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcErrorAccount.ascx.cs">
+      <DependentUpon>UcErrorAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcErrorAccount.ascx.designer.cs">
+      <DependentUpon>UcErrorAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcErrorAmount.ascx.cs">
+      <DependentUpon>UcErrorAmount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcErrorAmount.ascx.designer.cs">
+      <DependentUpon>UcErrorAmount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcHelloCashTransfer.ascx.cs">
+      <DependentUpon>UcHelloCashTransfer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcHelloCashTransfer.ascx.designer.cs">
+      <DependentUpon>UcHelloCashTransfer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcInputAccountReceive.ascx.cs">
+      <DependentUpon>UcInputAccountReceive.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcInputAccountReceive.ascx.designer.cs">
+      <DependentUpon>UcInputAccountReceive.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcInputMoneyTransfer.ascx.cs">
+      <DependentUpon>UcInputMoneyTransfer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcInputMoneyTransfer.ascx.designer.cs">
+      <DependentUpon>UcInputMoneyTransfer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcPrintPeceiptCT.ascx.cs">
+      <DependentUpon>UcPrintPeceiptCT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC5.CashTransfer\UcController\UcPrintPeceiptCT.ascx.designer.cs">
+      <DependentUpon>UcPrintPeceiptCT.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UseControl\Caculator.ascx.cs">
       <DependentUpon>Caculator.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -402,18 +554,9 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UC1.Validation\ValidateCard.aspx.cs">
-      <DependentUpon>ValidateCard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UC1.Validation\ValidateCard.aspx.designer.cs">
-      <DependentUpon>ValidateCard.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UC4.ViewHistory\" />
-    <Folder Include="UC5.CashTransfer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\DbMock1G4.BusinessLogic.csproj">

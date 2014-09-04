@@ -23,13 +23,12 @@ namespace DbMock1G4.BusinessLogic
         #endregion
 
         // check balance
-        public bool CheckBalance(int accId, decimal money)
+        public bool CheckBalanceWithDraw(int accId, decimal money)
         {
                 Account account = GetByAccountId(accId);
                 decimal balance = account.Balance;
                 if (money > balance)
                 {
-
                     return false;
                 }
                 else
@@ -92,25 +91,6 @@ namespace DbMock1G4.BusinessLogic
         {
             return _objAccountDa.GetByAccountId(accountid);
         }
-
-        // Lấy danh sách các Account
-        public List<Account> GetList()
-        {
-            const string cacheName = "lstAccount";
-            if (ServerCache.Get(cacheName) == null)
-            {
-                ServerCache.Insert(cacheName, _objAccountDa.GetList(), "Account");
-            }
-            return (List<Account>)ServerCache.Get(cacheName);
-        }
-
-
-        // Lấy dánh sách các Account theo phân trang
-        public List<Account> GetListPaged(int recperpage, int pageindex)
-        {
-            return _objAccountDa.GetListPaged(recperpage, pageindex);
-        }
-
         #endregion
 
         #region ***** Add Update Delete Methods *****

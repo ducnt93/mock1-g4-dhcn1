@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1b5fed9c-c25b-4e69-ab54-ab3d24588bd2}</ProjectGuid>
+    <ProjectGuid>{1B5FED9C-C25B-4E69-AB54-AB3D24588BD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DbMock1G4.DataAccess</RootNamespace>
@@ -42,11 +42,17 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtmDispenseChain.cs" />
+    <Compile Include="Money50Dispenser.cs" />
+    <Compile Include="Money100Dispenser.cs" />
+    <Compile Include="Money500Dispenser.cs" />
     <Compile Include="AccountDA.cs" />
     <Compile Include="AtmDA.cs" />
     <Compile Include="CardDA.cs" />
+    <Compile Include="Money200Dispenser.cs" />
     <Compile Include="ConfigDA.cs" />
     <Compile Include="CustomerDA.cs" />
+    <Compile Include="DispenseChain.cs" />
     <Compile Include="LogDA.cs" />
     <Compile Include="LogTypeDA.cs" />
     <Compile Include="MoneyDA.cs" />
@@ -62,6 +68,9 @@
       <Project>{D5E367AA-DC8C-4F43-A02D-3F609343E62B}</Project>
       <Name>DbMock1G4.BusinessObjects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
