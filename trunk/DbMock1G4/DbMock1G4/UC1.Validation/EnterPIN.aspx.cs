@@ -18,7 +18,7 @@ namespace WebApplication1.UC1.Validation
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ViewSate"].Equals("BlockCard"))
+            if (Session["ViewState"].Equals("BlockCard"))
             {
                 Response.Redirect("~/InsertCardMain.aspx");
             }
@@ -39,20 +39,20 @@ namespace WebApplication1.UC1.Validation
                     cardBl.Update(card);
                     Session["PIN"] = pin;
                     Session["AccountId"] = card.AccountId;
-                    Session["ViewSate"] = "Authentication";
+                    Session["ViewState"] = "Authentication";
                     Response.Redirect("~/MainATM.aspx");
                 }
                 else if (card.Attempt >= 1 && card.Attempt < 3)
                 {
                     cardBl.Update(card);
-                    Session["ViewSate"] = "ErrorPIN";
+                    Session["ViewState"] = "ErrorPIN";
                     txtPIN.Text = "";
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
                 }
                 else
                 {
-                    Session["ViewSate"] = "BlockCard";
+                    Session["ViewState"] = "BlockCard";
                     contenBlockCard.Controls.Clear();
                     contenBlockCard.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcBlockCard.ascx"));
                     card.Status = "Block";
@@ -325,7 +325,7 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     txtPIN.Text = "";
                     contenEnterPIN.Controls.Clear();
@@ -347,7 +347,7 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     string CardNo = Session["CardNo"].ToString();
                     card = cardBl.GetByCardNo(CardNo);
@@ -399,7 +399,7 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     string CardNo = Session["CardNo"].ToString();
                     card = cardBl.GetByCardNo(CardNo);

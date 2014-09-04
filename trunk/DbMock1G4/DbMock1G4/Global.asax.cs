@@ -40,7 +40,7 @@ namespace WebApplication1
             Session["ViewState"] = "";
             //NamLD them session amount
             Session["Amount"] = "";
-            Session["AccountIdR"] = "";
+            Session["AccountReceiveId"] = "";
         }
         void Session_End(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace WebApplication1
             Session["ViewState"] = "";
             //NamLD them session amount
             Session["Amount"] = "";
-            Session["AccountIdR"] = "";
+            Session["AccountReceiveId"] = "";
         }
     }
 }

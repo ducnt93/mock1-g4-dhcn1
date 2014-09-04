@@ -21,12 +21,12 @@ namespace WebApplication1.UC1.Validation
             {
                 contenValidate.Controls.Clear();
                 contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidating.ascx"));
-                string s = Session["ViewSate"].ToString();
-                if (Session["ViewSate"].Equals("EjectCard") || Session["ViewSate"].Equals("Block"))
+                string s = Session["ViewState"].ToString();
+                if (Session["ViewState"].Equals("EjectCard") || Session["ViewState"].Equals("Block"))
                 {
                     Response.Redirect("~/InsertCardMain.aspx");
                 }
-                if (Session["ViewSate"].Equals("InsertedCard"))
+                if (Session["ViewState"].Equals("InsertedCard"))
                 {
                     Response.Redirect("~/UC1.Validation/EnterPIN.aspx");
                 }
@@ -46,11 +46,11 @@ namespace WebApplication1.UC1.Validation
                 string cardNo = Session["CardNo"].ToString();
                 if (cardBl.AcceptCard(cardNo) == false)
                 {
-                    Session["ViewSate"] = "NoAccept";
+                    Session["ViewState"] = "NoAccept";
                 }
                 else
                 {
-                    Session["ViewSate"] = "Accepted";
+                    Session["ViewState"] = "Accepted";
                 }
             }
             catch (Exception ex)
@@ -64,17 +64,17 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("Accepted"))
+                if (Session["ViewState"].Equals("Accepted"))
                 {
                     string cardNo = Session["CardNo"].ToString();
                     Card card = cardBl.GetByCardNo(cardNo);
                     if (cardBl.ValidateCard(card) == false)
                     {
-                        Session["ViewSate"] = "InValidCard";
+                        Session["ViewState"] = "InValidCard";
                     }
                     else
                     {
-                        Session["ViewSate"] = "InsertedCard";
+                        Session["ViewState"] = "InsertedCard";
                     }
                 }
             }
@@ -89,20 +89,20 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("NoAccept"))
+                if (Session["ViewState"].Equals("NoAccept"))
                 {
                     contenValidate.Controls.Clear();
                     contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidatingError.ascx"));
-                    Session["ViewSate"] = "EjectCard";
+                    Session["ViewState"] = "EjectCard";
                 }
                 else
                 {
 
-                    if (Session["ViewSate"].Equals("InValidCard"))
+                    if (Session["ViewState"].Equals("InValidCard"))
                     {
                         contenValidate.Controls.Clear();
                         contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardInvalid.ascx"));
-                        Session["ViewSate"] = "EjectCard";
+                        Session["ViewState"] = "EjectCard";
                     }
                 }
             }
@@ -118,13 +118,13 @@ namespace WebApplication1.UC1.Validation
             {
                 string cardNo = Session["CardNo"].ToString();
                 Card card = cardBl.GetByCardNo(cardNo);
-                if (Session["ViewSate"].Equals("Accepted"))
+                if (Session["ViewState"].Equals("Accepted"))
                 {
                     if (card.Status.Equals("Block"))
                     {
                         contenValidate.Controls.Clear();
                         contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcCardBlocked.ascx"));
-                        Session["ViewSate"] = "Block";
+                        Session["ViewState"] = "Block";
                     }
                 }
             }
