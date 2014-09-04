@@ -41,6 +41,7 @@ namespace WebApplication1
             //NamLD them session amount
             Session["Amount"] = "";
             Session["AccountReceiveId"] = "";
+            Session["CriteriasChoose"] = "";
         }
         void Session_End(object sender, EventArgs e)
         {
