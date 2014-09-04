@@ -36,7 +36,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Button 3</asp:HyperLink>
+                                     <asp:Button runat="server" ID="Button1" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btnCashTransfer_Click"  />
                                 </td>
                             </tr>
                         </table>
