@@ -57,28 +57,29 @@
                                 <h3>Choose time criteria to view transaction history</h3>
                                 <div class="col-md-12">
                                     <div class="col-md-5 col-md-offset-1 col">
-                                        <%--<asp:Button runat="server" ID="btn5" CssClass="btn btn-success btn1 col" Text="500.000" />--%>
                                           <input type="text" class="btn btn-success btn1 col" value="1 Week ago"/>
                                     </div>
                                     <div class="col-md-5 col-md-offset-1 col">
-                                        <%--<asp:Button runat="server" ID="btn10" CssClass="btn btn-success btn1 col" Text="1.000.000" />--%>
-                                          <input type="text" class="btn btn-success btn1 col" value="1 Month ago"/>
+                                        <input type="text" class="btn btn-success btn1 col" value="6 Month ago"/> 
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="col-md-5 col-md-offset-1 col">
                                         <%-- <asp:Button runat="server" ID="btn20" CssClass="btn btn-success btn1 col" Text="2.000.000" />--%>
-                                          <input type="text" class="btn btn-success btn1 col" value="4 Month ago"/>
+                                        <input type="text" class="btn btn-success btn1 col" value="1 Month ago"/>
+                                        
+                                         
                                     </div>
                                     <div class="col-md-5 col-md-offset-1 col">
                                         <%--<asp:Button runat="server" ID="btn25" CssClass="btn btn-success btn1 col" Text="2.500.000" />--%>
-                                          <input type="text" class="btn btn-success btn1 col" value="6 Month ago"/>
+                                          <input type="text" class="btn btn-success btn1 col" value="1 Year ago"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="col-md-5 col-md-offset-1 col">
                                         <%--<asp:Button runat="server" ID="btn30" CssClass="btn btn-success btn1 col" Text="3.000.000" />--%>
-                                        <input type="text" class="btn btn-success btn1 col" value="1 Year ago"/>
+                                        <input type="text" class="btn btn-success btn1 col" value="4 Month ago"/>
+                                        
                                     </div>
                                     <div class="col-md-5 col-md-offset-1 col">
                                         

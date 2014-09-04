@@ -19,37 +19,37 @@ namespace WebApplication1.UC4.ViewHistory
         }
         protected void btn50_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("1 Week ago");
+            Session["CriteriasChoose"] = ("1 Week ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
         protected void btn200_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("1 Month ago");
+            Session["CriteriasChoose"] = ("1 Month ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
         protected void btn300_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("4 Month ago");
+            Session["CriteriasChoose"] = ("4 Month ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
         protected void btn100_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("6 Month ago");
+            Session["CriteriasChoose"] = ("6 Month ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
         protected void btn250_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("1 Year ago");
+            Session["CriteriasChoose"] = ("1 Year ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Session["ViewState"] = ("2 Year ago");
+            Session["CriteriasChoose"] = ("2 Year ago");
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
