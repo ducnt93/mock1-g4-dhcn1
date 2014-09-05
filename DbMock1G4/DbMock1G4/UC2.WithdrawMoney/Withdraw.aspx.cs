@@ -13,6 +13,7 @@ namespace WebApplication1.UC2.WithdrawMoney
     public partial class Withdraw1 : System.Web.UI.Page
     {
         readonly AccountBL accountBl = new AccountBL();
+        StockBL stockBl = new StockBL();
         readonly LogBL logBl = new LogBL();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -48,7 +49,13 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
 
         }
-
+        public void UpdateBalance(int accId, decimal money)
+        {
+            Account account = accountBl.GetByAccountId(accId);
+            decimal balance = account.Balance;
+            balance = balance - money;
+            accountBl.DispenserMoney(accId, balance);
+        }
         private void ResetSession()
         {
             Session["CardNo"] = "";
@@ -84,20 +91,8 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 500000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
-                    if (check == false)
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        Session["ViewState"] = "PrintPeceipt";
-                        WriteLog(money);
-                        ResetSession();
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    }
+                    int AtmId = 1;
+                    CheckWithdraw(AtmId, accId, money);
                 }
             }
             catch (Exception ex)
@@ -115,20 +110,8 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 2000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
-                    if (check == false)
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        Session["ViewState"] = "PrintPeceipt";
-                        WriteLog(money);
-                        ResetSession();
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    }
+                    int AtmId = 1;
+                    CheckWithdraw(AtmId, accId, money);
                 }
             }
             catch (Exception ex)
@@ -146,20 +129,8 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 3000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
-                    if (check == false)
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        Session["ViewState"] = "PrintPeceipt";
-                        WriteLog(money);
-                        ResetSession();
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    }
+                    int AtmId = 1;
+                    CheckWithdraw(AtmId, accId, money);
                 }
             }
             catch (Exception ex)
@@ -177,20 +148,8 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 1000000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
-                    if (check == false)
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        Session["ViewState"] = "PrintPeceipt";
-                        WriteLog(money);
-                        ResetSession();
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    }
+                    int AtmId = 1;
+                    CheckWithdraw(AtmId, accId, money);
                 }
             }
             catch (Exception ex)
@@ -204,33 +163,10 @@ namespace WebApplication1.UC2.WithdrawMoney
         {
             try
             {
-                if (Session["ViewState"].ToString() == "Withdraw")
-                {
-                    const decimal money = 2500000;
-                    int accId = Convert.ToInt32(Session["AccountId"]);
-                    bool check = accountBl.CheckBalanceWithDraw(accId, money);
-                    if (check == false)
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        Session["ViewState"] = "PrintPeceipt";
-                        WriteLog(money);
-                        ResetSession();
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                    }
-                }
-                else
-                {
-                    if (Session["ViewState"].ToString() == "PrintPeceipt")
-                    {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
-                    }
-                }
+                const decimal money = 2500000;
+                int accId = Convert.ToInt32(Session["AccountId"]);
+                int AtmId = 1;
+                CheckWithdraw(AtmId, accId, money);
             }
             catch (Exception ex)
             {
@@ -239,6 +175,63 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
         }
 
+        public void CheckWithdraw(int atmId, int accId, decimal money)
+        {
+            if (Session["ViewState"].ToString() == "Withdraw")
+            {
+
+                bool check = accountBl.CheckBalanceWithDraw(accId, money);
+                int checkAtm = stockBl.CheckMoneyAtm(atmId, accId, money);
+                if (check == false)
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                }
+                else
+                {
+                    if (checkAtm == 1)
+                    {
+                        contenPlace.Controls.Clear();
+                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                    }
+                    else
+                    {
+                        if (checkAtm == 2)
+                        {
+                            contenPlace.Controls.Clear();
+                            contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                        }
+                        else
+                        {
+                            if (checkAtm == 4)
+                            {
+                                contenPlace.Controls.Clear();
+                                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                            }
+                            else
+                            {
+                                Session["ViewState"] = "PrintPeceipt";
+                                UpdateBalance(accId, money);
+                                WriteLog(money);
+                                ResetSession();
+                                contenPlace.Controls.Clear();
+                                contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            else
+            {
+                if (Session["ViewState"].ToString() == "PrintPeceipt")
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                }
+            }
+        }
         protected void btnOrther_Click(object sender, EventArgs e)
         {
             try

@@ -27,25 +27,41 @@ namespace WebApplication1.UC2.WithdrawMoney
                 int accountId = int.Parse(Session["AccountId"].ToString());
                 decimal money = Convert.ToDecimal(txtEnterCash.Text);
                 bool check = accountBl.CheckBalanceWithDraw(accountId, money);
-                bool checkAtm = stockBl.CheckMoneyAtm(1, money);
-                if (checkAtm == false)
+                int checkAtm = stockBl.CheckMoneyAtm(1,accountId, money);
+                if (check == false)
                 {
-                    lblError.Text = "Number enter have to div to 50.000";
+                    lblError.Text = "Number enter have to div to 50.000 or money > balance";
+                    txtEnterCash.Text = "";
+                    txtEnterCash.Focus();
                 }
                 else
                 {
-                    if (check == false)
+                    if (checkAtm == 1)
                     {
-                        lblError.Text = "Number enter have to div to 50.000 or money > balance";
-                        txtEnterCash.Text = "";
-                        txtEnterCash.Focus();
+                        lblError.Text = "Number enter have to div to 50.000";
                     }
                     else
                     {
-                        Response.Redirect("Withdraw.aspx");
+                        if (checkAtm == 2)
+                        {
+                            lblError.Text = "The total amount smaller than withdrawal ";
+                        }
+                        else
+                        {
+                            if (checkAtm == 4)
+                            {
+                                lblError.Text = "Error...";
+                            }
+                            else
+                            {
+                                UpdateBalance(accountId, money);
+                                Response.Redirect("Withdraw.aspx");
+                            }
+                        }
+                        
                     }
+                    
                 }
-               
             }
             catch (Exception ex)
             {
@@ -54,6 +70,13 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
         }
 
+        public void UpdateBalance(int accId,decimal money)
+        {
+            Account account = accountBl.GetByAccountId(accId);
+            decimal balance = account.Balance;
+            balance = balance - money;
+            accountBl.DispenserMoney(accId, balance);
+        }
         protected void btnOrther_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/UC2.WithdrawMoney/Withdraw.aspx");

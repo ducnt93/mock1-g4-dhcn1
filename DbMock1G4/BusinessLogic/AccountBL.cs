@@ -45,8 +45,6 @@ namespace DbMock1G4.BusinessLogic
                         }
                         else
                         {
-                            balance = balance - money;
-                            DispenserMoney(accId, balance);
                             return true;
                         }
                     }
@@ -81,7 +79,7 @@ namespace DbMock1G4.BusinessLogic
             UpdateBalance(acc);
         }
 
-        private void UpdateBalance(Account acc)
+        public void UpdateBalance(Account acc)
         {
             _objAccountDa.UpdateBalance(acc);
         }
