@@ -21,23 +21,20 @@ namespace WebApplication1.UC2.WithdrawMoney
             {
                 if (!IsPostBack)
                 {
-                    if (Session["ViewState"].ToString() == "Error")
+                    switch (Session["ViewState"].ToString())
                     {
-                        contenPlace.Controls.Clear();
-                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
-                    }
-                    else
-                    {
-                        if (Session["ViewState"].ToString() == "PrintPeceipt")
-                        {
+                        case "Error":
+                            contenPlace.Controls.Clear();
+                            contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
+                            break;
+                        case "PrintPeceipt":
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
-                        }
-                        else
-                        {
+                            break;
+                        default:
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
-                        }
+                            break;
                     }
                 }
             }

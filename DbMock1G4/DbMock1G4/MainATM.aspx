@@ -17,97 +17,77 @@
 <body class="panel-body" id="main">
 
     <form id="form1" runat="server">
-        <div class="container">
+        <div class="container table-bordered">
             <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="col-md-3">
+                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                    </div>
+                    <div class="col-md-9">
+                        <h3>ABC Bank @ ATM</h3>
+                        <h4>Please select a transaction</h4>
+                        <p>
+                            Wellcom to ABC Bank @ ATM.
+                        </p>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 180px;">
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 1" />
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Buttom 1" OnClick="btnWithdraw_Click" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btnCheckBalance" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btnCheckBalance_Click"  />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                     <asp:Button runat="server" ID="btnCashTransfer" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btnCashTransfer_Click"  />
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 2" />
+                        </div>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 3" />
+                        </div>
                     </div>
                     <div class="col-md-8 table-bordered" style="height: 393px;">
                         <div class="col-md-12">
-                            <div class="col-md-3">
-                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                            <h4>Choose amount below or enter your amount you want:</h4>
+                            <div class="col-md-12">
+                                <div class="col-md-5 col-md-offset-1 col">
+
+                                    <input type="text" class="btn btn-success btn1 col" value="Withdraw" />
+                                </div>
+                                <div class="col-md-5 col-md-offset-1 col">
+                                    <input type="text" class="btn btn-success btn1 col" value="View History" />
+                                </div>
                             </div>
-                            <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
+                            <div class="col-md-12">
+                                <div class="col-md-5 col-md-offset-1 col">
+
+                                    <input type="text" class="btn btn-success btn1 col" value="Check Balance" />
+                                </div>
+                                <div class="col-md-5 col-md-offset-1 col">
+
+                                    <input type="text" class="btn btn-success btn1 col" value="Change PIN" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                               <h4>Choose amount below or enter your amount you want:</h4>
-                                <div class="col-md-12">
-                                    <div class="col-md-5 col-md-offset-1 col">
+                            <div class="col-md-12">
+                                <div class="col-md-5 col-md-offset-1 col">
 
-                                        <input type="text" class="btn btn-success btn1 col" value="Withdraw" />
-                                    </div>
-                                    <div class="col-md-5 col-md-offset-1 col">
-                                        <input type="text" class="btn btn-success btn1 col" value="View History" />
-                                    </div>
+                                    <input type="text" class="btn btn-success btn1 col" value="Transfer" />
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-5 col-md-offset-1 col">
+                                <div class="col-md-5 col-md-offset-1 col">
 
-                                        <input type="text" class="btn btn-success btn1 col" value="Check Balance" />
-                                    </div>
-                                    <div class="col-md-5 col-md-offset-1 col">
-
-                                        <input type="text" class="btn btn-success btn1 col" value="Change PIN" />
-                                    </div>
+                                    <input type="text" class="btn btn-success btn1 col" value="Exit" />
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-5 col-md-offset-1 col">
-
-                                        <input type="text" class="btn btn-success btn1 col" value="Transfer" />
-                                    </div>
-                                    <div class="col-md-5 col-md-offset-1 col">
-
-                                        <input type="text" class="btn btn-success btn1 col" value="Exit" />
-                                    </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="col-md-12" style="height: 180px;">
+                        <div class="col-md-2">
+                            <div class="col-md-12 paddingtop">
+                                <input type="button" class="btn btn-default col btn1" value="Buttom 4" />
+                            </div>
+                            <div class="col-md-12 paddingtop">
+                                <input type="button" class="btn btn-default col btn1" value="Buttom 5" />
+                            </div>
+                            <div class="col-md-12 paddingtop">
+                                <input type="button" class="btn btn-default col btn1" value="Buttom 6" />
+                            </div>
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Button 4" OnClick="btnExit_Click1" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Button 5" OnClick="btnExit_Click1" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="Button1" CssClass="btn btn-primary col btn1" Text="Button 6" OnClick="btnExit_Click1" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
                 </div>
                 <div class="col-md-12 table-bordered">
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -155,21 +135,6 @@
                                     </tr>
                                 </table>
                             </div>
-                            <%--<asp:Panel runat="server" ID="pnInsertCard">
-                                <div class="col-md-4">
-                                    <table class="table">
-                                        <tr>
-                                            <td>
-                                                <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Number"></asp:TextBox>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <asp:Button runat="server" ID="Button1" Text="Insert card" CssClass="btn btn-primary btn1 col" OnClick="Button1_Click" /></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </asp:Panel>--%>
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
