@@ -17,105 +17,121 @@
 <body class="panel-body" id="main">
 
     <form id="form1" runat="server">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
-                                    
-                                </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn50" CssClass="btn btn-primary col btn1" Text="Buttom 1"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn200" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn300" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btn300_Click"/>
-
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-8 table-bordered">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div class="container">
+                    <div class="row">
                         <div class="col-md-12">
-                            <div class="col-md-3">
-                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                            <div class="col-md-2">
+                                <div class="col-md-12" style="height: 210px;">
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <asp:Button runat="server" ID="btn50" CssClass="btn btn-primary col btn1" Text="Buttom 1" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Button runat="server" ID="btn200" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <a href="javascript:__doPostBack('grViewhistory','Page$Prev')" class="btn btn-primary col btn1">Buttom 3</a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                            <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
-                                <h3><p>View transaction history</p></h3>
+                            <div class="col-md-8 table-bordered" style="height: 450px;">
                                 <div class="col-md-12">
-                                    <asp:GridView ID="grViewhistory" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" 
-                                        BorderStyle="None" BorderWidth="1px" CellPadding="4" Height="148px" Width="444px" AllowPaging="True" 
-                                        EnableSortingAndPagingCallbacks="True" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
+                                    <div class="col-md-3">
+                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <h3><b>ABC Bank @ ATM</b></h3>
+                                        <p>
+                                            Wellcom to ABC Bank @ ATM.
+                                        </p>
+                                        <h4>View transaction history</h4>
+                                        <%-- <div class="col-md-12">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="col-md-5 col-md-offset-1 col">
+                                                    <asp:Button ID="btnPre" runat="server" CssClass="btn btn-primary col btn1" Text="Pre" />
+                                                </div>
+                                                <div class="col-md-5 col-md-offset-1 col">
+                                                    <asp:Button ID="btnNexxt" runat="server" CssClass="btn btn-primary col btn1" Text="Next" />
+                                                </div>
+                                            </div>--%>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="padding-top: 40px;">
+                                    <asp:GridView ID="grViewhistory" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" EnableSortingAndPagingCallbacks="True" Height="148px" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
                                         <Columns>
-                                            <asp:BoundField DataField="ATMLocation" HeaderText="ATM(Location)" />
-                                            <asp:BoundField DataField="Type" HeaderText="Type" />
-                                            <asp:BoundField DataField="LogDate" HeaderText="Date" />
-                                            <asp:BoundField DataField="Amount" HeaderText="Amount" />
-                                            <asp:BoundField DataField="Details" HeaderText="To" />
+                                            <asp:BoundField DataField="ATMLocation" HeaderText="ATM(Location)">
+                                                <ItemStyle Width="200px" />
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="Type" HeaderText="Type">
+                                                <ItemStyle Width="100px" />
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="LogDate" HeaderText="Date" DataFormatString="{0:d}">
+                                                <ItemStyle Width="150px" />
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="Amount" HeaderText="Amount">
+                                                <ItemStyle Width="100px" />
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="Details" HeaderText="To">
+                                                <ItemStyle Width="150px" />
+                                            </asp:BoundField>
                                         </Columns>
-                                        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                                        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-                                        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                                        <RowStyle BackColor="White" ForeColor="#003399" />
-                                        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                                        <SortedAscendingCellStyle BackColor="#EDF6F6" />
-                                        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-                                        <SortedDescendingCellStyle BackColor="#D6DFDF" />
-                                        <SortedDescendingHeaderStyle BackColor="#002876" />
+                                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                                        <PagerSettings Mode="NextPrevious" />
+                                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                                        <RowStyle BackColor="White" ForeColor="#330099" />
+                                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                                        <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                                        <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                                        <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                                        <SortedDescendingHeaderStyle BackColor="#7E0000" />
                                     </asp:GridView>
                                 </div>
-                                <div class="col-md-12">
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="col-md-5 col-md-offset-1 col">
-                                        <asp:Button runat="server" ID="btnPre" CssClass="btn btn-primary col btn1" Text="Pre"/>
+                                <div class="col-md-12" style="padding-top: 10px;">
+                                    <div class="col-md-6">
+                                        <input type="text" class="btn btn-success col btn1" value="Prev" />
                                     </div>
-                                    <div class="col-md-5 col-md-offset-1 col">                                       
-                                        <asp:Button runat="server" ID="btnNexxt" CssClass="btn btn-primary col btn1" Text="Next"/>
+                                    <div class="col-md-offset-3  col-md-3">
+                                        <input type="text" class="btn btn-success col btn1" value="Next" />
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">                                   
+                            <div class="col-md-2">
+                                <div class="col-md-12" style="height: 210px;">
                                 </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn250" CssClass="btn btn-primary col btn1" Text="Buttom 5" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn6" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btn6_Click" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-12 table-bordered">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Button runat="server" ID="btn250" CssClass="btn btn-primary col btn1" Text="Buttom 5" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                            <a href="javascript:__doPostBack('grViewhistory','Page$Next')" class="btn btn-primary col btn1">Buttom 6</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-12 table-bordered">
                             <div class="col-md-4 col-md-offset-4">
                                 <table class="table table-bordered">
                                     <tr>
@@ -158,11 +174,12 @@
                                     </tr>
                                 </table>
                             </div>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     <script src="Scripts/jquery-1.8.2.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
