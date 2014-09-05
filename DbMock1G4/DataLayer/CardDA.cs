@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.Common;
 using DbMock1G4.BusinessObjects;
+using System.Security.Cryptography;
 
 namespace DbMock1G4.DataAccess
 {
@@ -25,7 +26,7 @@ namespace DbMock1G4.DataAccess
 			obj.CardNo = (string) myReader["CardNo"];
 			obj.Status = (string) myReader["Status"];
 			obj.AccountId = (int) myReader["AccountId"];
-			obj.Pin = (string) myReader["Pin"];
+            obj.Pin = (string) myReader["Pin"];
 			obj.StartDate = (DateTime) myReader["StartDate"];
             obj.ExpiredDate = (DateTime)myReader["ExpiredDate"];
 			obj.Attempt = (int) myReader["Attempt"];
@@ -34,22 +35,23 @@ namespace DbMock1G4.DataAccess
 
 
         #region *****ReadCard Methods *****
-        public Card GetByCardNo(string cardno)
+        public string  ReadCard(string cardno)
         {
-            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNo]", Data.CreateParameter("CardNo", cardno)))
+            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetCardNo]", Data.CreateParameter("CardNo", cardno)))
             {
                 if (reader.Read())
                 {
-                    return Populate(reader);
+                    return (string)reader["CardNo"];
                 }
                 return null;
             }
         }
         #endregion
+
         #region ***** AcceptCard Methods *****
         public bool AcceptCard(string cardno)
         {
-            if (GetByCardNo(cardno) != null)
+            if (ReadCard(cardno) != null)
             {
                 return true;
             }
@@ -83,9 +85,11 @@ namespace DbMock1G4.DataAccess
         #endregion
 
         #region ***** CheckAttempt Methods *****
-        public void CheckAttempt(Card cardByCardNo, string pin)
+        public void CheckAttempt(Card cardByCardNo, string hashpin)
         {
-            if (pin.Equals(cardByCardNo.Pin))
+            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
+
+            if (0 == comparer.Compare(cardByCardNo.Pin.ToString(), hashpin))
             {
                 cardByCardNo.Attempt = 0;
             }
@@ -95,6 +99,34 @@ namespace DbMock1G4.DataAccess
             }
         }
         #endregion
+
+        #region ***** GetHashPinMD5 Methods *****
+        public string GetHashPinMD5(string pin)
+        {
+            MD5 md5Hash = MD5.Create();
+            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(pin));
+
+            StringBuilder sBuilder = new StringBuilder();
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+            return sBuilder.ToString();
+        }
+        #endregion
+
+        public Card GetByCardNo(string cardno)
+        {
+            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNo]", Data.CreateParameter("CardNo", cardno)))
+            {
+                if (reader.Read())
+                {
+                    return Populate(reader);
+                }
+                return null;
+            }
+        }
 
         public Card GetByCardNoPinCard(string cardno, string pin)
         {
@@ -120,9 +152,7 @@ namespace DbMock1G4.DataAccess
 				return list;
 			}
 		}
-
 		
-
 		public List<Card> GetListPaged(int recperpage, int pageindex)
 		{
 			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_GetPaged"
@@ -137,8 +167,6 @@ namespace DbMock1G4.DataAccess
 				return list;
 			}
 		}
-
-
 
 		#endregion
 
@@ -174,6 +202,14 @@ namespace DbMock1G4.DataAccess
 			);
 		}
 
+        public void UpdateStatus(Card obj)
+        {
+            SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_UpdateStatus"
+                            , Data.CreateParameter("CardNo", obj.CardNo)
+                            , Data.CreateParameter("Status", obj.Status)
+                            , Data.CreateParameter("Attempt", obj.Attempt)
+            );
+        }
 	
 		public void Delete(string cardno)
 		{
