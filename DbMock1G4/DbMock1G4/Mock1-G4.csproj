@@ -151,7 +151,9 @@
     <Content Include="Content\images\20140711084142-ngan-hang.jpg" />
     <Content Include="Content\images\bank-of-america-in-the-us.jpg" />
     <Content Include="Content\images\Bank.jpg" />
+    <Content Include="Content\images\nex.jpg" />
     <Content Include="Content\images\NH.jpg" />
+    <Content Include="Content\images\pre.jpg" />
     <Content Include="Content\images\tien-tien.jpg" />
     <Content Include="Content\Style.css" />
     <Content Include="InsertCardMain.aspx" />

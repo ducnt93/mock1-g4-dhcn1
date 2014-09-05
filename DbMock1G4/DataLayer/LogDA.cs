@@ -73,13 +73,11 @@ namespace DbMock1G4.DataAccess
 
 
 
-        public List<Log> GetListPaged(int recperpage, int pageindex, int time, string CardNo)
+        public List<Log> GetListPaged(int time, string CardNo)
         {
             using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Log_GetPaged"
-                            , Data.CreateParameter("recperpage", recperpage)
                             , Data.CreateParameter("Time", time)
-                            , Data.CreateParameter("CardNo",CardNo)
-                            , Data.CreateParameter("pageindex", pageindex)))
+                            , Data.CreateParameter("CardNo",CardNo)))
             {
                 List<Log> list = new List<Log>();
                 while (reader.Read())
