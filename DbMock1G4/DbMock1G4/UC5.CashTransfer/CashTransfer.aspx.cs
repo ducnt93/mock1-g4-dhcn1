@@ -20,7 +20,6 @@ namespace WebApplication1.UC5.CashTransfer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["AccountId"] = "1";
             account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountId"].ToString()));
             if (!IsPostBack)
             {
@@ -28,6 +27,10 @@ namespace WebApplication1.UC5.CashTransfer
                 //contenPlace.Controls.Add(LoadControl("~/UC5.CashTransfer/UcController/UcHelloCashTransfer.ascx"));
                 contenPlace.Controls.Add(UcHelloCashTransfer);
                 Session["ViewState"] = "InputAccountReceive_Accept";
+                btnEnter.Enabled = false;
+                btnCancel.Enabled = false;
+                btnAccept.Enabled = true;
+                btnReject.Enabled = true;
             }
         }
 
@@ -40,34 +43,37 @@ namespace WebApplication1.UC5.CashTransfer
                 Session["ViewState"] = "DisplayAccountReceive_Enter";
             }
 
-            if (Session["ViewState"].ToString() == "PrintPeceipt_Accept")
+            else if (Session["ViewState"].ToString() == "PrintPeceipt_Accept")
             {
                 contenPlace.Controls.Clear();
                 contenPlace.Controls.Add(UcInputMoneyTransfer);
                 Session["ViewState"] = "DisplayTransferCashInfomation_Enter";
             }
-            if (Session["ViewState"].ToString() == "")
+            else if (Session["ViewState"].ToString() == "")
             {
                 ResetSession();
-                Response.Redirect("InsertCardMain.aspx");
+                Response.Redirect("~/InsertCardMain.aspx");
+            }
+            else
+            {
+                contenPlace.Controls.Clear();
             }
         }
 
         protected void btnAccept_Click(object sender, EventArgs e)
         {
-            if (Session["ViewState"].ToString() == "InputAccountReceive_Accept")//Chuyển qua màn hình InputAccountReceive
+            if (Session["ViewState"].ToString() == "")//Thoát ra
+            {
+                ResetSession();
+                Response.Redirect("~/InsertCardMain.aspx");
+            }
+            else if (Session["ViewState"].ToString() == "InputAccountReceive_Accept")//Chuyển qua màn hình InputAccountReceive
             {
                 contenPlace.Controls.Clear();
                 contenPlace.Controls.Add(UcInputAccountReceive);
                 Session["ViewState"] = "DisplayAccountReceive_Enter";
             }
-            if (Session["ViewState"].ToString() == "InputAmount_Accept")//Chuyển qua màn hình InputMoneyTransfer
-            {
-                contenPlace.Controls.Clear();
-                contenPlace.Controls.Add(UcInputMoneyTransfer);
-                Session["ViewState"] = "DisplayTransferCashInfomation_Enter";
-            }
-            if (Session["ViewState"].ToString() == "PrintPeceipt_Accept")//Chuyển qua màn hình In
+            else if (Session["ViewState"].ToString() == "PrintPeceipt_Accept")//Chuyển qua màn hình In
             {
                 account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountId"].ToString()));
                 accountReceive = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountReceiveId"].ToString()));
@@ -77,21 +83,25 @@ namespace WebApplication1.UC5.CashTransfer
                 AccountBusinessLogic.Update(accountReceive);
                 WriteLog(Convert.ToInt32(Session["Amount"].ToString()));
                 contenPlace.Controls.Clear();
-                //contenPlace.Controls.Add(LoadControl("~/UC5.CashTransfer/UcController/UcPrintPeceiptCT.ascx"));
                 contenPlace.Controls.Add(UcPrintPeceiptCT);
                 Session["ViewState"] = "";
             }
-            if (Session["ViewState"].ToString() == "")//Thoát ra
+            else if (Session["ViewState"].ToString() == "InputAmount_Accept") //Chuyển qua màn hình InputMoneyTransfer
             {
-                ResetSession();
-                Response.Redirect("InsertCardMain.aspx");
+                contenPlace.Controls.Clear();
+                contenPlace.Controls.Add(UcInputMoneyTransfer);
+                Session["ViewState"] = "DisplayTransferCashInfomation_Enter";
+            }
+            else
+            {
+                contenPlace.Controls.Clear();
             }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             ResetSession();
-            Response.Redirect("InsertCardMain.aspx");
+            Response.Redirect("~/InsertCardMain.aspx");
         }
 
         protected void btnEnter_Click(object sender, EventArgs e)
@@ -107,7 +117,7 @@ namespace WebApplication1.UC5.CashTransfer
                     {
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(UcErrorAccount);
-                        Session["ViewState"] = "DisplayAccountReceive_Enter";
+                        Session["ViewState"] = "ReDisplayAccountReceive_Enter";
                     }
                     else //Nếu có tìm thấy account receive trong DB thì hiển thị màn hình nhập tiền chuyển
                     {
@@ -120,10 +130,10 @@ namespace WebApplication1.UC5.CashTransfer
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(UcErrorAccount);
-                    Session["ViewState"] = "DisplayAccountReceive_Enter";
+                    Session["ViewState"] = "ReDisplayAccountReceive_Enter";
                 }
             }
-            if (Session["ViewState"].ToString() == "DisplayTransferCashInfomation_Enter")//Chuyển qua màn hình hiển thị người nhận tiền và số tiền được nhận
+            else if (Session["ViewState"].ToString() == "DisplayTransferCashInfomation_Enter")//Chuyển qua màn hình hiển thị người nhận tiền và số tiền được nhận
             {
                 var txtMoney = UcInputMoneyTransfer.FindControl("txtAmount") as TextBox;//Lấy tiền từ textbox txtAmount
                 if (txtMoney != null)
@@ -144,9 +154,8 @@ namespace WebApplication1.UC5.CashTransfer
                         Session["ViewState"] = "DisplayMoneyTranfer_Enter";
                     }
                 }
-
             }
-            if (Session["ViewState"].ToString() == "DisplayAccountReceive_Enter")//
+            else if (Session["ViewState"].ToString() == "ReDisplayAccountReceive_Enter")//
             {
                 var txtAccountReceive = UcErrorAccount.FindControl("txtReAccountReceiveId") as TextBox;
                 if (txtAccountReceive != null)
@@ -174,17 +183,21 @@ namespace WebApplication1.UC5.CashTransfer
                     count++;
                 }
             }
-            if (Session["ViewState"].ToString() == "DisplayMoneyTranfer_Enter")//Chuyển qua màn hình hiển thị tài khoản nhận và số tiền nhận
+            else if (Session["ViewState"].ToString() == "DisplayMoneyTranfer_Enter")//Chuyển qua màn hình hiển thị tài khoản nhận và số tiền nhận
             {
                 contenPlace.Controls.Clear();
                 //contenPlace.Controls.Add(LoadControl("~/UC5.CashTransfer/UcController/UcErrorAmount.ascx"));
                 contenPlace.Controls.Add(UcErrorAmount);
                 Session["ViewState"] = "PrintPeceiptCT_Accept";
             }
-            if (Session["ViewState"].ToString() == "")
+            else if (Session["ViewState"].ToString() == "")
             {
                 ResetSession();
-                Response.Redirect("InsertCardMain.aspx");
+                Response.Redirect("~/InsertCardMain.aspx");
+            }
+            else
+            {
+                contenPlace.Controls.Clear();
             }
         }
 
