@@ -22,15 +22,11 @@ namespace DbMock1G4.BusinessLogic
         #endregion
 
         #region ***** Get Methods *****
-        // Lấy Card no theo mã 
-        public Card GetByCardNo(string cardno)
+        		
+		#region ***** Validation Methods *****
+        public string ReadCard(string cardno)
         {
-            return objCardDA.GetByCardNo(cardno);
-        }
-
-        public Card GetByCardNoPinCard(string cardno, string pin)
-        {
-            return objCardDA.GetByCardNoPinCard(cardno, pin);
+            return objCardDA.ReadCard(cardno);
         }
 
         public bool AcceptCard(string cardno)
@@ -46,6 +42,22 @@ namespace DbMock1G4.BusinessLogic
         public void CheckAttempt(Card cardByCardNo, string pin)
         {
             objCardDA.CheckAttempt(cardByCardNo, pin);
+        }
+		#endregion
+
+        public string GetHashPinMD5(string pin)
+        {
+            return objCardDA.GetHashPinMD5(pin);
+        }
+
+		public Card GetByCardNo(string cardno)
+        {
+            return objCardDA.GetByCardNo(cardno);
+        }
+		
+        public Card GetByCardNoPinCard(string cardno, string pin)
+        {
+            return objCardDA.GetByCardNoPinCard(cardno, pin);
         }
 
         // Lấy danh sách Card
@@ -81,6 +93,12 @@ namespace DbMock1G4.BusinessLogic
         {
             ServerCache.Remove("Card", true);
             objCardDA.Update(objCard);
+        }
+
+        public void UpdateStatus(Card objCard)
+        {
+            ServerCache.Remove("Card", true);
+            objCardDA.UpdateStatus(objCard);
         }
 
         // Xóa card
