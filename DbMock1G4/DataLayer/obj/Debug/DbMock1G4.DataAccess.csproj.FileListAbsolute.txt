@@ -26,3 +26,10 @@ C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.Busi
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.dll
 C:\Users\Admin\Desktop\MockProject1\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.pdb
+E:\mock\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.DataAccess.dll
+E:\mock\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.DataAccess.pdb
+E:\mock\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.BusinessObjects.dll
+E:\mock\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.BusinessObjects.pdb
+E:\mock\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.csprojResolveAssemblyReference.cache
+E:\mock\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.dll
+E:\mock\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.pdb
