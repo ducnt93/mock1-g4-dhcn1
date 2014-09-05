@@ -23,7 +23,7 @@ namespace WebApplication1.UC5.CashTransfer.UcController
         protected void LoadName(object sender, EventArgs e)
         {
             // cái này 
-            if (Session["AccountReceiveId"]!=null)
+            if (Session["AccountReceiveId"].ToString()!="")
             {
                 account = AccountBusinessLogic.GetByAccountId(Convert.ToInt32(Session["AccountReceiveId"].ToString()));
                 customer = CustomerBusinessLogic.GetByCusId(Convert.ToInt32(account.CusId));
@@ -37,7 +37,7 @@ namespace WebApplication1.UC5.CashTransfer.UcController
 
         protected void LoadID(object sender, EventArgs e)
         {
-            if (Session["AccountReceiveId"]!=null)
+            if (Session["AccountReceiveId"].ToString()!="")
             {
                 lblAccountID.Text = Session["AccountReceiveId"].ToString();
             }
