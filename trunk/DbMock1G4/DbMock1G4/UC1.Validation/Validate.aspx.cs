@@ -21,14 +21,13 @@ namespace WebApplication1.UC1.Validation
             {
                 contenValidate.Controls.Clear();
                 contenValidate.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcValidating.ascx"));
-                string s = Session["ViewState"].ToString();
                 if (Session["ViewState"].Equals("EjectCard") || Session["ViewState"].Equals("Block"))
                 {
-                    Response.Redirect("~/InsertCardMain.aspx");
+                    Response.Redirect("~/InsertCardMain.aspx",false);
                 }
                 if (Session["ViewState"].Equals("InsertedCard"))
                 {
-                    Response.Redirect("~/UC1.Validation/EnterPIN.aspx");
+                    Response.Redirect("~/UC1.Validation/EnterPIN.aspx",false);
                 }
             }
             catch (Exception ex)
@@ -112,6 +111,7 @@ namespace WebApplication1.UC1.Validation
                 logger.Debug(ex.Message);
             }
         }
+
         protected void CheckStatus()
         {
             try

@@ -18,9 +18,17 @@ namespace WebApplication1.UC1.Validation
 
         protected void Page_Load(object sender, EventArgs e)
         {
+			try
+            {
             if (Session["ViewState"].Equals("BlockCard"))
             {
-                Response.Redirect("~/InsertCardMain.aspx");
+                Response.Redirect("~/InsertCardMain.aspx",false);
+            }
+			}
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
             }
         }
 
@@ -28,23 +36,23 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                string pin = txtPIN.Text;
+                string hashpin = cardBl.GetHashPinMD5(txtPIN.Text);
                 string CardNo = Session["CardNo"].ToString();
                 card = cardBl.GetByCardNo(CardNo);
-                cardBl.CheckAttempt(card, pin);
+                cardBl.CheckAttempt(card, hashpin);
                 if (card.Attempt == 0)
                 {
                     card.Attempt = 0;
                     card.Status = "UnBlock";
-                    cardBl.Update(card);
-                    Session["PIN"] = pin;
+                    cardBl.UpdateStatus(card);
+                    Session["PIN"] = hashpin;
                     Session["AccountId"] = card.AccountId;
                     Session["ViewState"] = "Authentication";
-                    Response.Redirect("~/MainATM.aspx");
+                    Response.Redirect("~/MainATM.aspx",false);
                 }
                 else if (card.Attempt >= 1 && card.Attempt < 3)
                 {
-                    cardBl.Update(card);
+                    cardBl.UpdateStatus(card);
                     Session["ViewState"] = "ErrorPIN";
                     txtPIN.Text = "";
                     contenEnterPIN.Controls.Clear();
@@ -56,7 +64,7 @@ namespace WebApplication1.UC1.Validation
                     contenBlockCard.Controls.Clear();
                     contenBlockCard.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcBlockCard.ascx"));
                     card.Status = "Block";
-                    cardBl.Update(card);
+                    cardBl.UpdateStatus(card);
                 }
             }
             catch (Exception ex)
@@ -353,10 +361,10 @@ namespace WebApplication1.UC1.Validation
                     card = cardBl.GetByCardNo(CardNo);
                     card.Attempt = 0;
                     card.Status = "UnBlock";
-                    cardBl.Update(card);
+                    cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
-                Response.Redirect("~/InsertCardMain.aspx");
+                Response.Redirect("~/InsertCardMain.aspx",false);
             }
             catch (Exception ex)
             {
@@ -405,10 +413,10 @@ namespace WebApplication1.UC1.Validation
                     card = cardBl.GetByCardNo(CardNo);
                     card.Attempt = 0;
                     card.Status = "UnBlock";
-                    cardBl.Update(card);
+                    cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
-                Response.Redirect("~/InsertCardMain.aspx");
+                Response.Redirect("~/InsertCardMain.aspx",false);
             }
             catch (Exception ex)
             {

@@ -21,7 +21,7 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="btnEnter" EventName="Click" />
-                <asp:AsyncPostBackTrigger ControlID="Button5" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="Button5" EventName="Click" />                
             </Triggers>
             <ContentTemplate>
                 <div class="container">
@@ -75,7 +75,7 @@
                                                 <asp:PlaceHolder runat="server" ID="contenEnterPIN"></asp:PlaceHolder>
                                                 Enter your PIN<br />
                                                 <div>
-                                                    <asp:TextBox ID="txtPIN" runat="server" CssClass="form-control1" MaxLength="6" />
+                                                    <asp:TextBox ID="txtPIN" runat="server" TextMode="Password" CssClass="form-control1" MaxLength="6" />
                                                 </div>
                                                 <br />
                                             </div>

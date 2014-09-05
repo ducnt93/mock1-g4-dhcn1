@@ -67,7 +67,7 @@
                                     </Triggers>
                                     <ContentTemplate>
 
-                                        <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick" />
+                                        <asp:Timer ID="Timer1" runat="server" Interval="3000" OnTick="Timer1_Tick" />
                                         
                                         <asp:PlaceHolder runat="server" ID="contenValidate"></asp:PlaceHolder>
 
