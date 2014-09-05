@@ -20,10 +20,10 @@
             <td><h4 align="left" style="width: 346px">Press accept to continue, Reject to re-enter amount</h4></td>
             <td>
                 <div class="col-md-4 col-lg-offset-8 col">
-                    <input type="text" class="btn btn-primary btn1" value="Accept" />
+                    <input type="text" class="btn btn-success btn1" value="Accept" />
                 </div>
                 <div class="col-md-4 col-lg-offset-8 col">
-                    <input type="text" class="btn btn-primary btn1" value="Reject" />
+                    <input type="text" class="btn btn-success btn1" value="Reject" />
                 </div>
             </td>
         </tr>

@@ -8,57 +8,41 @@
     <title></title>
     <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Style.css" rel="stylesheet" />
-    <style type="text/css">
-        #main {
-            padding-top: 100px;
-            background-color: aliceblue;
-        }
-    </style>
 </head>
 <body class="panel-body" id="main">
     <form id="form1" runat="server">
 
-        <div class="container">
+        <div class="container table-bordered">
             <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="col-md-3">
+                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" style="height: 150px; width: 150px;" />
+                    </div>
+                    <div class="col-md-9">
+                        <h3>ABC Bank @ ATM</h3>
+                        <h4>Please select a transaction</h4>
+                        <p>
+                            Wellcom to ABC Bank @ ATM.
+                        </p>
+                    </div>
+                </div>
+
                 <div class="col-md-12">
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 1" />
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="btnWithdraw" CssClass="btn btn-primary col btn1" Text="Withdraw" OnClick="btnWithdraw_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 1" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="Button2" CssClass="btn btn-primary col btn1" Text="Check Balance" OnClick="btnWithdraw_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 2" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%-- <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Transfer</asp:HyperLink>--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 3" />
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 2" />
+                        </div>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 3" />
+                        </div>
                     </div>
-                    <div class="col-md-8 table-bordered" style="height: 393px;">
+                    <div class="col-md-8 table-bordered">
                         <div class="col-md-12">
-                            <div class="col-md-3">
-                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
-                            </div>
-                            <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
-                                <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
-                            </div>
                             <div class="col-lg-9 col-md-offset-3">
+                                <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <Triggers>
@@ -68,44 +52,30 @@
                                     <ContentTemplate>
 
                                         <asp:Timer ID="Timer1" runat="server" Interval="3000" OnTick="Timer1_Tick" />
-                                        
+
                                         <asp:PlaceHolder runat="server" ID="contenValidate"></asp:PlaceHolder>
 
                                     </ContentTemplate>
-                                    
+
                                 </asp:UpdatePanel>
                                 <%--<asp:UpdateProgress ID="UpProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">--%>
-                                    <%--<ProgressTemplate>--%>
-                                        <%--Validating your ATM card...--%>
-                                    <%--</ProgressTemplate>--%>
+                                <%--<ProgressTemplate>--%>
+                                <%--Validating your ATM card...--%>
+                                <%--</ProgressTemplate>--%>
                                 <%--</asp:UpdateProgress>--%>
-
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 4" />
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <%-- <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">View History</asp:HyperLink>--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 4" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Change PIN</asp:HyperLink>--%>
-                                    <input type="button" id="button5" class="btn btn-primary col btn1" value="Buttom 5" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Exit" OnClick="btnExit_Click" />--%>
-                                    <input type="button" class="btn btn-primary col btn1" value="Buttom 6" />
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 5" />
+                        </div>
+                        <div class="col-md-12 paddingtop">
+                            <input type="button" class="btn btn-default col btn1" value="Buttom 6" />
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12 table-bordered">
@@ -151,7 +121,6 @@
                             </tr>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

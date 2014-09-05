@@ -17,3 +17,24 @@
     height: 34px;
     width: 71px;
 }
+.sizebtn {
+    height: 40px;
+}
+.imgbank {
+    height: 150px;
+    width: 150px;
+}
+  .paddingtop {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-right: 5px;
+        }
+    #main {
+            padding-top: 5px;
+            background-color: aliceblue;
+        }
+        .paddingtop1 {
+            padding-top: 45px;
+            padding-bottom: 20px;
+
+        }

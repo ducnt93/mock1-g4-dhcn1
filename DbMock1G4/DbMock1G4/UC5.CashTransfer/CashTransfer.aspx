@@ -16,95 +16,68 @@
     <title></title>
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Style.css" rel="stylesheet" />
-    <style type="text/css">
-        #main {
-            padding-top: 100px;
-            background-color: aliceblue;
-        }
-    </style>
-
 </head>
 <body class="panel-body" id="main">
-
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                <div class="container">
+                <div class="container table-bordered">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-2">
-                                <div class="col-md-12" style="height: 200px;">
-                                </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn1" CssClass="btn btn-primary col btn1" Text="Buttom 1" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn2" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn3" CssClass="btn btn-primary col btn1" Text="Buttom 3" />
-
-                                        </td>
-                                    </tr>
-                                </table>
+                        <div class="col-md-10 col-md-offset-2">
+                            <div class="col-md-3">
+                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" />
                             </div>
-                            <div class="col-md-8 table-bordered" style="height: 393px;">
-                                <div class="col-md-12">
-                                    <div class="col-md-3">
-                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <h3>ABC Bank @ ATM</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                     <asp:PlaceHolder runat="server" ID="contenPlace">
-                                         <uc1:UcHelloCashTransfer runat="server" ID="UcHelloCashTransfer" />
-                                         <uc1:UcInputAccountReceive runat="server" ID="UcInputAccountReceive" />
-                                         <uc1:UcInputMoneyTransfer runat="server" ID="UcInputMoneyTransfer" />
-                                         <uc1:UcDisplayInfomationAccount runat="server" ID="UcDisplayInfomationAccount" />
-                                         <uc1:UcErrorAccount runat="server" ID="UcErrorAccount" />
-                                         <uc1:UcErrorAmount runat="server" ID="UcErrorAmount" />
-                                         <uc1:UcPrintPeceiptCT runat="server" ID="UcPrintPeceiptCT" />
-                                         <uc1:UcDisplayAccountReceiveAndAmount runat="server" id="UcDisplayAccountReceiveAndAmount" />
-                                     </asp:PlaceHolder>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="col-md-12" style="height: 200px;">
-                                </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnAccept" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btnAccept_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnReject" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btnReject_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div class="col-md-9">
+                                <h3>ABC Bank @ ATM</h3>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <div class="col-md-2">
+                                    <div class="col-md-12 paddingtop">
+                                        <asp:Button runat="server" ID="btn1" CssClass="btn btn-primary col btn1" Text="Buttom 1" />
+                                    </div>
+                                    <div class="col-md-12 paddingtop">
+                                        <asp:Button runat="server" ID="btn2" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
+                                    </div>
+                                    <div class="col-md-12 paddingtop">
+                                        <asp:Button runat="server" ID="btn3" CssClass="btn btn-primary col btn1" Text="Buttom 3" />
+                                    </div>
+                                </div>
+                                <div class="col-md-8 table-bordered" style="height: 393px;">
+                                    <div class="col-md-12">
+                                        <asp:PlaceHolder runat="server" ID="contenPlace">
+                                            <uc1:UcHelloCashTransfer runat="server" ID="UcHelloCashTransfer" />
+                                            <uc1:UcInputAccountReceive runat="server" ID="UcInputAccountReceive" />
+                                            <uc1:UcInputMoneyTransfer runat="server" ID="UcInputMoneyTransfer" />
+                                            <uc1:UcDisplayInfomationAccount runat="server" ID="UcDisplayInfomationAccount" />
+                                            <uc1:UcErrorAccount runat="server" ID="UcErrorAccount" />
+                                            <uc1:UcErrorAmount runat="server" ID="UcErrorAmount" />
+                                            <uc1:UcPrintPeceiptCT runat="server" ID="UcPrintPeceiptCT" />
+                                            <uc1:UcDisplayAccountReceiveAndAmount runat="server" ID="UcDisplayAccountReceiveAndAmount" />
+                                        </asp:PlaceHolder>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="col-md-2">
+                                        <div class="col-md-12 paddingtop">
+                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" />
+                                        </div>
+                                        <div class="col-md-12 paddingtop">
+                                            <asp:Button runat="server" ID="btnAccept" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btnAccept_Click" />
+                                        </div>
+                                        <div class="col-md-12 paddingtop">
+                                            <asp:Button runat="server" ID="btnReject" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btnReject_Click" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             </ContentTemplate>
         </asp:UpdatePanel>
 
-        <div class="col-md-12 table-bordered">
+        <div class="col-md-12">
             <div class="col-md-4 col-md-offset-4">
                 <table class="table table-bordered">
                     <tr>
@@ -135,7 +108,7 @@
                         <td>
                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                         <td>
-                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click"/></td>
+                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click" /></td>
                     </tr>
                     <tr>
                         <td>

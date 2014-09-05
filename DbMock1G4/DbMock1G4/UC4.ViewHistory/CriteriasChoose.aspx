@@ -19,42 +19,33 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="col-md-3">
+                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" />
+                    </div>
+                    <div class="col-md-9">
+                        <h3>ABC Bank @ ATM</h3>
+                        <h4>Please select a transaction</h4>
+                        <p>
+                            Wellcom to ABC Bank @ ATM.
+                        </p>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn1" CssClass="btn btn-default col btn1" Text="Buttom 1" OnClick="btn50_Click" />
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn1" CssClass="btn btn-primary col btn1" Text="Buttom 1" OnClick="btn50_Click" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn2" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btn200_Click" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn3" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btn300_Click" />
-
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn2" CssClass="btn btn-default col btn1" Text="Buttom 2" OnClick="btn200_Click" />
+                        </div>
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn3" CssClass="btn btn-default col btn1" Text="Buttom 3" OnClick="btn300_Click" />
+                        </div>
                     </div>
                     <div class="col-md-8 table-bordered">
                         <div class="col-md-12">
-                            <div class="col-md-3">
-                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
-                            </div>
-                            <div class="col-md-9">
-                                <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
-                                <p>
-                                    Wellcom to ABC Bank @ ATM.
-                                </p>
-                                <h3>Choose time criteria to view transaction history</h3>
-                            </div>
+                            <h4>Choose time criteria to view transaction history</h4>
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-5 col-md-offset-1 col">
@@ -64,51 +55,40 @@
                                 <input type="text" class="btn btn-success btn1 col" value="6 Month ago" />
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="col-md-5 col-md-offset-1 col">
+                        <div class="col-md-12" style="padding-top: 10px;">
+                            <div class="col-md-5 col-md-offset-1 col paddingtop">
                                 <input type="text" class="btn btn-success btn1 col" value="1 Month ago" />
 
 
                             </div>
-                            <div class="col-md-5 col-md-offset-1 col">
+                            <div class="col-md-5 col-md-offset-1 col paddingtop">
                                 <input type="text" class="btn btn-success btn1 col" value="1 Year ago" />
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="col-md-5 col-md-offset-1 col">
+                        <div class="col-md-12" >
+                            <div class="col-md-5 col-md-offset-1 col paddingtop">
                                 <input type="text" class="btn btn-success btn1 col" value="4 Month ago" />
 
                             </div>
-                            <div class="col-md-5 col-md-offset-1 col">
+                            <div class="col-md-5 col-md-offset-1 col paddingtop">
 
                                 <input type="text" class="btn btn-success btn1 col" value="2 Year ago" />
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="col-md-12" style="height: 190px;">
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn4" CssClass="btn btn-default col btn1" Text="Buttom 4" OnClick="btn100_Click" />
                         </div>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn4" CssClass="btn btn-primary col btn1" Text="Buttom 4" OnClick="btn100_Click" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn5" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btn250_Click" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <%--<asp:Button runat="server" ID="btnOrther" CssClass="btn btn-primary col btn1" Text="Buttom 6" />--%>
-                                    <asp:Button runat="server" ID="btn6" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="Button1_Click" />
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn5" CssClass="btn btn-default col btn1" Text="Buttom 5" OnClick="btn250_Click" />
+                        </div>
+                        <div class="col-md-12 paddingtop">
+                            <asp:Button runat="server" ID="btn6" CssClass="btn btn-default col btn1" Text="Buttom 6" OnClick="Button1_Click" />
+                        </div>
                     </div>
                 </div>
-                     <div class="col-md-12 table-bordered">
+                <div class="col-md-12">
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
@@ -122,7 +102,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -132,7 +112,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" /></td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -142,7 +122,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
                                     </tr>
                                     <tr>
                                         <td>
