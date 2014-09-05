@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcBlockCard.ascx.cs" Inherits="WebApplication1.UC1.Validation.UcController.UcBlockCard" %>
+<asp:Timer ID="time" Interval="3000" OnTick="Timer_Tick" runat="server"></asp:Timer>
 <div class="col-lg-9 col-md-offset-3">
-    <h4>You enterred three times invalid PIN</h4><br />
-    <h4>System BLOCK CARD</h4><br />
-    <h4>Swallow card .....</h4> 
+    <h5>You enterred three times invalid PIN</h5>
+    <br />
+    <h5>System BLOCK CARD</h5>
+    <br />
+    <h5>Swallow card .....</h5>
 </div>

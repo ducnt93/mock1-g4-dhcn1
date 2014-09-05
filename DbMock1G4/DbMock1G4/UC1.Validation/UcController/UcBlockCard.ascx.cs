@@ -11,7 +11,9 @@ namespace WebApplication1.UC1.Validation.UcController
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        }
+        protected void Timer_Tick(object sender, EventArgs e)
+        {
         }
     }
 }
