@@ -1,18 +1,19 @@
 ﻿
-      .btn1 {
-            width: 150px;
-            height: 45px;
-            padding: 5px;
-        }
-        .col {
-            padding: 10px;
-        }
-        .cus-col {
-             height: 180px;
-        }
+.btn1 {
+    width: 120px;
+    height: 50px;
+    padding: 5px;
+}
 
-        .buttom {
-            height: 34px;
-            width: 71px;
-        }
-         
+.col {
+    padding: 10px;
+}
+
+.cus-col {
+    height: 180px;
+}
+
+.buttom {
+    height: 34px;
+    width: 71px;
+}
