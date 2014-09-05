@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DbMock1G4.BusinessLogic;
+using DbMock1G4.BusinessObjects;
 using log4net;
 
 namespace WebApplication1
@@ -87,6 +89,10 @@ namespace WebApplication1
 
         protected void btnCashTransfer_Click(object sender, EventArgs e)
         {
+            Card card = new Card();
+            CardBL cardBusinessLogic = new CardBL();
+            card = cardBusinessLogic.GetByCardNo(Session["CardNo"].ToString());
+            Session["AccountId"] = card.AccountId;
             Response.Redirect("~/UC5.CashTransfer/CashTransfer.aspx");
         }
 
