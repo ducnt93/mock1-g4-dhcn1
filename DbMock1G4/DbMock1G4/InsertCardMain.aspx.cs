@@ -15,9 +15,17 @@ namespace WebApplication1
         protected static ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtCardNo.Focus();
-            Session["ViewState"] = "";
-            Session["CardNo"] = "";
+            try
+            {
+                txtCardNo.Focus();
+                Session["ViewState"] = "";
+                Session["CardNo"] = "";
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "error:" + ex.Message;
+                logger.Debug(ex.Message);
+            }
         }
 
         protected void btnInsertCard_Click(object sender, EventArgs e)
@@ -33,7 +41,7 @@ namespace WebApplication1
                 {
                     Session["ViewState"] = "";
                     Session["CardNo"] = cardNo;
-                    Response.Redirect("~/UC1.Validation/Validate.aspx");
+                    Response.Redirect("~/UC1.Validation/Validate.aspx",false);
                 }
             }
             catch (Exception ex)
@@ -51,7 +59,7 @@ namespace WebApplication1
         #region ***** Number button *****
         protected void btnNum1_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "1";
+            txtCardNo.Text+="1";
 
         }
 
