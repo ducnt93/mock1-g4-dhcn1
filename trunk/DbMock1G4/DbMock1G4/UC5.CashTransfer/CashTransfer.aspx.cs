@@ -24,7 +24,6 @@ namespace WebApplication1.UC5.CashTransfer
             if (!IsPostBack)
             {
                 contenPlace.Controls.Clear();
-                //contenPlace.Controls.Add(LoadControl("~/UC5.CashTransfer/UcController/UcHelloCashTransfer.ascx"));
                 contenPlace.Controls.Add(UcHelloCashTransfer);
                 Session["ViewState"] = "InputAccountReceive_Accept";
                 btnEnter.Enabled = false;
