@@ -53,5 +53,10 @@ namespace WebApplication1.UC4.ViewHistory
             Response.Redirect("~/UC4.ViewHistory/WaittedScreen.aspx");
         }
 
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/MainATM.aspx");
+        }
+
     }
 }

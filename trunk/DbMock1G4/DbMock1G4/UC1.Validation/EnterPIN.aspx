@@ -9,8 +9,14 @@
     <link href="../Content/Style.css" rel="stylesheet" />
     <style type="text/css">
         #main {
-            padding-top: 100px;
+            padding-top: 5px;
             background-color: aliceblue;
+        }
+        
+        .paddingtop {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-right: 5px;
         }
     </style>
 </head>
@@ -24,41 +30,36 @@
                 <asp:AsyncPostBackTrigger ControlID="Button5" EventName="Click" />                
             </Triggers>
             <ContentTemplate>
-                <div class="container">
+                <div class="container table-bordered">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-2">
-                                <div class="col-md-12" style="height: 190px;">
-                                </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 1" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 2" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 3" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col-md-8 table-bordered" style="height: 393px;">
-                                <div class="col-md-12">
+                            <div class="col-md-10 col-md-offset-2">
                                     <div class="col-md-3">
-                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" style="height:150px; width:150px;"/>
                                     </div>
-                                    <div class="col-md-9">
-                                        <h3>ABC Bank @ ATM</h3>
+                                <div class="col-md-9">
+                                      <h3>ABC Bank @ ATM</h3>
                                         <h4>Please select a transaction</h4>
                                         <p>
                                             Wellcom to ABC Bank @ ATM.
                                         </p>
+                                </div>
+                                  
+                                </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                  <div class="col-md-12 paddingtop">
+                                    <input type="button" class="btn btn-default col btn1" value="Buttom 1" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <input type="button" class="btn btn-default col btn1" value="Buttom 2" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <input type="button" class="btn btn-default col btn1" value="Buttom 3" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 table-bordered">
+                                  <div class="col-md-12">
+                                      
                                         <asp:UpdateProgress ID="UpProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
                                             <ProgressTemplate>
                                                 Validating your PIN card...
@@ -66,8 +67,7 @@
                                         </asp:UpdateProgress>
                                         <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="padding-top: 20px;">
                                     <fieldset>
                                         <%--<asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick" />--%>
                                         <asp:PlaceHolder runat="server" ID="contenBlockCard">
@@ -80,15 +80,14 @@
                                                 <br />
                                             </div>
                                             <div class="col-lg-9 col-md-offset-3">
-                                                <div>
+                                                <div class="col-md-12">
                                                     <p>then press Enter buttom</p>
                                                 </div>
-                                                <div class="col-md-4 col-lg-offset-8 col">
-                                                    <p></p>
-                                                    <input type="text" class="btn btn-success btn1" value="OK" />
+                                                <div class="col-md-4 col-lg-offset-8 col paddingtop ">
+                                                    <input type="text" class="btn btn-success sizebtn" value="OK" />
                                                 </div>
-                                                <div class="col-md-4 col-lg-offset-8 col">
-                                                    <input type="text" class="btn btn-success btn1" value="Cancel" />
+                                                <div class="col-md-4 col-lg-offset-8 col paddingtop ">
+                                                    <input type="text" class="btn btn-success sizebtn" value="Cancel" />
                                                 </div>
                                             </div>
                                         </asp:PlaceHolder>
@@ -96,33 +95,18 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="col-md-12" style="height: 190px;">
+                                   <div class="col-md-12 paddingtop">
+                                    <input type="button" class="btn btn-default col btn1" value="Buttom 4" />
                                 </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <%-- <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">View History</asp:HyperLink>--%>
-                                            <input type="button" class="btn btn-primary col btn1" value="Buttom 4" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <%--<asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Change PIN</asp:HyperLink>--%>
-                                            <asp:Button runat="server" ID="Button5" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="Button5_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <%--<asp:Button runat="server" ID="btnExit" CssClass="btn btn-primary col btn1" Text="Exit" OnClick="btnExit_Click" />--%>
-                                            <asp:Button runat="server" ID="Button6" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="Button6_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="Button5" CssClass="btn btn-default col btn1" Text="Buttom 5" OnClick="Button5_Click" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="Button6" CssClass="btn btn-default col btn1" Text="Buttom 6" OnClick="Button6_Click" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-12 table-bordered">
+                        <div class="col-md-12 table-bordered">
                     <div class="col-md-4 col-md-offset-4">
                         <table class="table table-bordered">
                             <tr>
@@ -133,7 +117,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-default" Text="Cancel" OnClick="btnCancel_Click" /></td>
+                                    <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -143,7 +127,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnClear" CssClass="btn btn-default" Text="Clear" OnClick="btnClear_Click" /></td>
+                                    <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" OnClick="btnClear_Click" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -153,7 +137,7 @@
                                 <td>
                                     <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
                                 <td>
-                                    <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-default" Text="Enter" OnClick="btnEnter_Click" /></td>
+                                    <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click" /></td>
                             </tr>
                             <tr>
                                 <td>
@@ -166,6 +150,9 @@
                         </table>
                     </div>
                 </div>
+                    </div>
+                </div>
+                
             </ContentTemplate>
             <%--<Triggers>--%>
             <%--<asp:AsyncPostBackTrigger ControlID="" EventName="" />--%>

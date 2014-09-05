@@ -96,7 +96,7 @@ namespace WebApplication1
             Response.Redirect("~/UC5.CashTransfer/CashTransfer.aspx");
         }
 
-        protected void btnExit_Click1(object sender, EventArgs e)
+        protected void btnViewHistory_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/UC4.ViewHistory/CriteriasChoose.aspx");
         }   

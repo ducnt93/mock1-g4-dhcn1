@@ -177,7 +177,6 @@
     <Content Include="UC3.CheckBalance\CheckBalace.aspx" />
     <Content Include="UC4.ViewHistory\CriteriasChoose.aspx" />
     <Content Include="UC4.ViewHistory\ShowResults.aspx" />
-    <Content Include="UC4.ViewHistory\UcController\Uc1.ascx" />
     <Content Include="UC4.ViewHistory\WaittedScreen.aspx" />
     <Content Include="UC5.CashTransfer\CashTransfer.aspx" />
     <Content Include="UC5.CashTransfer\UcController\UcDisplayAccountReceiveAndAmount.ascx" />
@@ -455,13 +454,6 @@
     </Compile>
     <Compile Include="UC4.ViewHistory\ShowResults.aspx.designer.cs">
       <DependentUpon>ShowResults.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UC4.ViewHistory\UcController\Uc1.ascx.cs">
-      <DependentUpon>Uc1.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UC4.ViewHistory\UcController\Uc1.ascx.designer.cs">
-      <DependentUpon>Uc1.ascx</DependentUpon>
     </Compile>
     <Compile Include="UC4.ViewHistory\WaittedScreen.aspx.cs">
       <DependentUpon>WaittedScreen.aspx</DependentUpon>

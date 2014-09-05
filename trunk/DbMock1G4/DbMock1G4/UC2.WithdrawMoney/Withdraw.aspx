@@ -7,13 +7,6 @@
     <title></title>
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Style.css" rel="stylesheet" />
-    <style type="text/css">
-        #main {
-            padding-top: 100px;
-            background-color: aliceblue;
-        }
-    </style>
-  
 </head>
 <body class="panel-body" id="main">
 
@@ -21,34 +14,11 @@
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                <div class="container">
+                <div class="container table-bordered">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-md-2">
-                                <div class="col-md-12" style="height: 200px;">
-                                </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn50" CssClass="btn btn-primary col btn1" Text="Buttom 1" OnClick="btn50_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn200" CssClass="btn btn-primary col btn1" Text="Buttom 2" OnClick="btn200_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn300" CssClass="btn btn-primary col btn1" Text="Buttom 3" OnClick="btn300_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="col-md-8 table-bordered" style="height: 393px;">
-                                <div class="col-md-12">
+                        <div class="col-md-10 col-md-offset-2">
                                     <div class="col-md-3">
-                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" />
                                     </div>
                                     <div class="col-md-9">
                                         <h3>ABC Bank @ ATM</h3>
@@ -58,38 +28,37 @@
                                         </p>
                                     </div>
                                 </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn50" CssClass="btn btn-default col btn1" Text="Buttom 1" OnClick="btn50_Click" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn200" CssClass="btn btn-default col btn1" Text="Buttom 2" OnClick="btn200_Click" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn300" CssClass="btn btn-default col btn1" Text="Buttom 3" OnClick="btn300_Click" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 table-bordered" style="height: 393px;">
                                 <div class="col-md-12">
-                                     <asp:PlaceHolder runat="server" ID="contenPlace"></asp:PlaceHolder>
+                                    <asp:PlaceHolder runat="server" ID="contenPlace"></asp:PlaceHolder>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="col-md-12" style="height: 200px;">
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn100" CssClass="btn btn-default col btn1" Text="Buttom 4" OnClick="btn100_Click" />
                                 </div>
-                                <table class="table">
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" OnClick="btn100_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btn250" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btn250_Click" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Button runat="server" ID="btnOrther" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btnOrther_Click" />
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn250" CssClass="btn btn-default col btn1" Text="Buttom 5" OnClick="btn250_Click" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btnOrther" CssClass="btn btn-default col btn1" Text="Buttom 6" OnClick="btnOrther_Click" />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </ContentTemplate>
-        </asp:UpdatePanel>
-
-        <div class="col-md-12 table-bordered">
+                        
+        <div class="col-md-12">
             <div class="col-md-4 col-md-offset-4">
                 <table class="table table-bordered">
                     <tr>
@@ -133,6 +102,10 @@
                 </table>
             </div>
         </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     <script src="Scripts/jquery-1.8.2.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>

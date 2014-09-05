@@ -76,5 +76,10 @@ namespace WebApplication1.UC4.ViewHistory
         {
             Page_Load(sender, e);
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/MainATM.aspx");
+        }
     }
 }

@@ -31,6 +31,10 @@ namespace WebApplication1.UC2.WithdrawMoney
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
                             break;
+                        case "Test":
+                            contenPlace.Controls.Clear();
+                            contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                            break;
                         default:
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
@@ -91,6 +95,19 @@ namespace WebApplication1.UC2.WithdrawMoney
                     int AtmId = 1;
                     CheckWithdraw(AtmId, accId, money);
                 }
+                //else
+                //{
+                //    if (Session["ViewState"].ToString() == "PrintPeceipt")
+                //    {
+                //        contenPlace.Controls.Clear();
+                //        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                //    }
+                //    else
+                //    {
+                //        contenPlace.Controls.Clear();
+                //        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -160,10 +177,21 @@ namespace WebApplication1.UC2.WithdrawMoney
         {
             try
             {
-                const decimal money = 2500000;
-                int accId = Convert.ToInt32(Session["AccountId"]);
-                int AtmId = 1;
-                CheckWithdraw(AtmId, accId, money);
+                if (Session["ViewState"].ToString() == "Withdraw")
+                {
+                    const decimal money = 2500000;
+                    int accId = Convert.ToInt32(Session["AccountId"]);
+                    int AtmId = 1;
+                    CheckWithdraw(AtmId, accId, money);
+                }
+                else
+                {
+                    if (Session["ViewState"].ToString() == "PrintPeceipt")
+                    {
+                        contenPlace.Controls.Clear();
+                        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -172,7 +200,7 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
         }
 
-        public void CheckWithdraw(int atmId, int accId, decimal money)
+        private void CheckWithdraw(int atmId, int accId, decimal money)
         {
             if (Session["ViewState"].ToString() == "Withdraw")
             {
@@ -215,17 +243,20 @@ namespace WebApplication1.UC2.WithdrawMoney
                                 contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
                             }
                         }
-
                     }
-
                 }
             }
             else
             {
-                if (Session["ViewState"].ToString() == "PrintPeceipt")
+                if (Session["ViewState"].ToString() == "Test")
                 {
                     contenPlace.Controls.Clear();
                     contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
+                }
+                else
+                {
+                    contenPlace.Controls.Clear();
+                    contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
                 }
             }
         }
@@ -251,8 +282,14 @@ namespace WebApplication1.UC2.WithdrawMoney
                         if (Session["ViewState"].ToString() == "PrintPeceipt")
                         {
                             ResetSession();
-                            Session["ViewState"] = "Withdraw";
-                            Response.Redirect("~/MainATM.aspx");
+                            //Session["ViewState"] = "Withdraw";
+                            Response.Redirect("~/InsertCardMain.aspx");
+                        }
+                        else
+                        {
+                            ResetSession();
+                            //Session["ViewState"] = "Withdraw";
+                            Response.Redirect("~/InsertCardMain.aspx");
                         }
                     }
                 }
@@ -266,10 +303,7 @@ namespace WebApplication1.UC2.WithdrawMoney
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            if (Session["ViewState"].ToString() == "Withdraw")
-            {
                 Response.Redirect("~/MainATM.aspx");
-            }
         }
     }
 }

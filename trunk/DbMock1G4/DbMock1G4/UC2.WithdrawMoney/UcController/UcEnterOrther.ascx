@@ -3,12 +3,12 @@
     <div class="col-md-8 col-lg-offset-4">
         <asp:TextBox runat="server" ID="txtEnterCash" CssClass="form-control" TextMode="Number"></asp:TextBox>
     </div>
-    <div class="col-md-4 col-lg-offset-8 col">
+    <div class="col-md-4 col-lg-offset-8 col paddingtop1">
 
-        <input type="text" class="btn btn-primary btn1" value="OK" />
+        <input type="text" class="btn btn-success btn1" value="OK" />
     </div>
-    <div class="col-md-4 col-lg-offset-8 col">
-        <input type="text" class="btn btn-primary btn1" value="Cancel" />
+    <div class="col-md-4 col-lg-offset-8 col paddingtop1">
+        <input type="text" class="btn btn-success btn1" value="Cancel" />
 
     </div>
 </div>
