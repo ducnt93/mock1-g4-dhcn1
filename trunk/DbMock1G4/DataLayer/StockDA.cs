@@ -110,7 +110,13 @@ namespace DbMock1G4.DataAccess
 							,Data.CreateParameter("QuanlityId", obj.QuanlityId)
 			);
 		}
-
+        public void UpdateQuantity(Stock obj)
+        {
+            SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Stock_UpdateQuantity"
+                            , Data.CreateParameter("StockId", obj.StockId)
+                            , Data.CreateParameter("QuanlityId", obj.QuanlityId)
+            );
+        }
 		
 		public void Delete(int stockid)
 		{

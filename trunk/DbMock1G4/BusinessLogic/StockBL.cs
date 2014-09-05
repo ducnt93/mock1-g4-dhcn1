@@ -48,16 +48,19 @@ namespace DbMock1G4.BusinessLogic
         #region CheckMoneyAtm
         private Money money;
         private MoneyDA moneyDa;
-        public bool CheckMoneyAtm(int atmId, decimal amount)
+        private CardBL cardBl;
+        public int CheckMoneyAtm(int atmId,int accId, decimal amount)
         {
-            bool check = false;
+            int check = 0;
             moneyDa = new MoneyDA();
+            cardBl = new CardBL();
             // tổng tiền của cả cây Atm
             decimal totalMoney = 0;
             // Kiểm tra nếu số tiền muốn rút ko phải là bội của 50000 thì giao dịch thất bại
             if (amount % 50000 != 0)
             {
-                check = false;
+                // trả về 1 thì tiền nhập vào không phải là bội của 50000
+                check = 1;
             }
             else
             {
@@ -68,10 +71,15 @@ namespace DbMock1G4.BusinessLogic
                     Money money1 = moneyDa.GetByMoneyId(item.MoneyId);
                     totalMoney = totalMoney + money1.MoneyValue * item.QuanlityId;
                 }
+                // Lấy số dư tài khoản của khách hàng đang giao dịch
+               AccountBL accountBl = new AccountBL();
+               Account account = accountBl.GetBalance(accId);
+               decimal balance = account.Balance;
                 // trường hợp cây atm không đáp ứng đủ số tiền khách muốn rút. Giao dịch thất bại
-                if (totalMoney < amount)
+                if ((totalMoney < amount) || (balance < amount))
                 {
-                    check = false;
+                    // Số tiền trong máy rút tiền không đử để rút
+                    check = 2;
                 }
                 // trường hợp atm đủ tiền đáp ứng khách hàng muốn rút
                 else
@@ -81,7 +89,7 @@ namespace DbMock1G4.BusinessLogic
                     // Lấy ra số tờ tiền có mệnh giá của M1
                     decimal x1 = ((amount / money.MoneyValue) - ((amount / money.MoneyValue) % 1));
                     // khi ma so to tiền của M1 can rut it hơn số tiền có trong Atm
-                    if (x1 < list[0].QuanlityId)
+                    if (x1 <= list[0].QuanlityId)
                     {
                         // số dư bằng tiền nhập vào trừ đi số tờ tiền * giá tiền
                         decimal soDu = amount - x1 * money.MoneyValue;
@@ -90,7 +98,7 @@ namespace DbMock1G4.BusinessLogic
                         // Tính số lượng tờ tiền có mệnh giá của M2 trong số tiền dư còn lại
                         decimal x2 = ((soDu/money.MoneyValue) - ((soDu/money.MoneyValue)%1));
                         // Nếu số lượng tờ mệnh giá M2 muốn rút ít hơn số tiền có mệnh giá M2 trong atm
-                        if (x2 < list[1].QuanlityId)
+                        if (x2 <= list[1].QuanlityId)
                         {
                             // tính lại số dư bằng cách lấy số dư của lần M1 - số tờ tiền M2 * giá tiền
                             soDu = soDu - x2 * money.MoneyValue;
@@ -99,7 +107,7 @@ namespace DbMock1G4.BusinessLogic
                             // Tính số lượng tờ tiền có mệnh giá của M3 trong số tiền còn lại
                             decimal x3 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                             // Nếu số lượng tờ mệnh giá M3 muốn rút ít hơn số tiền có mệnh giá M3 trong atm
-                            if (x3 < list[2].QuanlityId)
+                            if (x3 <= list[2].QuanlityId)
                             {
                                 // tính lại số tiền trong số dư còn lại bằng= số dư còn lại - mệnh giá tờ M3 cần rút * mệnh giá của nó
                                 soDu = soDu - x3 * money.MoneyValue;
@@ -108,7 +116,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -117,20 +125,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = list[0].QuanlityId - Convert.ToInt32(x1);
+                                        list[1].QuanlityId = list[1].QuanlityId - Convert.ToInt32(x2);
+                                        list[2].QuanlityId = list[2].QuanlityId - Convert.ToInt32(x3);
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                             // Nếu số lượng tờ mệnh giá M3 muốn rút lớn hơn số tiền có mệnh giá M3 trong atm
@@ -143,7 +159,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -152,20 +168,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = list[0].QuanlityId - Convert.ToInt32(x1);
+                                        list[1].QuanlityId = list[1].QuanlityId - Convert.ToInt32(x2);
+                                        list[2].QuanlityId = 0;
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                         }
@@ -178,7 +202,7 @@ namespace DbMock1G4.BusinessLogic
                             // Tính số lượng tờ tiền có mệnh giá của M3 trong số tiền còn lại
                             decimal x3 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                             // Nếu số lượng tờ mệnh giá M3 muốn rút ít hơn số tiền có mệnh giá M3 trong atm
-                            if (x3 < list[2].QuanlityId)
+                            if (x3 <= list[2].QuanlityId)
                             {
                                 // tính lại số tiền trong số dư còn lại bằng= số dư còn lại - mệnh giá tờ M3 cần rút * mệnh giá của nó
                                 soDu = soDu - x3 * money.MoneyValue;
@@ -187,7 +211,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -196,20 +220,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = list[0].QuanlityId - Convert.ToInt32(x1);
+                                        list[1].QuanlityId = 0;
+                                        list[2].QuanlityId = list[2].QuanlityId - Convert.ToInt32(x3);
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                             // Nếu số lượng tờ mệnh giá M3 muốn rút lớn hơn số tiền có mệnh giá M3 trong atm
@@ -222,7 +254,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -231,20 +263,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = list[0].QuanlityId - Convert.ToInt32(x1);
+                                        list[1].QuanlityId = 0;
+                                        list[2].QuanlityId = 0;
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                         }
@@ -259,7 +299,7 @@ namespace DbMock1G4.BusinessLogic
                         // Tính số lượng tờ tiền có mệnh giá của M2 trong số tiền dư còn lại
                         decimal x2 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                         // Nếu số lượng tờ mệnh giá M2 muốn rút ít hơn số tiền có mệnh giá M2 trong atm
-                        if (x2 < list[1].QuanlityId)
+                        if (x2 <= list[1].QuanlityId)
                         {
                             // tính lại số dư bằng cách lấy số dư của lần M1 - số tờ tiền M2 * giá tiền
                             soDu = soDu - x2 * money.MoneyValue;
@@ -268,7 +308,7 @@ namespace DbMock1G4.BusinessLogic
                             // Tính số lượng tờ tiền có mệnh giá của M3 trong số tiền còn lại
                             decimal x3 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                             // Nếu số lượng tờ mệnh giá M3 muốn rút ít hơn số tiền có mệnh giá M3 trong atm
-                            if (x3 < list[2].QuanlityId)
+                            if (x3 <= list[2].QuanlityId)
                             {
                                 // tính lại số tiền trong số dư còn lại bằng= số dư còn lại - mệnh giá tờ M3 cần rút * mệnh giá của nó
                                 soDu = soDu - x3 * money.MoneyValue;
@@ -277,7 +317,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -286,20 +326,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = 0;
+                                        list[1].QuanlityId = list[1].QuanlityId - Convert.ToInt32(x2);
+                                        list[2].QuanlityId = list[2].QuanlityId - Convert.ToInt32(x3);
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                             // Nếu số lượng tờ mệnh giá M3 muốn rút lớn hơn số tiền có mệnh giá M3 trong atm
@@ -312,7 +360,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -321,20 +369,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = 0;
+                                        list[1].QuanlityId = list[1].QuanlityId - Convert.ToInt32(x2);
+                                        list[2].QuanlityId = 0;
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                         }
@@ -347,7 +403,7 @@ namespace DbMock1G4.BusinessLogic
                             // Tính số lượng tờ tiền có mệnh giá của M3 trong số tiền còn lại
                             decimal x3 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                             // Nếu số lượng tờ mệnh giá M3 muốn rút ít hơn số tiền có mệnh giá M3 trong atm
-                            if (x3 < list[2].QuanlityId)
+                            if (x3 <= list[2].QuanlityId)
                             {
                                 // tính lại số tiền trong số dư còn lại bằng= số dư còn lại - mệnh giá tờ M3 cần rút * mệnh giá của nó
                                 soDu = soDu - x3 * money.MoneyValue;
@@ -356,7 +412,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -365,20 +421,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = 0;
+                                        list[1].QuanlityId = 0;
+                                        list[2].QuanlityId = list[2].QuanlityId - Convert.ToInt32(x3);
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                             // Nếu số lượng tờ mệnh giá M3 muốn rút lớn hơn số tiền có mệnh giá M3 trong atm
@@ -391,7 +455,7 @@ namespace DbMock1G4.BusinessLogic
                                 // Tính số lượng tờ tiền có mệnh giá của M4 trong số tiền còn lại
                                 decimal x4 = ((soDu / money.MoneyValue) - ((soDu / money.MoneyValue) %1));
                                 // Nếu số lượng tờ mệnh giá M4 muốn rút ít hơn số tiền có mệnh giá M4 trong atm
-                                if (x4 < list[3].QuanlityId)
+                                if (x4 <= list[3].QuanlityId)
                                 {
                                     // Tính lai số dư 
                                     soDu = soDu - x4 * money.MoneyValue;
@@ -400,20 +464,28 @@ namespace DbMock1G4.BusinessLogic
                                     if (soDu == 0)
                                     {
                                         // update cac thong tin kia
-                                        check = true;
+                                        list[0].QuanlityId = 0;
+                                        list[1].QuanlityId = 0;
+                                        list[2].QuanlityId = 0;
+                                        list[3].QuanlityId = list[3].QuanlityId - Convert.ToInt32(x4);
+                                        UpdateQuantity(list[0]);
+                                        UpdateQuantity(list[1]);
+                                        UpdateQuantity(list[2]);
+                                        UpdateQuantity(list[3]);
+                                        check = 3;
                                     }
                                     // Nếu không thì có nghĩa không thể ghép được sô tiền trong tại khoản sao cho = tổng số tiền cần rút.
                                     // Giao dịch thất bại
                                     else
                                     {
-                                        check = false;
+                                        check = 4;
                                     }
                                 }
                                 // Trường hợp số tờ tiền mệnh giá của M4 > số tờ có mệnh giá của M4 trong Atm.
                                 // Nếu không đủ thì giao dịch thất bại
                                 else
                                 {
-                                    check = false;
+                                    check = 4;
                                 }
                             }
                         }
@@ -439,6 +511,11 @@ namespace DbMock1G4.BusinessLogic
             objStockDA.Update(objStock);
         }
 
+        public void UpdateQuantity(Stock objStock)
+        {
+            ServerCache.Remove("Stock", true);
+            objStockDA.Update(objStock);
+        }
 
         public void Delete(int stockid)
         {

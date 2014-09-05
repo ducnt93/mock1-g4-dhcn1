@@ -42,17 +42,11 @@
     <Reference Include="System.Transactions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtmDispenseChain.cs" />
-    <Compile Include="Money50Dispenser.cs" />
-    <Compile Include="Money100Dispenser.cs" />
-    <Compile Include="Money500Dispenser.cs" />
     <Compile Include="AccountDA.cs" />
     <Compile Include="AtmDA.cs" />
     <Compile Include="CardDA.cs" />
-    <Compile Include="Money200Dispenser.cs" />
     <Compile Include="ConfigDA.cs" />
     <Compile Include="CustomerDA.cs" />
-    <Compile Include="DispenseChain.cs" />
     <Compile Include="LogDA.cs" />
     <Compile Include="LogTypeDA.cs" />
     <Compile Include="MoneyDA.cs" />
