@@ -26,10 +26,6 @@ namespace WebApplication1.UC5.CashTransfer
                 contenPlace.Controls.Clear();
                 contenPlace.Controls.Add(UcHelloCashTransfer);
                 Session["ViewState"] = "InputAccountReceive_Accept";
-                btnEnter.Enabled = false;
-                btnCancel.Enabled = false;
-                btnAccept.Enabled = true;
-                btnReject.Enabled = true;
             }
         }
 
