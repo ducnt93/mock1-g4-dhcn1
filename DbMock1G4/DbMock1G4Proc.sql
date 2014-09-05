@@ -335,6 +335,7 @@ WHERE
 	[AtmId] = @AtmId
 GO
 
+-- BEGIN Procedure table Card
 if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetCount]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 	drop procedure [sproc_Card_GetCount]
 GO
@@ -357,15 +358,13 @@ GO
 CREATE PROCEDURE sproc_Card_Get
 AS
 SELECT
-	--[CardNo],
-	--[Status],
-	--[AccountId],
-	--[Pin],
-	--[StartDate],
-	--[ExpiredDate],
-	--[Attempt]
-
-*
+	[CardNo],
+	[Status],
+	[AccountId],
+	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	[StartDate],
+	[ExpiredDate],
+	[Attempt]
 FROM
 	[Card]
 GO
@@ -380,22 +379,73 @@ CREATE PROCEDURE sproc_Card_GetByCardNo
 @CardNo varchar(16)
 AS
 SELECT
-	--[CardNo],
-	--[Status],
-	--[AccountId],
-	--[Pin],
-	--[StartDate],
-	--[ExpiredDate],
-	--[Attempt]
-
-*
+	[CardNo],
+	[Status],
+	[AccountId],
+	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	[StartDate],
+	[ExpiredDate],
+	[Attempt]
 FROM
 	[Card]
 WHERE
 	[CardNo] = @CardNo
 GO
 
+if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetByCardNoPIN]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure [sproc_Card_GetByCardNoPIN]
+GO
 
+/* Procedure sproc_Card_GetByCardNoPIN*/
+CREATE PROCEDURE sproc_Card_GetByCardNoPIN
+@CardNo varchar(16),
+@HashPin varchar(1000)
+AS
+SELECT
+	[CardNo],
+	[Status],
+	[AccountId],
+	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	[StartDate],
+	[ExpiredDate],
+	[Attempt]
+FROM
+	[Card]
+WHERE
+	[CardNo] =@CardNo AND CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) = @HashPin
+GO
+
+if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetCardNo]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure [sproc_Card_GetCardNo]
+GO
+
+/* Procedure sproc_Card_GetByCardNo*/
+CREATE PROCEDURE sproc_Card_GetCardNo
+@CardNo varchar(16)
+AS
+SELECT
+	[CardNo]
+FROM
+	[Card]
+WHERE
+	[CardNo] =@CardNo
+GO
+
+if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetHashPIN]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure sproc_Card_GetHashPIN
+GO
+
+/* Procedure sproc_Card_GetHashPIN*/
+CREATE PROCEDURE sproc_Card_GetHashPIN
+@CardNo varchar(16)
+AS
+SELECT
+	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin
+FROM
+	[Card]
+WHERE
+	[CardNo] = @CardNo
+GO
 
 if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetPaged]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 	drop procedure [sproc_Card_GetPaged]
@@ -427,7 +477,14 @@ FROM [Card]
 
 
 -- query out
-SELECT *
+SELECT 
+	[CardNo],
+	[Status],
+	[AccountId],
+	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	[StartDate],
+	[ExpiredDate],
+	[Attempt]
 FROM [Card]
 WHERE [CardNo]
 IN (
@@ -438,8 +495,6 @@ IN (
 DROP TABLE #tmp_paging_index
 
 GO
-
-
 
 if exists (select * from sysobjects where id = object_id(N'[sproc_Card_Add]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 	drop procedure [sproc_Card_Add]
@@ -505,6 +560,25 @@ WHERE
 	[CardNo] = @CardNo
 GO
 
+if exists (select * from sysobjects where id = object_id(N'[sproc_Card_UpdateStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure sproc_Card_UpdateStatus
+GO
+
+/* Procedure sproc_Card_UpdateStatus*/
+CREATE PROCEDURE sproc_Card_UpdateStatus
+	@Status varchar(30),
+	@Attempt int,
+	@CardNo varchar(16)
+
+AS
+UPDATE [Card]
+SET
+	[Status] = @Status,
+	[Attempt] = @Attempt
+WHERE
+	[CardNo] = @CardNo
+GO
+
 if exists (select * from sysobjects where id = object_id(N'[sproc_Card_Delete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 	drop procedure [sproc_Card_Delete]
 GO
@@ -519,6 +593,7 @@ FROM
 WHERE
 	[CardNo] = @CardNo
 GO
+-- END Procedure table Card
 
 if exists (select * from sysobjects where id = object_id(N'[sproc_Config_GetCount]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
 	drop procedure [sproc_Config_GetCount]
