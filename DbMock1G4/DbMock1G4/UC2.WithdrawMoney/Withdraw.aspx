@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <title></title>
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
@@ -32,7 +32,8 @@
                             <div class="col-md-2">
                                 <div class="col-md-12 paddingtop">
                                     <asp:Button runat="server" ID="btn50" CssClass="btn btn-default col btn1" Text="Buttom 1" OnClick="btn50_Click" />
-                                </div>
+                               
+                                     </div>
                                 <div class="col-md-12 paddingtop">
                                     <asp:Button runat="server" ID="btn200" CssClass="btn btn-default col btn1" Text="Buttom 2" OnClick="btn200_Click" />
                                 </div>
