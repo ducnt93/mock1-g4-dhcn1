@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcCardInvalid.ascx.cs" Inherits="WebApplication1.UC1.Validation.UcController.UcCardInvalid" %>
+ATM invalid card<br />
+Eject card...
