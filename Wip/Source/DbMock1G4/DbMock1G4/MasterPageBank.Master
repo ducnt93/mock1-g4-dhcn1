@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageBank.master.cs" Inherits="WebApplication1.MasterPageBank" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #main {
+            padding-top: 100px;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body class="panel-body" id="main">
+
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-2">
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <asp:HyperLink runat="server" ID="hyperLinkWithdraw" CssClass="btn btn-primary col btn1" NavigateUrl="UC2.WithdrawMoney/Withdraw.aspx">Withdraw</asp:HyperLink>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:HyperLink runat="server" ID="hyperLinkCheckBalance" CssClass="btn btn-primary col btn1">Check Balance</asp:HyperLink>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:HyperLink runat="server" ID="hyperLinkTransfer" CssClass="btn btn-primary col btn1">Transfer</asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-8 table-bordered">
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+                                <img src="../Content/images/nganhang2.jpg" class="img-thumbnail" />
+                            </div>
+                            <div class="col-md-9">
+                                <h3>ABC Bank @ ATM</h3>
+                                <h4>Please select a transaction</h4>
+                                <p>
+                                    Wellcom to ABC Bank @ ATM.
+                                </p>
+                            </div>
+                        </div>
+                        <asp:ContentPlaceHolder ID="Content1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="col-md-2">
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                    <asp:HyperLink runat="server" ID="hyperLinkViewHistory" CssClass="btn btn-primary col btn1">View History</asp:HyperLink>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:HyperLink runat="server" ID="hyperLinkChangePin" CssClass="btn btn-primary col btn1">Change PIN</asp:HyperLink>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:HyperLink runat="server" ID="hyperLinkExit" CssClass="btn btn-primary col btn1" NavigateUrl="MainATM.aspx">Exit</asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12 table-bordered">
+                    <asp:ContentPlaceHolder runat="server" ID="Content2">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="Scripts/jquery-1.8.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

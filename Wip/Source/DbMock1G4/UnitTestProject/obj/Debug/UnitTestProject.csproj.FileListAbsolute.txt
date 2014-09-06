@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.BusinessLogic.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.BusinessLogic.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\bin\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\obj\Debug\UnitTestProject.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\Admin\Desktop\MockProject1\DbMock1G4\UnitTestProject\obj\Debug\UnitTestProject.pdb
