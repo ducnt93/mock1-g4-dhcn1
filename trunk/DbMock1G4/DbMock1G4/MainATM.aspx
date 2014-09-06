@@ -45,30 +45,26 @@
                             <h4>Choose amount below or enter your amount you want:</h4>
                             <div class="col-md-12">
                                 <div class="col-md-5 col-md-offset-1 col">
-
-                                    <input type="text" class="btn btn-success btn1 col" value="Withdraw" />
+                                    <asp:Label runat="server" CssClass="btn btn-success btn1 col" >Withdraw</asp:Label>
+                                    <%--<input type="text" class="btn btn-success btn1 col" value="Withdraw" />--%>
                                 </div>
                                 <div class="col-md-5 col-md-offset-1 col">
                                     <input type="text" class="btn btn-success btn1 col" value="View History" />
                                 </div>
                             </div>
                             <div class="col-md-12 paddingtop1">
-                                <div class="col-md-5 col-md-offset-1 col">
-
+                                   <div class="col-md-5 col-md-offset-1 col">
                                     <input type="text" class="btn btn-success btn1 col" value="Check Balance" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1 col">
-
-                                    <input type="text" class="btn btn-success btn1 col" value="Change PIN" />
+                                    <span class="btn btn-success btn1 col"   >Change PIN</span>
                                 </div>
                             </div>
                             <div class="col-md-12 paddingtop1">
                                 <div class="col-md-5 col-md-offset-1 col">
-
                                     <input type="text" class="btn btn-success btn1 col" value="Transfer" />
                                 </div>
                                 <div class="col-md-5 col-md-offset-1 col">
-
                                     <input type="text" class="btn btn-success btn1 col" value="Exit" />
                                 </div>
                             </div>

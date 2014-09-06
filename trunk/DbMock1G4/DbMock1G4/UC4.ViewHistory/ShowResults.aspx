@@ -39,9 +39,9 @@
                                     <a href="javascript:__doPostBack('grViewhistory','Page$Prev')" class="btn btn-default col btn1">Buttom 3</a>
                                 </div>
                             </div>
-                            <div class="col-md-8 table-bordered">
+                            <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 385px;">
                                     <h4>View transaction history</h4>
-                                <div class="col-md-12 paddingtop1">
+                                <div class="col-md-12 paddingtop1" style="height: 195px;">
                                     <asp:GridView ID="grViewhistory" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" EnableSortingAndPagingCallbacks="True" Height="148px" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
                                         <Columns>
                                             <asp:BoundField DataField="ATMLocation" HeaderText="ATM(Location)">
