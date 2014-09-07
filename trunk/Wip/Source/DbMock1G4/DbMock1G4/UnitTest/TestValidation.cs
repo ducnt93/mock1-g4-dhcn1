@@ -31,7 +31,25 @@ namespace WebApplication1.UnitTest
         {
             Assert.AreEqual("1234567890", cardBl.GetByCardNo("1234567890"));
         }
-		
+
+        [TestMethod]
+        public void TestReadCard3()
+        {
+            Assert.AreEqual("0", cardBl.ReadCard("0"));
+        }
+
+        [TestMethod]
+        public void TestReadCard4()
+        {
+            Assert.AreEqual("abc123", cardBl.ReadCard("abc123"));
+        }
+
+        [TestMethod]
+        public void TestReadCard5()
+        {
+            Assert.AreEqual(".", cardBl.ReadCard("."));
+        }
+
 		[TestMethod]
 		public void TestMethodAcceptCard1()
         {
@@ -81,7 +99,7 @@ namespace WebApplication1.UnitTest
         [TestMethod]
         public void TestMethodValidateCard3()
         {
-            cardNo = "0641060097";
+            cardNo = "0";
             card = cardBl.GetByCardNo(cardNo);
             Assert.AreEqual(false, cardBl.ValidateCard(card));
         }
