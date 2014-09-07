@@ -63,7 +63,7 @@
                             </div>
                             <div class="col-md-8 table-bordered">
                                 <div class="col-md-12" style="padding-top: 20px;">
-                                    <fieldset>
+                                   <fieldset>
                                         <asp:PlaceHolder runat="server" ID="contenBlockCard">
                                             <div class="col-lg-9 col-md-offset-3">
                                                 <asp:PlaceHolder runat="server" ID="contenEnterPIN"></asp:PlaceHolder>
