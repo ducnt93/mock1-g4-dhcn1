@@ -62,7 +62,7 @@
                                         </Columns>
                                         <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
                                         <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                                        <PagerSettings Mode="NextPrevious" />
+                                        <PagerSettings Mode="NextPrevious" NextPageText="" PreviousPageText="" />
                                         <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
                                         <RowStyle BackColor="White" ForeColor="#330099" />
                                         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />

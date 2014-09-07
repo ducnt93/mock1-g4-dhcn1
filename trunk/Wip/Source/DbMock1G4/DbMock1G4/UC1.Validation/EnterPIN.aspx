@@ -83,10 +83,10 @@
                                                 <div class="col-md-12">
                                                     <p>then press Enter buttom</p>
                                                 </div>
-                                                <div class="col-md-4 col-lg-offset-8 col paddingtop ">
+                                                <div class="col-md-4 col-lg-offset-8 col paddingtop1 ">
                                                     <input type="text" class="btn btn-success sizebtn" value="OK" />
                                                 </div>
-                                                <div class="col-md-4 col-lg-offset-8 col paddingtop ">
+                                                <div class="col-md-4 col-lg-offset-8 col paddingtop1 ">
                                                     <input type="text" class="btn btn-success sizebtn" value="Cancel" />
                                                 </div>
                                             </div>
