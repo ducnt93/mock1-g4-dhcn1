@@ -79,9 +79,9 @@ namespace DbMock1G4.BusinessLogic
             UpdateBalance(acc);
         }
 
-        public void UpdateBalance(Account acc)
+        public int UpdateBalance(Account acc)
         {
-            _objAccountDa.UpdateBalance(acc);
+           return _objAccountDa.UpdateBalance(acc);
         }
         #region ***** Get Methods *****
         //Lấy Account theo Id
