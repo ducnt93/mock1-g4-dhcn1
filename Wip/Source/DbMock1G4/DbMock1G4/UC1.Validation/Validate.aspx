@@ -20,13 +20,9 @@
                     </div>
                     <div class="col-md-9">
                         <h3>ABC Bank @ ATM</h3>
-                        <h4>Please select a transaction</h4>
-                        <p>
-                            Wellcom to ABC Bank @ ATM.
-                        </p>
-                    </div>
+                        <h4>Wellcom to ABC Bank @ ATM.</h4>
+                   </div>
                 </div>
-
                 <div class="col-md-12">
                     <div class="col-md-2">
                         <div class="col-md-12 paddingtop">
@@ -47,22 +43,12 @@
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <Triggers>
                                         <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
-                                        <%--<asp:AsyncPostBackTrigger ControlID="Timer2" EventName="Tick" />--%>
                                     </Triggers>
                                     <ContentTemplate>
-
-                                        <asp:Timer ID="Timer1" runat="server" Interval="3000" OnTick="Timer1_Tick" />
-
+                                        <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick" />
                                         <asp:PlaceHolder runat="server" ID="contenValidate"></asp:PlaceHolder>
-
                                     </ContentTemplate>
-
                                 </asp:UpdatePanel>
-                                <%--<asp:UpdateProgress ID="UpProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">--%>
-                                <%--<ProgressTemplate>--%>
-                                <%--Validating your ATM card...--%>
-                                <%--</ProgressTemplate>--%>
-                                <%--</asp:UpdateProgress>--%>
                             </div>
                         </div>
                     </div>
