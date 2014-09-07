@@ -45,10 +45,10 @@
                             <h4><b>You account have:<asp:Label runat="server" ID="lblAccount"></asp:Label></b></h4>
                             <h4 style="padding-top: 10px;">Do you want to print receipt?</h4>
                             <div class="col-md-12 paddingtop">
-                                <div class="col-md-5 col-md-offset-7 col paddingtop">
+                                <div class="col-md-5 col-md-offset-7 col paddingtop1">
                                     <input type="text" class="btn btn-success btn1 col" value="OK" />
                                 </div>
-                                <div class="col-md-5 col-md-offset-7 col paddingtop">
+                                <div class="col-md-5 col-md-offset-7 col paddingtop1">
                                     <input type="text" class="btn btn-success btn1 col" value="Cancel" />
                                 </div>
                             </div>

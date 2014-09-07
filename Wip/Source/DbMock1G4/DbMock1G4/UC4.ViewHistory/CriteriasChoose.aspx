@@ -7,12 +7,6 @@
     <title></title>
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Style.css" rel="stylesheet" />
-    <style type="text/css">
-        #main {
-            padding-top: 100px;
-            background-color: aliceblue;
-        }
-    </style>
 </head>
 <body class="panel-body" id="main">
 
