@@ -21,3 +21,8 @@ E:\mock\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.pdb
 E:\mock\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.csprojResolveAssemblyReference.cache
 E:\mock\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.dll
 E:\mock\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessObjects\bin\Debug\DbMock1G4.BusinessObjects.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.csprojResolveAssemblyReference.cache
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessObjects\obj\Debug\DbMock1G4.BusinessObjects.pdb

@@ -43,30 +43,26 @@
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-5 col-md-offset-1 col">
-                                <input type="text" class="btn btn-success btn1 col" value="1 Week ago" />
+                                <span class="btn btn-success btn1 col">1 Week ago</span>
                             </div>
                             <div class="col-md-5 col-md-offset-1 col">
-                                <input type="text" class="btn btn-success btn1 col" value="6 Month ago" />
+                                <span class="btn btn-success btn1 col">6 Month ago</span>
                             </div>
                         </div>
                         <div class="col-md-12" style="padding-top: 10px;">
                             <div class="col-md-5 col-md-offset-1 col paddingtop">
-                                <input type="text" class="btn btn-success btn1 col" value="1 Month ago" />
-
-
+                                <span class="btn btn-success btn1 col">1 Month ago</span>
                             </div>
                             <div class="col-md-5 col-md-offset-1 col paddingtop">
-                                <input type="text" class="btn btn-success btn1 col" value="1 Year ago" />
+                                <span class="btn btn-success btn1 col">1 Year ago</span>
                             </div>
                         </div>
                         <div class="col-md-12" >
                             <div class="col-md-5 col-md-offset-1 col paddingtop">
-                                <input type="text" class="btn btn-success btn1 col" value="4 Month ago" />
-
+                                <span class="btn btn-success btn1 col">4 Month ago</span>
                             </div>
                             <div class="col-md-5 col-md-offset-1 col paddingtop">
-
-                                <input type="text" class="btn btn-success btn1 col" value="2 Year ago" />
+                                <span class="btn btn-success btn1 col">2 Year ago</span>
                             </div>
                         </div>
                     </div>

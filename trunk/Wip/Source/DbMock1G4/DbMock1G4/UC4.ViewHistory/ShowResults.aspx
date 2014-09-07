@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 385px;">
-                                    <h4>View transaction history</h4>
+                                    <h4 style="text-align: center;">Transaction history</h4>
                                 <div class="col-md-12 paddingtop1" style="height: 195px;">
                                     <asp:GridView ID="grViewhistory" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" EnableSortingAndPagingCallbacks="True" Height="148px" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
                                         <Columns>
@@ -74,10 +74,11 @@
                                 </div>
                                 <div class="col-md-12 paddingtop1" style="padding-top:35px; ">
                                     <div class="col-md-6">
-                                        <input type="text" class="btn btn-success col btn1" value="Prev" />
+                                         <span class="btn btn-success btn1 col">Prev</span>
+                                        <%--<asp:Label runat="server" CssClass="btn btn-success btn1 col" >Prev</asp:Label>--%>
                                     </div>
                                     <div class="col-md-offset-3  col-md-3">
-                                        <input type="text" class="btn btn-success col btn1" value="Next" />
+                                        <span class="btn btn-success btn1 col">Next</span>
                                     </div>
                                 </div>
                             </div>

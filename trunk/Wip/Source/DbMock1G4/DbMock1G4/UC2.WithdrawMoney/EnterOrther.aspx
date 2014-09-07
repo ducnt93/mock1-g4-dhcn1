@@ -47,12 +47,10 @@
                                         <asp:TextBox runat="server" ID="txtEnterCash" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
                                     <div class="col-md-4 col-lg-offset-8 col paddingtop1">
-
-                                        <input type="text" class="btn btn-success btn1" value="OK" />
+                                        <span class="btn btn-success btn1 col">OK</span>
                                     </div>
                                     <div class="col-md-4 col-lg-offset-8 col paddingtop1">
-                                        <input type="text" class="btn btn-success btn1" value="Cancel" />
-
+                                        <span class="btn btn-success btn1 col">Cancel</span>
                                     </div>
                                 </div>
                             </div>
