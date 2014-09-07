@@ -107,14 +107,17 @@ namespace DbMock1G4.DataAccess
                             , Data.CreateParameter("WdId", obj.WdId)
                             , Data.CreateParameter("Balance", obj.Balance)
             );
+
         }
 
-        public void UpdateBalance(Account obj)
+        public int UpdateBalance(Account obj)
         {
+            DbParameter parameterItemID = Data.CreateParameter("AccountId", obj.AccountId);
             SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Account_UpdateBalance"
                               , Data.CreateParameter("AccountId", obj.AccountId)
                               , Data.CreateParameter("Balance", obj.Balance)
               );
+            return (int)parameterItemID.Value;
         }
 
         public void Delete(int accountid)

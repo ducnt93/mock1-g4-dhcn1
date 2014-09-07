@@ -55,14 +55,15 @@ namespace WebApplication1.UnitTest
 
         #endregion
 
-        //[TestMethod]
-        //public void UpdateBalance()
-        //{
-        //    Account account = new Account();
-        //    account.AccountId = 2;
-        //    account.Balance = 100000000;
-        //    bool check = accountBl.UpdateBalance(account)
-        //}
+        [TestMethod]
+        public void UpdateBalance()
+        {
+            Account account = new Account();
+            account.AccountId = 2;
+            account.Balance = 100000000;
+            int num = accountBl.UpdateBalance(account);
+            Assert.IsNotNull(num);
+        }
         #region Withdraw
         // With money = 500.000
         [TestMethod]

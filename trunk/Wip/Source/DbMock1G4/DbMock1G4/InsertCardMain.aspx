@@ -137,7 +137,7 @@
                                     <table class="table">
                                         <tr>
                                             <td>
-                                                <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Number"></asp:TextBox>
+                                                <asp:TextBox runat="server" CssClass="form-control" ID="txtCardNo" TextMode="Password"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
