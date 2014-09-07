@@ -43,7 +43,6 @@ namespace WebApplication1.UC1.Validation
                 if (card.Attempt == 0)
                 {
                     card.Attempt = 0;
-                    card.Status = "UnBlock";
                     cardBl.UpdateStatus(card);
                     Session["PIN"] = hashpin;
                     Session["AccountId"] = card.AccountId;
@@ -360,7 +359,6 @@ namespace WebApplication1.UC1.Validation
                     string CardNo = Session["CardNo"].ToString();
                     card = cardBl.GetByCardNo(CardNo);
                     card.Attempt = 0;
-                    card.Status = "UnBlock";
                     cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
@@ -377,7 +375,7 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
                 CheckAttempt();
             }
             catch (Exception ex)
@@ -393,7 +391,7 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
                 CheckAttempt();
             }
             catch (Exception ex)
@@ -412,7 +410,6 @@ namespace WebApplication1.UC1.Validation
                     string CardNo = Session["CardNo"].ToString();
                     card = cardBl.GetByCardNo(CardNo);
                     card.Attempt = 0;
-                    card.Status = "UnBlock";
                     cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
