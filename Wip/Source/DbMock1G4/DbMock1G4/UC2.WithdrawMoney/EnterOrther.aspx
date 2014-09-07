@@ -24,6 +24,10 @@
                                 <h3>ABC Bank @ ATM</h3>
                                 <h4>Please select a transaction</h4>
                             </div>
+                            <div class="col-md-12">
+                                <h5><b>Enter your amount you want to withdraw below, number enter have to div to 50.000:</b></h5>
+                                <asp:Label runat="server" ID="lblError" ForeColor="Red"></asp:Label>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-2">
@@ -38,11 +42,8 @@
                                 </div>
                             </div>
                             <div class="col-md-8 table-bordered">
-                                <div class="col-md-12">
-                                    <h5><b>Enter your amount you want to withdraw below, number enter have to div to 50.000:</b></h5>
-                                    <asp:Label runat="server" ID="lblError" ForeColor="Red"></asp:Label>
-                                </div>
-                                <div class="col-md-12" style="padding-top: 15px;">
+
+                                <div class="col-md-12" style="padding-top: 50px;">
                                     <div class="col-md-6 col-lg-offset-4" style="padding-bottom: 40px;">
                                         <asp:TextBox runat="server" ID="txtEnterCash" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
