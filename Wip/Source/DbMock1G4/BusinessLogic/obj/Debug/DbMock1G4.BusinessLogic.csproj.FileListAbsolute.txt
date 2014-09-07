@@ -47,3 +47,14 @@ E:\mock\DbMock1G4\BusinessLogic\bin\Debug\log4net.xml
 E:\mock\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
 E:\mock\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
 E:\mock\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessLogic.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\log4net.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.BusinessObjects.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\DbMock1G4.DataAccess.pdb
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\bin\Debug\log4net.xml
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.csprojResolveAssemblyReference.cache
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.dll
+G:\01-HOCTAP\Fshopt\Mock1-G4-haui\Wip\Source\DbMock1G4\BusinessLogic\obj\Debug\DbMock1G4.BusinessLogic.pdb

@@ -45,27 +45,26 @@
                             <h4>Choose amount below or enter your amount you want:</h4>
                             <div class="col-md-12">
                                 <div class="col-md-5 col-md-offset-1 col">
-                                    <asp:Label runat="server" CssClass="btn btn-success btn1 col" >Withdraw</asp:Label>
-                                    <%--<input type="text" class="btn btn-success btn1 col" value="Withdraw" />--%>
+                                    <span class="btn btn-success btn1 col">Withdraw</span>
                                 </div>
                                 <div class="col-md-5 col-md-offset-1 col">
-                                    <input type="text" class="btn btn-success btn1 col" value="View History" />
+                                    <span class="btn btn-success btn1 col">View History</span>
                                 </div>
                             </div>
                             <div class="col-md-12 paddingtop1">
                                    <div class="col-md-5 col-md-offset-1 col">
-                                    <input type="text" class="btn btn-success btn1 col" value="Check Balance" />
-                                </div>
+                                       <span class="btn btn-success btn1 col">Check Balance</span>
+                                   </div>
                                 <div class="col-md-5 col-md-offset-1 col">
-                                    <span class="btn btn-success btn1 col"   >Change PIN</span>
+                                    <span class="btn btn-success btn1 col">Change PIN</span>
                                 </div>
                             </div>
                             <div class="col-md-12 paddingtop1">
                                 <div class="col-md-5 col-md-offset-1 col">
-                                    <input type="text" class="btn btn-success btn1 col" value="Transfer" />
+                                    <span class="btn btn-success btn1 col">Transfer</span>
                                 </div>
                                 <div class="col-md-5 col-md-offset-1 col">
-                                    <input type="text" class="btn btn-success btn1 col" value="Exit" />
+                                    <span class="btn btn-success btn1 col">Exit</span>
                                 </div>
                             </div>
                         </div>

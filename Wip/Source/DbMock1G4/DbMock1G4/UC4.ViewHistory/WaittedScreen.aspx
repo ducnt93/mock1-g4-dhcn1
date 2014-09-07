@@ -41,8 +41,8 @@
                     </div>
                     <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 385px;">
                         <div class="col-md-12">
-                            <h3>View transaction history</h3>
-                            <h4>Searching....</h4>
+                            <h3 style="text-align: center;">View transaction history</h3>
+                            <h4 style="text-align: center; color: #04EBEB;">Searching....</h4>
                         </div>
                     </div>
                     <div class="col-md-2 ">
