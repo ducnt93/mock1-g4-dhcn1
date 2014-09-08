@@ -53,73 +53,72 @@ namespace WebApplication1
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text = "";
+            txtCardNo.Attributes["value"] = "";
         }
 
         #region ***** Number button *****
         protected void btnNum1_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text+="1";
-
+            txtCardNo.Attributes["value"] += "1";
         }
 
         protected void btnNum2_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "2";
+            txtCardNo.Attributes["value"] += "2";
         }
 
         protected void btnNum3_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "3";
+            txtCardNo.Attributes["value"] += "3";
         }
 
         protected void btnNum4_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "4";
+            txtCardNo.Attributes["value"] += "4";
         }
 
         protected void btnNum5_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "5";
+            txtCardNo.Attributes["value"] += "5";
         }
 
         protected void btnNum6_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "6";
+            txtCardNo.Attributes["value"] += "6";
         }
 
         protected void btnNum7_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "7";
+            txtCardNo.Attributes["value"] += "7";
         }
 
         protected void btnNum8_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "8";
+            txtCardNo.Attributes["value"] += "8";
         }
 
         protected void btnNum9_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "9";
+            txtCardNo.Attributes["value"] += "9";
         }
 
         protected void btnDot_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += ".";
+            txtCardNo.Attributes["value"] += ".";
         }
 
         protected void btnNum0_Click(object sender, EventArgs e)
         {
-            txtCardNo.Text += "0";
+            txtCardNo.Attributes["value"] += "0";
         }
         int count = 0;
         protected void btnComma_Click(object sender, EventArgs e)
         {
             count = 1;
-            txtCardNo.Text += ",";
+            txtCardNo.Attributes["value"] += ",";
             if (count == 1)
             {
-                txtCardNo.Text += "";
+                txtCardNo.Attributes["value"] += "";
             }
         }
         #endregion
