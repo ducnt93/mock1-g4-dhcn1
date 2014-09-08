@@ -63,18 +63,17 @@ namespace WebApplication1.UC4.ViewHistory
             grViewhistory.PageIndex = e.NewPageIndex;
             CheckViewHistory(time, cardNo);
             grViewhistory.DataBind();
-            Page_Load(sender,e);
-           
+            Page_Load(sender,e);           
         }
 
         protected void btn6_Click(object sender, EventArgs e)
         {
-            Page_Load(sender, e);
+            //Page_Load(sender, e);
         }
 
         protected void btn300_Click(object sender, EventArgs e)
         {
-            Page_Load(sender, e);
+            //Page_Load(sender, e);
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
