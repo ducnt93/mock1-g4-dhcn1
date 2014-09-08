@@ -8,24 +8,23 @@ namespace WebApplication1.UnitTest
     class TestMethodValidation
     {
 		private string cardNo;
-		private string pin;
-		
+		//private string pin;
 		private CardBL cardBl;
 		private Card card;
-		
-     
-        public void TestMethodValidate()
+
+        public void SetUp()
         {
 			cardBl= new CardBL();
 			card=new Card();
         }
 
+        #region Test Method Validation
         [TestMethod]
         public void TestMethodReadCard1()
         {
             Assert.AreEqual(null, cardBl.GetByCardNo(""));
         }
-
+        
         [TestMethod]
         public void TestMethodReadCard2()
         {
@@ -103,5 +102,6 @@ namespace WebApplication1.UnitTest
             card = cardBl.GetByCardNo(cardNo);
             Assert.AreEqual(false, cardBl.ValidateCard(card));
         }
+        #endregion
     }
 }
