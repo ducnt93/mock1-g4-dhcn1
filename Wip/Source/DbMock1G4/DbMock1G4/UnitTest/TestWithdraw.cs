@@ -153,7 +153,7 @@ namespace WebApplication1.UnitTest
             log.LogTypeId = 1;
             log.AtmId = 1;
             int num = logBl.Add(log);
-            Assert.AreEqual(65, num);
+            Assert.AreEqual(67, num);
         }
 
         #endregion

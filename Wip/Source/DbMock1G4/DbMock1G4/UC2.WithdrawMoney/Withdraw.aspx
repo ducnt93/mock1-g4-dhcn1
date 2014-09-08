@@ -41,7 +41,7 @@
                                     <asp:Button runat="server" ID="btn300" CssClass="btn btn-default col btn1" Text="Buttom 3" OnClick="btn300_Click" />
                                 </div>
                             </div>
-                            <div class="col-md-8 table-bordered" style="height: 393px;">
+                            <div class="col-md-8 table-bordered">
                                 <div class="col-md-12">
                                     <asp:PlaceHolder runat="server" ID="contenPlace"></asp:PlaceHolder>
                                 </div>
