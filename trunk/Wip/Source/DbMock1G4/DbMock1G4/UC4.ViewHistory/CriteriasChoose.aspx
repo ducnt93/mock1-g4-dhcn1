@@ -42,26 +42,26 @@
                             <h4>Choose time criteria to view transaction history</h4>
                         </div>
                         <div class="col-md-12">
-                            <div class="col-md-5 col-md-offset-1 col">
+                            <div class="col-md-5 col-md-offset-2 col">
                                 <span class="btn btn-success btn1 col">1 Week ago</span>
                             </div>
-                            <div class="col-md-5 col-md-offset-1 col">
+                            <div class="col-md-5 col-md-offset-0 col">
                                 <span class="btn btn-success btn1 col">6 Month ago</span>
                             </div>
                         </div>
                         <div class="col-md-12" style="padding-top: 10px;">
-                            <div class="col-md-5 col-md-offset-1 col paddingtop">
+                            <div class="col-md-5 col-md-offset-2 col paddingtop">
                                 <span class="btn btn-success btn1 col">1 Month ago</span>
                             </div>
-                            <div class="col-md-5 col-md-offset-1 col paddingtop">
+                            <div class="col-md-5 col-md-offset-0 col paddingtop">
                                 <span class="btn btn-success btn1 col">1 Year ago</span>
                             </div>
                         </div>
                         <div class="col-md-12" >
-                            <div class="col-md-5 col-md-offset-1 col paddingtop">
+                            <div class="col-md-5 col-md-offset-2 col paddingtop">
                                 <span class="btn btn-success btn1 col">4 Month ago</span>
                             </div>
-                            <div class="col-md-5 col-md-offset-1 col paddingtop">
+                            <div class="col-md-5 col-md-offset-0 col paddingtop">
                                 <span class="btn btn-success btn1 col">2 Year ago</span>
                             </div>
                         </div>

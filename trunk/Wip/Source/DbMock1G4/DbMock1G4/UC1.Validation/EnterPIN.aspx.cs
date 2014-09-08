@@ -18,13 +18,14 @@ namespace WebApplication1.UC1.Validation
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			try
+            try
             {
-            if (Session["ViewState"].Equals("BlockCard"))
-            {
-                Response.Redirect("~/InsertCardMain.aspx",false);
+                txtPIN.Focus();
+                if (Session["ViewState"].Equals("BlockCard"))
+                {
+                    Response.Redirect("~/InsertCardMain.aspx", false);
+                }
             }
-			}
             catch (Exception ex)
             {
                 lblError.Text = "error:" + ex.Message;
@@ -47,7 +48,7 @@ namespace WebApplication1.UC1.Validation
                     Session["PIN"] = hashpin;
                     Session["AccountId"] = card.AccountId;
                     Session["ViewState"] = "Authentication";
-                    Response.Redirect("~/MainATM.aspx",false);
+                    Response.Redirect("~/MainATM.aspx", false);
                 }
                 else if (card.Attempt >= 1 && card.Attempt < 3)
                 {
@@ -362,7 +363,7 @@ namespace WebApplication1.UC1.Validation
                     cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
-                Response.Redirect("~/InsertCardMain.aspx",false);
+                Response.Redirect("~/InsertCardMain.aspx", false);
             }
             catch (Exception ex)
             {
@@ -413,7 +414,7 @@ namespace WebApplication1.UC1.Validation
                     cardBl.UpdateStatus(card);
                 }
                 Session["PIN"] = "";
-                Response.Redirect("~/InsertCardMain.aspx",false);
+                Response.Redirect("~/InsertCardMain.aspx", false);
             }
             catch (Exception ex)
             {

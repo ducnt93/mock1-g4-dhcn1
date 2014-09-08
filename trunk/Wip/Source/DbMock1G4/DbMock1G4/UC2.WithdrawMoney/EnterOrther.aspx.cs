@@ -30,7 +30,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 int checkAtm = stockBl.CheckMoneyAtm(1, accountId, money);
                 if (check == false)
                 {
-                    lblError.Text = "Number enter have to div to 50.000 or money more than balance";
+                    lblError.Text = "Number enter have to div to 50.000 or money withdraw more than balance or money withdraw < 0";
                     txtEnterCash.Text = "";
                     txtEnterCash.Focus();
                 }

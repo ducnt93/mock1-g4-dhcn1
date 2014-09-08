@@ -7,18 +7,6 @@
     <title></title>
     <link href="../Content/css/bootstrap.css" rel="stylesheet" />
     <link href="../Content/Style.css" rel="stylesheet" />
-    <style type="text/css">
-        #main {
-            padding-top: 5px;
-            background-color: aliceblue;
-        }
-
-        .paddingtop {
-            padding-top: 50px;
-            padding-bottom: 20px;
-            padding-right: 5px;
-        }
-    </style>
 </head>
 <body class="panel-body" id="main">
 
