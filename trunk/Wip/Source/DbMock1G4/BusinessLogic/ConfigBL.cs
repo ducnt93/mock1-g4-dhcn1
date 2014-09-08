@@ -21,35 +21,5 @@ namespace DbMock1G4.BusinessLogic
 		}
 		#endregion
 
-		#region ***** Get Methods ***** 
-
-		//Lấy dánh sách Config
-		public List<Config> GetList()
-		{
-			const string cacheName = "lstConfig";
-			if( ServerCache.Get(cacheName) == null )
-			{
-				ServerCache.Insert(cacheName, objConfigDA.GetList(), "Config");
-			}
-			return (List<Config>) ServerCache.Get(cacheName);
-		}
-		// Lấy danh sách theo trang
-		public List<Config> GetListPaged(int recperpage, int pageindex)
-		{
-			return objConfigDA.GetListPaged(recperpage, pageindex);
-		}
-
-		#endregion
-
-		#region ***** Add Update Delete Methods ***** 
-		// Thêm Config
-		public int Add(Config objConfig)
-		{
-			ServerCache.Remove("Config", true);
-			return objConfigDA.Add(objConfig);
-		}
-
-    
-		#endregion
 	}
 }

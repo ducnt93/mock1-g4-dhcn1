@@ -80,23 +80,6 @@ namespace DbMock1G4.DataAccess
         #endregion
 
         #region ***** Add Update Delete Methods *****
-
-        public int Add(Account obj)
-        {
-            DbParameter parameterItemID = Data.CreateParameter("AccountId", obj.AccountId);
-            parameterItemID.Direction = ParameterDirection.Output;
-            SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Account_Add"
-                            , parameterItemID
-                            , Data.CreateParameter("CusId", obj.CusId)
-                            , Data.CreateParameter("AccountNo", obj.AccountNo)
-                            , Data.CreateParameter("OdId", obj.OdId)
-                            , Data.CreateParameter("WdId", obj.WdId)
-                            , Data.CreateParameter("Balance", obj.Balance)
-            );
-            return (int)parameterItemID.Value;
-        }
-
-
         public void Update(Account obj)
         {
             SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Account_Update"
@@ -120,10 +103,6 @@ namespace DbMock1G4.DataAccess
             return (int)parameterItemID.Value;
         }
 
-        public void Delete(int accountid)
-        {
-            SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Account_Delete", Data.CreateParameter("AccountId", accountid));
-        }
         #endregion
     }
 }

@@ -20,54 +20,5 @@ namespace DbMock1G4.BusinessLogic
 			objOverDraftDA = new OverDraftDA();
 		}
 		#endregion
-
-		#region ***** Get Methods ***** 
-		// Lấy overDraft theo Id
-		public OverDraft GetByOdId(int odid)
-		{
-			return objOverDraftDA.GetByOdId(odid);
-		}
-
-		//Lấy ra danh sách OverDraft
-		public List<OverDraft> GetList()
-		{
-			const string cacheName = "lstOverDraft";
-			if( ServerCache.Get(cacheName) == null )
-			{
-				ServerCache.Insert(cacheName, objOverDraftDA.GetList(), "OverDraft");
-			}
-			return (List<OverDraft>) ServerCache.Get(cacheName);
-		}
-
-		// Lấy danh sách theo phân trang
-		public List<OverDraft> GetListPaged(int recperpage, int pageindex)
-		{
-			return objOverDraftDA.GetListPaged(recperpage, pageindex);
-		}
-
-		#endregion
-
-		#region ***** Add Update Delete Methods ***** 
-		// Thêm
-		public int Add(OverDraft objOverdraft)
-		{
-			ServerCache.Remove("OverDraft", true);
-			return objOverDraftDA.Add(objOverdraft);
-		}
-
-		// Sửa
-		public void Update(OverDraft objOverdraft)
-		{
-			ServerCache.Remove("OverDraft", true);
-			objOverDraftDA.Update(objOverdraft);
-		}
-
-		// Xóa
-		public void Delete(int odid)
-		{
-			ServerCache.Remove("OverDraft", true);
-			objOverDraftDA.Delete(odid);
-		}
-		#endregion
 	}
 }
