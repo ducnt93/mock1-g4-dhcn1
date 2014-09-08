@@ -513,7 +513,7 @@ namespace DbMock1G4.BusinessLogic
 
         public void UpdateQuantity(Stock objStock)
         {
-            ServerCache.Remove("Stock", true);
+            //ServerCache.Remove("Stock", true);
             objStockDA.Update(objStock);
         }
 

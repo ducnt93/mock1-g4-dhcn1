@@ -52,10 +52,20 @@ namespace WebApplication1.UC2.WithdrawMoney
         }
         public void UpdateBalance(int accId, decimal money)
         {
-            Account account = accountBl.GetByAccountId(accId);
-            decimal balance = account.Balance;
-            balance = balance - money;
-            accountBl.DispenserMoney(accId, balance);
+            try
+            {
+                Account account = accountBl.GetByAccountId(accId);
+                decimal balance = account.Balance;
+                balance = balance - money;
+                accountBl.DispenserMoney(accId, balance);
+            }
+            catch (Exception ex)
+            {
+
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
+            }
+           
         }
         private void ResetSession()
         {
@@ -92,22 +102,9 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     const decimal money = 500000;
                     int accId = Convert.ToInt32(Session["AccountId"]);
-                    int AtmId = 1;
+                    const int AtmId = 1;
                     CheckWithdraw(AtmId, accId, money);
                 }
-                //else
-                //{
-                //    if (Session["ViewState"].ToString() == "PrintPeceipt")
-                //    {
-                //        contenPlace.Controls.Clear();
-                //        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
-                //    }
-                //    else
-                //    {
-                //        contenPlace.Controls.Clear();
-                //        contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcWithdraw.ascx"));
-                //    }
-                //}
             }
             catch (Exception ex)
             {

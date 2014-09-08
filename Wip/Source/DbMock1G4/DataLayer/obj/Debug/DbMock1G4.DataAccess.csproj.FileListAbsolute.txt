@@ -47,3 +47,10 @@ C:\Users\Admin\Desktop\Project\Wip\Source\DbMock1G4\DataLayer\bin\Debug\DbMock1G
 C:\Users\Admin\Desktop\Project\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\Project\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.dll
 C:\Users\Admin\Desktop\Project\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.DataAccess.pdb
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.BusinessObjects.dll
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\bin\Debug\DbMock1G4.BusinessObjects.pdb
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.dll
+C:\Users\Admin\Desktop\MockProject\Wip\Source\DbMock1G4\DataLayer\obj\Debug\DbMock1G4.DataAccess.pdb

@@ -25,31 +25,31 @@ namespace DbMock1G4.BusinessLogic
         // check balance
         public bool CheckBalanceWithDraw(int accId, decimal money)
         {
-                Account account = GetByAccountId(accId);
-                decimal balance = account.Balance;
-                if (money > balance)
+            Account account = GetByAccountId(accId);
+            decimal balance = account.Balance;
+            if (money > balance)
+            {
+                return false;
+            }
+            else
+            {
+                if (money < 50000)
                 {
                     return false;
                 }
                 else
                 {
-                    if (money < 50000)
+                    if ((money % 50000) != 0)
                     {
                         return false;
                     }
                     else
                     {
-                        if ((money%50000) != 0)
-                        {
-                            return false;
-                        }
-                        else
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
-    }
+            }
+        }
 
         public bool CheckBalance(decimal balance, decimal money)
         {
@@ -68,20 +68,22 @@ namespace DbMock1G4.BusinessLogic
 
         public Account GetBalance(int accId)
         {
-                Account account = GetByAccountId(accId);
-                return account;
+            Account account = GetByAccountId(accId);
+            return account;
         }
-        public void DispenserMoney(int accId, decimal balance)
+        public int DispenserMoney(int accId, decimal balance)
         {
+            int num = 0;
             Account acc = new Account();
             acc.Balance = Convert.ToDecimal(balance);
             acc.AccountId = accId;
-            UpdateBalance(acc);
+            num = UpdateBalance(acc);
+            return num;
         }
 
         public int UpdateBalance(Account acc)
         {
-           return _objAccountDa.UpdateBalance(acc);
+            return _objAccountDa.UpdateBalance(acc);
         }
         #region ***** Get Methods *****
         //Lấy Account theo Id
