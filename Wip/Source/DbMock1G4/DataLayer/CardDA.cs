@@ -116,105 +116,33 @@ namespace DbMock1G4.DataAccess
         }
         #endregion
 
-        public Card GetByCardNo(string cardno)
-        {
-            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNo]", Data.CreateParameter("CardNo", cardno)))
-            {
-                if (reader.Read())
-                {
-                    return Populate(reader);
-                }
-                return null;
-            }
-        }
+	    public Card GetByCardNo(string cardno)
+	    {
+	        using (
+	            IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure,
+	                "[sproc_Card_GetByCardNo]", Data.CreateParameter("CardNo", cardno)))
+	        {
+	            if (reader.Read())
+	            {
+	                return Populate(reader);
+	            }
+	            return null;
+	        }
+	    }
 
-        public Card GetByCardNoPinCard(string cardno, string pin)
-        {
-            using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "[sproc_Card_GetByCardNoPIN]", Data.CreateParameter("CardNo", cardno), Data.CreateParameter("Pin", pin)))
-            {
-                if (reader.Read())
-                {
-                    return Populate(reader);
-                }
-                return null;
-            }
-        }
-		
-		public List<Card> GetList()
-		{
-			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_Get"))
-			{
-				List<Card> list = new List<Card>();
-				while (reader.Read())
-				{
-				list.Add(Populate(reader));
-				}
-				return list;
-			}
-		}
-		
-		public List<Card> GetListPaged(int recperpage, int pageindex)
-		{
-			using (IDataReader reader = SqlHelper.ExecuteReader(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_GetPaged"
-							,Data.CreateParameter("recperpage", recperpage)
-							,Data.CreateParameter("pageindex", pageindex)))
-			{
-				List<Card> list = new List<Card>();
-				while (reader.Read())
-				{
-				list.Add(Populate(reader));
-				}
-				return list;
-			}
-		}
-
-		#endregion
+	    #endregion
 
 		#region ***** Add Update Delete Methods ***** 
-		
-		public int Add(Card obj)
-		{
-			DbParameter parameterItemID = Data.CreateParameter("CardNo", obj.CardNo);
-			parameterItemID.Direction = ParameterDirection.Output;
-			SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure,"sproc_Card_Add"
-							,parameterItemID
-							,Data.CreateParameter("Status", obj.Status)
-							,Data.CreateParameter("AccountId", obj.AccountId)
-							,Data.CreateParameter("Pin", obj.Pin)
-							,Data.CreateParameter("StartDate", obj.StartDate)
-							,Data.CreateParameter("ExpiredDate", obj.ExpiredDate)
-							,Data.CreateParameter("Attempt", obj.Attempt)
-			);
-			return 0;
-		}
 
-	
-		public void Update(Card obj)
-		{
-			SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure,"sproc_Card_Update"
-							,Data.CreateParameter("CardNo", obj.CardNo)
-							,Data.CreateParameter("Status", obj.Status)
-							,Data.CreateParameter("AccountId", obj.AccountId)
-							,Data.CreateParameter("Pin", obj.Pin)
-							,Data.CreateParameter("StartDate", obj.StartDate)
-							,Data.CreateParameter("ExpiredDate", obj.ExpiredDate)
-							,Data.CreateParameter("Attempt", obj.Attempt)
-			);
-		}
+	    public void UpdateStatus(Card obj)
+	    {
+	        SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_UpdateStatus"
+	            , Data.CreateParameter("CardNo", obj.CardNo)
+	            , Data.CreateParameter("Status", obj.Status)
+	            , Data.CreateParameter("Attempt", obj.Attempt)
+	            );
+	    }
 
-        public void UpdateStatus(Card obj)
-        {
-            SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure, "sproc_Card_UpdateStatus"
-                            , Data.CreateParameter("CardNo", obj.CardNo)
-                            , Data.CreateParameter("Status", obj.Status)
-                            , Data.CreateParameter("Attempt", obj.Attempt)
-            );
-        }
-	
-		public void Delete(string cardno)
-		{
-			SqlHelper.ExecuteNonQuery(Data.ConnectionString, CommandType.StoredProcedure,"sproc_Card_Delete", Data.CreateParameter("CardNo", cardno));
-		}
-		#endregion
+	    #endregion
 	}
 }

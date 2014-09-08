@@ -94,13 +94,7 @@ namespace DbMock1G4.BusinessLogic
         #endregion
 
         #region ***** Add Update Delete Methods *****
-        //Thêm Account
-        public int Add(Account obj_account)
-        {
-            ServerCache.Remove("Account", true);
-            return _objAccountDa.Add(obj_account);
-        }
-
+    
         // Update Account
         public void Update(Account obj_account)
         {
@@ -108,12 +102,7 @@ namespace DbMock1G4.BusinessLogic
             _objAccountDa.Update(obj_account);
         }
 
-        // Xóa Account
-        public void Delete(int accountid)
-        {
-            ServerCache.Remove("Account", true);
-            _objAccountDa.Delete(accountid);
-        }
+       
         #endregion
     }
 }

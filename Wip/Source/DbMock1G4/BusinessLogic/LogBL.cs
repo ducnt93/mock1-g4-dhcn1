@@ -22,22 +22,6 @@ namespace DbMock1G4.BusinessLogic
         }
         #endregion
 		#region ***** Get Methods ***** 
-		// Lấy Log theo Id
-		public Log GetByLogId(int logid)
-		{
-			return objLogDA.GetByLogId(logid);
-		}
-
-		// Lấy danh sách 
-		public List<Log> GetList()
-		{
-			const string cacheName = "lstLog";
-			if( ServerCache.Get(cacheName) == null )
-			{
-				ServerCache.Insert(cacheName, objLogDA.GetList(), "Log");
-			}
-			return (List<Log>) ServerCache.Get(cacheName);
-		}
 
 		// Lấy danh theo phân trang
         public List<Log> GetListPaged(int time,string cardNo)
