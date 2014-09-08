@@ -34,18 +34,17 @@
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-2">
-                                <div class="col-md-2">
                                     <div class="col-md-12 paddingtop">
-                                        <asp:Button runat="server" ID="btn1" CssClass="btn btn-primary col btn1" Text="Buttom 1" />
+                                        <asp:Button runat="server" ID="btn1" CssClass="btn btn-default col btn1" Text="Buttom 1" />
                                     </div>
                                     <div class="col-md-12 paddingtop">
-                                        <asp:Button runat="server" ID="btn2" CssClass="btn btn-primary col btn1" Text="Buttom 2" />
+                                        <asp:Button runat="server" ID="btn2" CssClass="btn btn-default col btn1" Text="Buttom 2" />
                                     </div>
                                     <div class="col-md-12 paddingtop">
-                                        <asp:Button runat="server" ID="btn3" CssClass="btn btn-primary col btn1" Text="Buttom 3" />
+                                        <asp:Button runat="server" ID="btn3" CssClass="btn btn-default col btn1" Text="Buttom 3" />
                                     </div>
                                 </div>
-                                <div class="col-md-8 table-bordered" style="height: 393px;">
+                                <div class="col-md-8 table-bordered">
                                     <div class="col-md-12">
                                         <asp:PlaceHolder runat="server" ID="contenPlace">
                                             <uc1:UcHelloCashTransfer runat="server" ID="UcHelloCashTransfer" />
@@ -62,13 +61,13 @@
                                 <div class="col-md-2">
                                     <div class="col-md-2">
                                         <div class="col-md-12 paddingtop">
-                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-primary col btn1" Text="Buttom 4" />
+                                            <asp:Button runat="server" ID="btn100" CssClass="btn btn-default col btn1" Text="Buttom 4" />
                                         </div>
                                         <div class="col-md-12 paddingtop">
-                                            <asp:Button runat="server" ID="btnAccept" CssClass="btn btn-primary col btn1" Text="Buttom 5" OnClick="btnAccept_Click" />
+                                            <asp:Button runat="server" ID="btnAccept" CssClass="btn btn-default col btn1" Text="Buttom 5" OnClick="btnAccept_Click" />
                                         </div>
                                         <div class="col-md-12 paddingtop">
-                                            <asp:Button runat="server" ID="btnReject" CssClass="btn btn-primary col btn1" Text="Buttom 6" OnClick="btnReject_Click" />
+                                            <asp:Button runat="server" ID="btnReject" CssClass="btn btn-default col btn1" Text="Buttom 6" OnClick="btnReject_Click" />
                                         </div>
                                     </div>
                                 </div>
