@@ -20,7 +20,6 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                txtPIN.Focus();
                 if (Session["ViewState"].Equals("BlockCard"))
                 {
                     Response.Redirect("~/InsertCardMain.aspx", false);
@@ -54,7 +53,7 @@ namespace WebApplication1.UC1.Validation
                 {
                     cardBl.UpdateStatus(card);
                     Session["ViewState"] = "ErrorPIN";
-                    txtPIN.Text = "";
+                    txtPIN.Attributes["value"] = "";
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
                 }
@@ -79,15 +78,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "1";
+                    txtPIN.Attributes["value"] += "1";
                 }
                 else
                 {
-                    txtPIN.Text += "1";
+                    txtPIN.Attributes["value"] += "1";
                 }
             }
             catch (Exception ex)
@@ -101,15 +100,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "2";
+                    txtPIN.Attributes["value"] += "2";
                 }
                 else
                 {
-                    txtPIN.Text += "2";
+                    txtPIN.Attributes["value"] += "2";
                 }
             }
             catch (Exception ex)
@@ -123,15 +122,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "3";
+                    txtPIN.Attributes["value"] += "3";
                 }
                 else
                 {
-                    txtPIN.Text += "3";
+                    txtPIN.Attributes["value"] += "3";
                 }
             }
             catch (Exception ex)
@@ -145,15 +144,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "4";
+                    txtPIN.Attributes["value"] += "4";
                 }
                 else
                 {
-                    txtPIN.Text += "4";
+                    txtPIN.Attributes["value"] += "4";
                 }
             }
             catch (Exception ex)
@@ -167,15 +166,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "5";
+                    txtPIN.Attributes["value"] += "5";
                 }
                 else
                 {
-                    txtPIN.Text += "5";
+                    txtPIN.Attributes["value"] += "5";
                 }
             }
             catch (Exception ex)
@@ -189,15 +188,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "6";
+                    txtPIN.Attributes["value"] += "6";
                 }
                 else
                 {
-                    txtPIN.Text += "6";
+                    txtPIN.Attributes["value"] += "6";
                 }
             }
             catch (Exception ex)
@@ -211,15 +210,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "7";
+                    txtPIN.Attributes["value"] += "7";
                 }
                 else
                 {
-                    txtPIN.Text += "7";
+                    txtPIN.Attributes["value"] += "7";
                 }
             }
             catch (Exception ex)
@@ -233,15 +232,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "8";
+                    txtPIN.Attributes["value"] += "8";
                 }
                 else
                 {
-                    txtPIN.Text += "8";
+                    txtPIN.Attributes["value"] += "8";
                 }
             }
             catch (Exception ex)
@@ -255,15 +254,15 @@ namespace WebApplication1.UC1.Validation
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "9";
+                    txtPIN.Attributes["value"] += "9";
                 }
                 else
                 {
-                    txtPIN.Text += "9";
+                    txtPIN.Attributes["value"] += "9";
                 }
             }
             catch (Exception ex)
@@ -275,39 +274,22 @@ namespace WebApplication1.UC1.Validation
 
         protected void btnDot_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
-                {
-                    contenEnterPIN.Controls.Clear();
-                    contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += ".";
-                }
-                else
-                {
-                    txtPIN.Text += ".";
-                }
-            }
-            catch (Exception ex)
-            {
-                lblError.Text = "error:" + ex.Message;
-                logger.Debug(ex.Message);
-            }
+
         }
 
         protected void btnNum0_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Session["ViewSate"].Equals("ErrorPIN"))
+                if (Session["ViewState"].Equals("ErrorPIN"))
                 {
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
-                    txtPIN.Text += "0";
+                    txtPIN.Attributes["value"] += "0";
                 }
                 else
                 {
-                    txtPIN.Text += "0";
+                    txtPIN.Attributes["value"] += "0";
                 }
             }
             catch (Exception ex)
@@ -319,12 +301,7 @@ namespace WebApplication1.UC1.Validation
         int count = 0;
         protected void btnComma_Click(object sender, EventArgs e)
         {
-            count = 1;
-            txtPIN.Text += ",";
-            if (count == 1)
-            {
-                txtPIN.Text += "";
-            }
+
         }
         #endregion
 
@@ -335,13 +312,13 @@ namespace WebApplication1.UC1.Validation
             {
                 if (Session["ViewState"].Equals("ErrorPIN"))
                 {
-                    txtPIN.Text = "";
+                    txtPIN.Attributes["value"] = "";
                     contenEnterPIN.Controls.Clear();
                     contenEnterPIN.Controls.Add(LoadControl("~/UC1.Validation/UcController/UcRe-EnterPIN.ascx"));
                 }
                 else
                 {
-                    txtPIN.Text = "";
+                    txtPIN.Attributes["value"] = "";
                 }
             }
             catch (Exception ex)
@@ -387,7 +364,7 @@ namespace WebApplication1.UC1.Validation
         }
         #endregion
 
-        #region ***** button OK Cancel and Clear *****
+        #region ***** button OK and Cancel*****
         protected void Button5_Click(object sender, EventArgs e)
         {
             try
