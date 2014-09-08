@@ -535,7 +535,6 @@
     <Compile Include="UnitTest\TestValidation.cs" />
     <Compile Include="UnitTest\TestViewHistory.cs" />
     <Compile Include="UnitTest\TestWithdraw.cs" />
-    <Compile Include="UnitTest\Validation.cs" />
     <Compile Include="UseControl\Caculator.ascx.cs">
       <DependentUpon>Caculator.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

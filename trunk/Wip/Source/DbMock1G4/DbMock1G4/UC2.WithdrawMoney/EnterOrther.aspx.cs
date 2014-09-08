@@ -27,10 +27,10 @@ namespace WebApplication1.UC2.WithdrawMoney
                 int accountId = int.Parse(Session["AccountId"].ToString());
                 decimal money = Convert.ToDecimal(txtEnterCash.Text);
                 bool check = accountBl.CheckBalanceWithDraw(accountId, money);
-                int checkAtm = stockBl.CheckMoneyAtm(1,accountId, money);
+                int checkAtm = stockBl.CheckMoneyAtm(1, accountId, money);
                 if (check == false)
                 {
-                    lblError.Text = "Number enter have to div to 50.000 or money > balance";
+                    lblError.Text = "Number enter have to div to 50.000 or money more than balance";
                     txtEnterCash.Text = "";
                     txtEnterCash.Focus();
                 }
@@ -58,9 +58,9 @@ namespace WebApplication1.UC2.WithdrawMoney
                                 Response.Redirect("Withdraw.aspx");
                             }
                         }
-                        
+
                     }
-                    
+
                 }
             }
             catch (Exception ex)
@@ -70,12 +70,21 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
         }
 
-        public void UpdateBalance(int accId,decimal money)
+        public void UpdateBalance(int accId, decimal money)
         {
-            Account account = accountBl.GetByAccountId(accId);
-            decimal balance = account.Balance;
-            balance = balance - money;
-            accountBl.DispenserMoney(accId, balance);
+            try
+            {
+                Account account = accountBl.GetByAccountId(accId);
+                decimal balance = account.Balance;
+                balance = balance - money;
+                accountBl.DispenserMoney(accId, balance);
+            }
+            catch (Exception ex)
+            {
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
+            }
+            
         }
         protected void btnOrther_Click(object sender, EventArgs e)
         {

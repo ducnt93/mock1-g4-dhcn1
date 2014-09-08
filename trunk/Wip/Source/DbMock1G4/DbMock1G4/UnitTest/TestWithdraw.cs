@@ -15,6 +15,7 @@ namespace WebApplication1.UnitTest
 
 
         #region CheckBalance
+
         // Checkbalance when money > balance
         [TestMethod]
         public void CheckBalance()
@@ -34,6 +35,7 @@ namespace WebApplication1.UnitTest
             bool checkBalance = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsFalse(checkBalance);
         }
+
         // Checkbalance when money > balance and money > 50.000 but money != 50.000 <> 0
         [TestMethod]
         public void CheckBalance2()
@@ -43,6 +45,7 @@ namespace WebApplication1.UnitTest
             bool checkBalance = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsFalse(checkBalance);
         }
+
         // Checkbalance when money > balance and money > 50.000 and money = 50.000 <> 0
         [TestMethod]
         public void CheckBalance3()
@@ -64,7 +67,9 @@ namespace WebApplication1.UnitTest
             int num = accountBl.UpdateBalance(account);
             Assert.IsNotNull(num);
         }
+
         #region Withdraw
+
         // With money = 500.000
         [TestMethod]
         public void Withdraw50()
@@ -74,6 +79,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         [TestMethod]
         public void Withdraw100()
         {
@@ -82,6 +88,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         [TestMethod]
         public void Withdraw200()
         {
@@ -90,6 +97,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         [TestMethod]
         public void Withdraw250()
         {
@@ -98,6 +106,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         [TestMethod]
         public void Withdraw300()
         {
@@ -106,6 +115,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         // input money div to 50.000
         [TestMethod]
         public void WithdrawOrther()
@@ -115,6 +125,7 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsTrue(check);
         }
+
         // input money not div to 50.000
         [TestMethod]
         public void WithdrawOrther1()
@@ -124,11 +135,14 @@ namespace WebApplication1.UnitTest
             bool check = accountBl.CheckBalanceWithDraw(AccId, money);
             Assert.IsFalse(check);
         }
+
         #endregion
+
         #region SaveLog
+
         // Save log success
         [TestMethod]
-        public void SaveLog()
+        public void SaveLog1()
         {
             Log log = new Log();
             log.Amount = 500000;
@@ -137,31 +151,23 @@ namespace WebApplication1.UnitTest
             log.Details = "Rut tien";
             log.LogDate = DateTime.Now;
             log.LogTypeId = 1;
+            log.AtmId = 1;
             int num = logBl.Add(log);
-            Assert.AreEqual(1, num);
+            Assert.AreEqual(65, num);
         }
-        // Save log unsuccess
-        [TestMethod]
-        public void SaveLog1()
-        {
-            Log log = new Log();
-            log.Amount = 500000;
-            log.AtmLocation = "";
-            log.CardNo = "";
-            log.Details = "Rut tien";
-            log.LogDate = DateTime.Now;
-            log.LogTypeId = 1;
-            int num = logBl.Add(log);
-            Assert.AreEqual(0, num);
-        }
+
         #endregion
+
         #region CheckMoneyATM
+
         // Check money Atm when total money Atm < amount
         public AccountBL AccountBl
         {
             get { return accountBl; }
             set { accountBl = value; }
         }
+
+        // Không đủ tiền trong cây để rút
         [TestMethod]
         public void CheckMoneyAtm()
         {
@@ -196,19 +202,17 @@ namespace WebApplication1.UnitTest
             int checkNum = stockBl.CheckMoneyAtm(AtmId, accId, amount);
             Assert.AreEqual(3, checkNum);
         }
-        // TH1: So tien trong CSDL có 500.000 : 10 tờ. 200.000 : 1 tờ, 100.000: 10 tờ, 50.000: 10 tờ
-        // Luôn đử tiền cho khách hàng rút. Khách rút: 2.950.000
-        // Số tiền sẽ rút được là: 5 tờ 500.000, 2 tờ 200.000, 0 tờ 100.000 và 1 tờ 50.000
-        // Giá trị cần so sánh đúng đầu ra là checkNum = 3
-        [TestMethod]
-        public void CheckMoneyAtm3()
-        {
-            int AtmId = 1;
-            decimal amount = 2950000;
-            int accId = 2;
-            int checkNum = stockBl.CheckMoneyAtm(AtmId, accId, amount);
-            Assert.AreEqual(3, checkNum);
-        }
+
         #endregion
+
+        [TestMethod]
+        public void DispenserMoney()
+        {
+            int accId = 2;
+            decimal balanceNew = 900000000;
+            int exp = 2;
+            int act = accountBl.DispenserMoney(accId, balanceNew);
+            Assert.AreEqual(exp,act);
+        }
     }
 }

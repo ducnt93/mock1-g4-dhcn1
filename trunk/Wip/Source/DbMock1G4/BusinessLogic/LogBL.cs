@@ -51,7 +51,6 @@ namespace DbMock1G4.BusinessLogic
 		// Thêm 1 log
 		public int Add(Log objLog)
 		{
-			ServerCache.Remove("Log", true);
 			return objLogDA.Add(objLog);
 		}
 
