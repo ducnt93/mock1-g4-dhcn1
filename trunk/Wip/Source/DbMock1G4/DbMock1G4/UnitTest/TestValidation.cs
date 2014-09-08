@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WebApplication1.UnitTest
 {
     [TestClass]
-    class TestMethodValidation
+  public class TestMethodValidation
     {
 		private string cardNo;
 		//private string pin;
@@ -28,7 +28,7 @@ namespace WebApplication1.UnitTest
         [TestMethod]
         public void TestMethodReadCard2()
         {
-            Assert.AreEqual("1234567890", cardBl.GetByCardNo("1234567890"));
+            Assert.IsNotNull(cardBl.GetByCardNo("1234567890"));
         }
 
         [TestMethod]
