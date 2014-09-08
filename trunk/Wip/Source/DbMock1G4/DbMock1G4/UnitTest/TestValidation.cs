@@ -33,19 +33,19 @@ namespace WebApplication1.UnitTest
         }
 
         [TestMethod]
-        public void TestReadCard3()
+        public void TestMethodReadCard3()
         {
             Assert.AreEqual("0", cardBl.ReadCard("0"));
         }
 
         [TestMethod]
-        public void TestReadCard4()
+        public void TestMethodReadCard4()
         {
             Assert.AreEqual("abc123", cardBl.ReadCard("abc123"));
         }
 
         [TestMethod]
-        public void TestReadCard5()
+        public void TestMethodReadCard5()
         {
             Assert.AreEqual(".", cardBl.ReadCard("."));
         }
