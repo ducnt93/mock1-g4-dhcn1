@@ -361,7 +361,7 @@ SELECT
 	[CardNo],
 	[Status],
 	[AccountId],
-	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) as Pin,
 	[StartDate],
 	[ExpiredDate],
 	[Attempt]
@@ -382,7 +382,7 @@ SELECT
 	[CardNo],
 	[Status],
 	[AccountId],
-	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) as Pin,
 	[StartDate],
 	[ExpiredDate],
 	[Attempt]
@@ -405,14 +405,14 @@ SELECT
 	[CardNo],
 	[Status],
 	[AccountId],
-	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) as Pin,
 	[StartDate],
 	[ExpiredDate],
 	[Attempt]
 FROM
 	[Card]
 WHERE
-	[CardNo] =@CardNo AND CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) = @HashPin
+	[CardNo] =@CardNo AND CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) = @HashPin
 GO
 
 if exists (select * from sysobjects where id = object_id(N'[sproc_Card_GetCardNo]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
@@ -440,7 +440,7 @@ CREATE PROCEDURE sproc_Card_GetHashPIN
 @CardNo varchar(16)
 AS
 SELECT
-	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin
+	CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) as Pin
 FROM
 	[Card]
 WHERE
@@ -481,7 +481,7 @@ SELECT
 	[CardNo],
 	[Status],
 	[AccountId],
-	CONVERT(varchar(1000),HASHBYTES('MD5', Pin),2) as Pin,
+	CONVERT(varchar(32),HASHBYTES('MD5', Pin),2) as Pin,
 	[StartDate],
 	[ExpiredDate],
 	[Attempt]
