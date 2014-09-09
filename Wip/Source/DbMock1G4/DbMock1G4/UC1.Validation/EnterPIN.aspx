@@ -28,11 +28,6 @@
                                 <h3>ABC Bank @ ATM</h3>
                                 <h4>Wellcom to ABC Bank @ ATM.</h4>
                                 <div class="col-md-12">
-                                    <asp:UpdateProgress ID="UpProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
-                                        <ProgressTemplate>
-                                            Validating your PIN card...
-                                        </ProgressTemplate>
-                                    </asp:UpdateProgress>
                                     <asp:Label ID="lblError" Text="" runat="server"></asp:Label>
                                 </div>
                            </div>
