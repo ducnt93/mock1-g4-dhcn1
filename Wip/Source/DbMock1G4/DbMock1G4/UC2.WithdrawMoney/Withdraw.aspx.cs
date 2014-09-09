@@ -28,10 +28,17 @@ namespace WebApplication1.UC2.WithdrawMoney
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcErrorScreen.ascx"));
                             break;
                         case "PrintPeceipt":
+                           DisableButtom();
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcPrintPeceipt.ascx"));
                             break;
                         case "Test":
+                            btn100.Enabled = false;
+                            btn50.Enabled = false;
+                            btn300.Enabled = false;
+                            btn200.Enabled = false;
+                            btn250.Enabled = false;
+                            btnOrther.Enabled = false;
                             contenPlace.Controls.Clear();
                             contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
                             break;
@@ -50,6 +57,14 @@ namespace WebApplication1.UC2.WithdrawMoney
             }
 
         }
+
+        public void DisableButtom()
+        {
+            btn100.Enabled = false;
+            btn50.Enabled = false;
+            btn300.Enabled = false;
+            btn200.Enabled = false;
+        }
         public void UpdateBalance(int accId, decimal money)
         {
             try
@@ -65,7 +80,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                 ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
                 logger.Debug(ex.Message);
             }
-           
+
         }
         private void ResetSession()
         {
@@ -185,6 +200,8 @@ namespace WebApplication1.UC2.WithdrawMoney
                 {
                     if (Session["ViewState"].ToString() == "PrintPeceipt")
                     {
+                        btn250.Enabled = false;
+                        btnOrther.Enabled = false;
                         contenPlace.Controls.Clear();
                         contenPlace.Controls.Add(LoadControl("~/UC2.WithdrawMoney/UcController/UcTest.ascx"));
                     }
@@ -233,6 +250,7 @@ namespace WebApplication1.UC2.WithdrawMoney
                             else
                             {
                                 Session["ViewState"] = "PrintPeceipt";
+                                DisableButtom();
                                 UpdateBalance(accId, money);
                                 WriteLog(money);
                                 ResetSession();
@@ -300,7 +318,16 @@ namespace WebApplication1.UC2.WithdrawMoney
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            if (Session["ViewState"].Equals("PrintPeceipt"))
+            {
+                ResetSession();
+                Response.Redirect("~/InsertCardMain.aspx");
+            }
+            else
+            {
                 Response.Redirect("~/MainATM.aspx");
+            }
+         
         }
     }
 }
