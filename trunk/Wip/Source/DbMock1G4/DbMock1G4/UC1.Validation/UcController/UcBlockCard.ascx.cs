@@ -11,9 +11,12 @@ namespace WebApplication1.UC1.Validation.UcController
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["ViewState"] = "BlockCard";
         }
+
         protected void Timer_Tick(object sender, EventArgs e)
         {
+
         }
     }
 }
