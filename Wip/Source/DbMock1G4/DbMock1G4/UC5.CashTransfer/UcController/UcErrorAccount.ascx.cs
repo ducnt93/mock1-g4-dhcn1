@@ -11,7 +11,7 @@ namespace WebApplication1.UC5.CashTransfer.UcController
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtReAccountReceiveId.Focus();
         }
     }
 }
