@@ -1,4 +1,4 @@
-﻿using DbMock1G4.BusinessLogic;
+ using DbMock1G4.BusinessLogic;
 using DbMock1G4.BusinessObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,9 +8,9 @@ namespace WebApplication1.UnitTest
     public class TestMethodValidation
     {
         public string cardNo;
-        //private string pin;
         public CardBL cardBl = new CardBL();
         public Card card = new Card();
+        
         #region Test Method Validation
         [TestMethod]
         public void TestMethodReadCard1()
