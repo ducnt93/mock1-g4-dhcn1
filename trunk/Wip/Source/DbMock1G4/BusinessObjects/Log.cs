@@ -77,18 +77,6 @@ namespace DbMock1G4.BusinessObjects
                 _Amount = value;
             }
         }
-        private string _Details;
-        public string Details
-        {
-            get
-            {
-                return _Details;
-            }
-            set
-            {
-                _Details = value;
-            }
-        }
 
         private string _type;
         public string Type
@@ -104,7 +92,14 @@ namespace DbMock1G4.BusinessObjects
             set { ATMLocation = value; }
         }
 
-        #endregion
+	    public string Details
+	    {
+	        get { return _details; }
+	        set { _details = value; }
+	    }
+
+	    private string _details;
+	    #endregion
 
         #region ***** Init Methods *****
         public Log()

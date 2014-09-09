@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-2">
                     <div class="col-md-3">
-                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" style="height: 150px; width: 150px;" />
+                        <img src="../Content/images/nganhang2.jpg" class="img-thumbnail imgbank" />
                     </div>
                     <div class="col-md-9">
                         <h3>ABC Bank @ ATM</h3>
