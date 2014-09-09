@@ -5,55 +5,52 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WebApplication1.UnitTest
 {
     [TestClass]
-  public class TestMethodValidation
+    public class TestMethodValidation
     {
-		private string cardNo;
-		//private string pin;
-		private CardBL cardBl;
-		private Card card;
-
-        public void SetUp()
-        {
-			cardBl= new CardBL();
-			card=new Card();
-        }
-
+        public string cardNo;
+        //private string pin;
+        public CardBL cardBl = new CardBL();
+        public Card card = new Card();
         #region Test Method Validation
         [TestMethod]
         public void TestMethodReadCard1()
         {
-            Assert.AreEqual(null, cardBl.GetByCardNo(""));
+            Assert.AreEqual(null, cardBl.ReadCard(""));
         }
-        
+
         [TestMethod]
         public void TestMethodReadCard2()
         {
-            Assert.IsNotNull(cardBl.GetByCardNo("1234567890"));
+            string exp = "1234567890";
+            string card = cardBl.ReadCard(exp);
+            Assert.AreEqual(exp, card);
         }
 
         [TestMethod]
         public void TestMethodReadCard3()
         {
-            Assert.AreEqual("0", cardBl.ReadCard("0"));
+            string exp = null;
+            string card = cardBl.ReadCard("0");
+            Assert.AreEqual(exp, card);
         }
 
         [TestMethod]
         public void TestMethodReadCard4()
         {
-            Assert.AreEqual("abc123", cardBl.ReadCard("abc123"));
+            Assert.AreEqual(null, cardBl.ReadCard("abc123"));
         }
 
         [TestMethod]
         public void TestMethodReadCard5()
         {
-            Assert.AreEqual(".", cardBl.ReadCard("."));
+            Assert.AreEqual(null, cardBl.ReadCard("."));
         }
 
-		[TestMethod]
-		public void TestMethodAcceptCard1()
+        [TestMethod]
+        public void TestMethodAcceptCard1()
         {
             Assert.AreEqual(false, cardBl.AcceptCard(""));
-		}
+        }
 
         [TestMethod]
         public void TestMethodAcceptCard2()
@@ -90,15 +87,7 @@ namespace WebApplication1.UnitTest
         [TestMethod]
         public void TestMethodValidateCard2()
         {
-            cardNo = "0641060097";
-            card = cardBl.GetByCardNo(cardNo);
-            Assert.AreEqual(false, cardBl.ValidateCard(card));
-        }
-
-        [TestMethod]
-        public void TestMethodValidateCard3()
-        {
-            cardNo = "0";
+            cardNo = "1";
             card = cardBl.GetByCardNo(cardNo);
             Assert.AreEqual(false, cardBl.ValidateCard(card));
         }
