@@ -81,5 +81,10 @@ namespace WebApplication1.UC4.ViewHistory
         {
             Response.Redirect("~/MainATM.aspx");
         }
+
+        protected void btnEnter_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UC4.ViewHistory/PrintReceipts.aspx");
+        }
     }
 }

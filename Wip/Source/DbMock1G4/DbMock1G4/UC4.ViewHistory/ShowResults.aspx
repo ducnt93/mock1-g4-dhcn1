@@ -71,7 +71,7 @@
                                         <SortedDescendingCellStyle BackColor="#F6F0C0" />
                                         <SortedDescendingHeaderStyle BackColor="#7E0000" />
                                     </asp:GridView>
-                                    <div style="text-align: center; margin-top: 5px; color: #ff0000; font-size: 20px;">Press Cancel to re-ject Card </div>
+                                    <div style="text-align: center; margin-top: 5px; color: #ff0000; font-size: 18px;">Press Enter to print receipts or Cancel to return to the main form </div>
                                 </div>
                                 <div class="col-md-12 paddingtop1" style="padding-top: 35px;">
                                     <div class="col-md-6">
@@ -127,7 +127,7 @@
                                     <td>
                                         <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                     <td>
-                                        <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
+                                        <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click" /></td>
                                 </tr>
                                 <tr>
                                     <td>

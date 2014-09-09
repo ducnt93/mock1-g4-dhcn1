@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1.UC4.ViewHistory
 {
-    public partial class WaittedScreen : System.Web.UI.Page
+    public partial class PrintReceipts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
