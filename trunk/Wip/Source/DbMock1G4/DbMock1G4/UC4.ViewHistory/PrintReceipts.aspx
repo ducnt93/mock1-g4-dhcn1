@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WaittedScreen.aspx.cs" Inherits="WebApplication1.UC4.ViewHistory.WaittedScreen" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PrintReceipts.aspx.cs" Inherits="WebApplication1.UC4.ViewHistory.PrintReceipts" %>
 
 <!DOCTYPE html>
 
@@ -7,9 +7,6 @@
     <title></title>
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Style.css" rel="stylesheet" />
-     <script type="text/JavaScript">
-        setTimeout("location.href = 'http://localhost:39319/UC4.ViewHistory/ShowResults.aspx';", 2000);
-    </script>
 </head>
 <body class="panel-body" id="main">
     <form id="form1" runat="server">
@@ -39,10 +36,10 @@
                             <asp:Button runat="server" ID="btn300" CssClass="btn btn-default col btn1" Text="Buttom 3" />
                         </div>
                     </div>
-                    <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 385px;">
+                    <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 340px;">
                         <div class="col-md-12">
-                            <h3 style="text-align: center;">View transaction history</h3>
-                            <h4 style="text-align: center; color: #04EBEB;">Searching....</h4>
+                           <div style="text-align: center; font-size: 20px; margin-top: 50px;"> <img src="../Content/images/Symbol-Check.png" />Successful print receipts</div> 
+                            <h4 style="text-align: center; margin-top: 10px;">Press Cancel to return to the main form</h4>
                         </div>
                     </div>
                     <div class="col-md-2 ">
@@ -74,7 +71,7 @@
                                     <td>
                                         <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
                                     <td>
-                                        <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
+                                        <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click"/></td>
                                 </tr>
                                 <tr>
                                     <td>

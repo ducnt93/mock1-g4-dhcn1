@@ -112,7 +112,7 @@
                                         <td>
                                             <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
