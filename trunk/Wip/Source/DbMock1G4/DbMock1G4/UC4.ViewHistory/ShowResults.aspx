@@ -40,9 +40,9 @@
                                 </div>
                             </div>
                             <div class="col-md-8 table-bordered" style="padding-top: 20px; height: 385px;">
-                                    <h4 style="text-align: center;">Transaction history</h4>
+                                <h4 style="text-align: center;">Transaction history</h4>
                                 <div class="col-md-12 paddingtop1" style="height: 195px;">
-                                    <asp:GridView ID="grViewhistory" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" EnableSortingAndPagingCallbacks="True" Height="148px" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
+                                    <asp:GridView ID="grViewhistory" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" EnableSortingAndPagingCallbacks="True" Height="146px" OnPageIndexChanging="grViewhistory_PageIndexChanging" PageSize="5">
                                         <Columns>
                                             <asp:BoundField DataField="ATMLocation" HeaderText="ATM(Location)">
                                                 <ItemStyle Width="200px" />
@@ -71,10 +71,11 @@
                                         <SortedDescendingCellStyle BackColor="#F6F0C0" />
                                         <SortedDescendingHeaderStyle BackColor="#7E0000" />
                                     </asp:GridView>
+                                    <div style="text-align: center; margin-top: 5px; color: #ff0000; font-size: 20px;">Press Cancel to re-ject Card </div>
                                 </div>
-                                <div class="col-md-12 paddingtop1" style="padding-top:35px; ">
+                                <div class="col-md-12 paddingtop1" style="padding-top: 35px;">
                                     <div class="col-md-6">
-                                         <span class="btn btn-success btn1 col">Prev</span>
+                                        <span class="btn btn-success btn1 col">Prev</span>
                                         <%--<asp:Label runat="server" CssClass="btn btn-success btn1 col" >Prev</asp:Label>--%>
                                     </div>
                                     <div class="col-md-offset-3  col-md-3">
@@ -82,17 +83,17 @@
                                     </div>
                                 </div>
                             </div>
-                             <div class="col-md-2">
-                            <div class="col-md-12 paddingtop">
-                                <asp:Button runat="server" ID="btn100" CssClass="btn btn-default col btn1" Text="Buttom 4" />
+                            <div class="col-md-2">
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn100" CssClass="btn btn-default col btn1" Text="Buttom 4" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <asp:Button runat="server" ID="btn250" CssClass="btn btn-default col btn1" Text="Buttom 5" />
+                                </div>
+                                <div class="col-md-12 paddingtop">
+                                    <a href="javascript:__doPostBack('grViewhistory','Page$Next')" class="btn btn-default col btn1">Buttom 6</a>
+                                </div>
                             </div>
-                            <div class="col-md-12 paddingtop">
-                                <asp:Button runat="server" ID="btn250" CssClass="btn btn-default col btn1" Text="Buttom 5" />
-                            </div>
-                            <div class="col-md-12 paddingtop">
-                                <a href="javascript:__doPostBack('grViewhistory','Page$Next')" class="btn btn-default col btn1">Buttom 6</a>
-                            </div>
-                        </div>
                         </div>
                     </div>
                     <div class="col-md-12 table-bordered">

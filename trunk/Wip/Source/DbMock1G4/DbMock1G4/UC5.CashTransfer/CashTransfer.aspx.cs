@@ -212,7 +212,7 @@ namespace WebApplication1.UC5.CashTransfer
                 log.LogDate = DateTime.Now;
                 log.AtmId = 1;
                 log.CardNo = Session["CardNo"].ToString();
-                log.Details = Session["AccountId"].ToString();
+                log.Details = Session["AccountReceiveId"].ToString();
                 log.LogTypeId = 2;
                 LogBusinessLogic.Add(log);
             }
