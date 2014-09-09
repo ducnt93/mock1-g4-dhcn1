@@ -6,6 +6,7 @@ using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DbMock1G4.BusinessLogic;
+using DbMock1G4.BusinessObjects;
 
 namespace WebApplication1.UC4.ViewHistory
 {
@@ -63,7 +64,7 @@ namespace WebApplication1.UC4.ViewHistory
             grViewhistory.PageIndex = e.NewPageIndex;
             CheckViewHistory(time, cardNo);
             grViewhistory.DataBind();
-            Page_Load(sender,e);           
+            Page_Load(sender,e);
         }
 
         protected void btn6_Click(object sender, EventArgs e)
