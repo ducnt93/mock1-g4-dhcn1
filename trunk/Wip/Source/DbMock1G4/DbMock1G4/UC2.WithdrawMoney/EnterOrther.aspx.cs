@@ -17,6 +17,10 @@ namespace WebApplication1.UC2.WithdrawMoney
         protected void Page_Load(object sender, EventArgs e)
         {
             txtEnterCash.Focus();
+            btn100.Enabled = false;
+            btn50.Enabled = false;
+            btn300.Enabled = false;
+            btn200.Enabled = false;
         }
         StockBL stockBl = new StockBL();
         protected void btn250_Click(object sender, EventArgs e)
@@ -143,6 +147,7 @@ namespace WebApplication1.UC2.WithdrawMoney
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("~/MainATM.aspx");
         }
 
