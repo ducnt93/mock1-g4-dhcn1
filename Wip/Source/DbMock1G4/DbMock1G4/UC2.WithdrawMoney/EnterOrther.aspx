@@ -22,7 +22,6 @@
                             </div>
                             <div class="col-md-9">
                                 <h3>ABC Bank @ ATM</h3>
-                                <h4>Please select a transaction</h4>
                             </div>
                             <div class="col-md-12">
                                 <h5><b>Enter your amount you want to withdraw below, number enter have to div to 50.000:</b></h5>
@@ -43,7 +42,7 @@
                             </div>
                             <div class="col-md-8 table-bordered">
 
-                                <div class="col-md-12" style="padding-top: 50px;">
+                                <div class="col-md-12" style="padding-top: 40px;">
                                     <div class="col-md-6 col-lg-offset-4" style="padding-bottom: 40px;">
                                         <asp:TextBox runat="server" ID="txtEnterCash" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
@@ -72,39 +71,39 @@
                                 <table class="table table-bordered">
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" /></td>
+                                            <asp:Button runat="server" ID="btnNum1" CssClass="btn btn-default" Text="1" OnClick="btnNum1_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" /></td>
+                                            <asp:Button runat="server" ID="btnNum2" CssClass="btn btn-default" Text="2" OnClick="btnNum2_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" /></td>
+                                            <asp:Button runat="server" ID="btnNum3" CssClass="btn btn-default" Text="3" OnClick="btnNum3_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" /></td>
+                                            <asp:Button runat="server" ID="btnCancel" CssClass="btn btn-danger buttom" Text="Cancel" OnClick="btnCancel_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" /></td>
+                                            <asp:Button runat="server" ID="btnNum4" CssClass="btn btn-default" Text="4" OnClick="btnNum4_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" /></td>
+                                            <asp:Button runat="server" ID="btnNum5" CssClass="btn btn-default" Text="5" OnClick="btnNum5_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" /></td>
+                                            <asp:Button runat="server" ID="btnNum6" CssClass="btn btn-default" Text="6" OnClick="btnNum6_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" /></td>
+                                            <asp:Button runat="server" ID="btnClear" CssClass="btn btn-warning buttom" Text="Clear" OnClick="btnClear_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" /></td>
+                                            <asp:Button runat="server" ID="btnNum7" CssClass="btn btn-default" Text="7" OnClick="btnNum7_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" /></td>
+                                            <asp:Button runat="server" ID="btnNum8" CssClass="btn btn-default" Text="8" OnClick="btnNum8_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" /></td>
+                                            <asp:Button runat="server" ID="btnNum9" CssClass="btn btn-default" Text="9" OnClick="btnNum9_Click" /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" /></td>
+                                            <asp:Button runat="server" ID="btnEnter" CssClass="btn btn-primary buttom" Text="Enter" OnClick="btnEnter_Click" /></td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <asp:Button runat="server" ID="btnDot" CssClass="btn btn-default" Text="." /></td>
                                         <td>
-                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" /></td>
+                                            <asp:Button runat="server" ID="btnNum0" CssClass="btn btn-default" Text="0" OnClick="btnNum0_Click" /></td>
                                         <td>
                                             <asp:Button runat="server" ID="btnComma" CssClass="btn btn-default" Text="," /></td>
                                     </tr>

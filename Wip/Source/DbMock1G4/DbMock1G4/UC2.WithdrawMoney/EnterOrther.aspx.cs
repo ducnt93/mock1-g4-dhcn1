@@ -90,5 +90,116 @@ namespace WebApplication1.UC2.WithdrawMoney
         {
             Response.Redirect("~/UC2.WithdrawMoney/Withdraw.aspx");
         }
+
+        protected void btnNum1_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "1";
+        }
+
+        protected void btnNum2_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "2";
+        }
+
+        protected void btnNum3_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "3";
+        }
+
+        protected void btnNum4_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "4";
+        }
+
+        protected void btnNum5_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "5";
+        }
+
+        protected void btnNum6_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "6";
+        }
+
+        protected void btnNum7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNum8_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "8";
+        }
+
+        protected void btnNum9_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "9";
+        }
+
+        protected void btnNum0_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text += "0";
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/MainATM.aspx");
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtEnterCash.Text = "";
+        }
+
+        protected void btnEnter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Session["ViewState"] = "PrintPeceipt";
+                int accountId = int.Parse(Session["AccountId"].ToString());
+                decimal money = Convert.ToDecimal(txtEnterCash.Text);
+                bool check = accountBl.CheckBalanceWithDraw(accountId, money);
+                int checkAtm = stockBl.CheckMoneyAtm(1, accountId, money);
+                if (check == false)
+                {
+                    lblError.Text = "Number enter have to div to 50.000 or money withdraw more than balance or money withdraw < 0";
+                    txtEnterCash.Text = "";
+                    txtEnterCash.Focus();
+                }
+                else
+                {
+                    if (checkAtm == 1)
+                    {
+                        lblError.Text = "Number enter have to div to 50.000";
+                    }
+                    else
+                    {
+                        if (checkAtm == 2)
+                        {
+                            lblError.Text = "The total amount smaller than withdrawal ";
+                        }
+                        else
+                        {
+                            if (checkAtm == 4)
+                            {
+                                lblError.Text = "Error...";
+                            }
+                            else
+                            {
+                                UpdateBalance(accountId, money);
+                                Response.Redirect("Withdraw.aspx");
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ILog logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+                logger.Debug(ex.Message);
+            }
+        }
     }
 }
