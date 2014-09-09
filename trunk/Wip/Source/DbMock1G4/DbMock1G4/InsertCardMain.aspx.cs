@@ -20,6 +20,7 @@ namespace WebApplication1
                 txtCardNo.Focus();
                 Session["ViewState"] = "";
                 Session["CardNo"] = "";
+                Session["PIN"] = "";
             }
             catch (Exception ex)
             {
