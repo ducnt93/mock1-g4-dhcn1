@@ -22,7 +22,7 @@
                 <div class="col-md-4 col-lg-offset-8 col">
                     <input type="text" class="btn btn-success btn1" value="Accept" />
                 </div>
-                <div class="col-md-4 col-lg-offset-8 col">
+                <div class="col-md-4 col-lg-offset-8 col paddingtop">
                     <input type="text" class="btn btn-success btn1" value="Reject" />
                 </div>
             </td>

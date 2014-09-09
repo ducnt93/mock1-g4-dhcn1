@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UcInputMoneyTransfer.ascx.cs" Inherits="WebApplication1.UC5.CashTransfer.UcController.AmountTransfer" %>
-<h4 align="center">Transfer Cash Amount</h4>        
+<div class="col-md-12" style="padding-top: 50px;">
+    <h4 align="center">Transfer Cash Amount</h4>        
 <table align="center">
             
             <tr>
@@ -8,3 +9,5 @@
             </tr>
         </table>
 <h5 align="center">Press enter to continue</h5>
+</div>
+

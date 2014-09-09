@@ -16,10 +16,10 @@
         <h4 align="left">Press accept to continue, Reject to re-enter account</h4>
     </div>
     <div class="col-md-5">
-        <div class="col-md-4 col-lg-offset-8 col">
+        <div class="col-md-4 col-lg-offset-8 col paddingtop1">
             <input type="text" class="btn btn-success btn1" value="Accept" />
         </div>
-        <div class="col-md-4 col-lg-offset-8 col">
+        <div class="col-md-4 col-lg-offset-8 col paddingtop1">
             <input type="text" class="btn btn-success btn1" value="Reject" />
         </div>
     </div>
